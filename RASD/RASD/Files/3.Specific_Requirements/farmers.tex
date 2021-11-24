@@ -1,0 +1,124 @@
+Synonims: system, application, service
+
+Definitions:
+\begin{itemize}
+    \item Production data: By the term Production data we refer to all general kind of information that the farmer with his activity produces. In order to achieve some form of coherence and uniformity for this kind of information, we consider useful to let the farmer describe it by a set of mandatory properties that are analogous to each product (e.g. type of product, amount of produced items, unit of measurement etc.). In order to achieve a deeper level of understanding we consider useful to let the user the possibility to fill some optional fields like a qualitative descriprion of the produced items or notes relevant for the other users of the system.
+    \item Problem information: With the term \textbf{problem information} we refer to every kind of information that describes in a functional way the general set of events that [could get in the way of/represent an obstacle to] farmer's ordinary production rate.
+    \item Help request/Suggestion request: With the term \textbf{help/suggestion request} we refer to the Farmer activity of information retrieval. The farmer should be able to request information in a private way to the other components of the systems, like other farmers and/or agronomists, in order to increase the quality of their activity.
+
+\end{itemize}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}[c]{|l|p{0.75\textwidth}|}
+        \hline % ---------------------------------------------------------------------
+    	\textsc{id}                 &   1\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Name}               &   Production data upload\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Actors}             &   Farmer\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Entry conditions}   &   Farmer has logged in\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Event flow}         &   \footnotesize
+            	                        \begin{itemize}
+                                    	    \item Farmer selects the graphical element for recording production data, called informally \textit{Record Production Data button} for the sake of simplicity
+                                    		\item The application displays a section that asks for more information (mandatory fields like type of production, amount of produced items, unit of measurement and optional one like description of the productivity, notes) and an element to save and upload informations, called informally \textit{Upload Button}
+                                    		\item Farmer fills the mandatory fields of the current section and eventually the optional ones. Then press the Upload Button.
+                                    		\item The application displays a confirm popup revealing the summary of the information is going to be recorded, asking for Farmer confirmation through a \textit{Confirm Button}
+                                    		\item The farmer confirms the submission by selecting the Confirm Button
+                                        \end{itemize}\\
+        \hline % ---------------------------------------------------------------------
+        \textsc{Exit conditions}    &  The application displays the summary page of both already uploaded product information and the previous submitted ones\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Output}             &  \begin{itemize}
+    	    \item The system collects the new production data
+    	    \item The farmer can visualize the list of both current production information and the previous ones
+    	   % TODO (where can he visualize it?)
+    	\end{itemize}\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Exceptions}         &  Farmer submits production data without filling the mandatory fields. In such case, the system displays an error message informing the Farmer about the missing field(s) required in order to achieve the goal\\
+    	\hline % ---------------------------------------------------------------------
+        
+    \end{tabular}
+    \caption{\label{tab:Production_data_submission}Use case table that describes one of the farmer functional requirements: the capability of submitting in the system his activity's usual production information.}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline % ---------------------------------------------------------------------
+    	\textsc{id}                 &   2\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Name}               &   Help/suggestion request\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Actors}             &   Farmer\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Entry conditions}   &   Farmer has logged in\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Event flow}         &   \footnotesize
+            	                        \begin{itemize}
+                                    	    \item Farmer selects the graphical section responsible of the private requests, called informally \textit{request section} for the sake of simplicity
+                                    		\item The application displays a section that presents an eventual list of previous request chats, and an internal element to send a new private request, called informally \textit{Send request element}
+                                    		\item Farmer selects the send request button
+                                    		\item The application displays a new section that present all the Farmer's saved contacts
+                                    		\item The farmer selects the contact he wants to send the request
+                                    		\item The system displays a section with an editable text form and a send button.
+                                    		\item The farmer writes the request and selects the send button
+                                        \end{itemize}\\
+        \hline % ---------------------------------------------------------------------
+        \textsc{Exit conditions}    &  The application displays the summary page of both already sent request chat and the previous submitted ones\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Output}             &  \begin{itemize}
+    	    \item The system collects the new request chat
+    	    \item The farmer can visualize the list of both current request chat and the previous ones
+    	   % TODO (where can he visualize it?)
+    	\end{itemize}\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Exceptions}         &  Farmer selects the request button without editing the text form. In such case, the system displays an error message informing the Farmer about the missing field required in order to achieve the goal\\
+    	\hline % ---------------------------------------------------------------------
+        
+    \end{tabular}
+    \caption{\label{tab:Help_request_submission}Use case table that describes one of the farmer functional requirements: the capability of submitting in the system help requests to other farmers and/or agronomists in a private way.}
+
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline % ---------------------------------------------------------------------
+    	\textsc{id}                 &   3\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Name}               &   Forum generation\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Actors}             &   Farmer\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Entry conditions}   &   Farmer has logged in\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Event flow}         &   \footnotesize
+            	                        \begin{itemize}
+                                    	    \item Farmer selects the graphical section responsible of the forum generation, called informally \textit{Forum section} for the sake of simplicity
+                                    		\item The application displays a section that presents an eventual list that contains both previous submitted forums and farmer's forum replies, and an internal element to submit a new public forum, called informally \textit{forum upload button}
+                                    		\item Farmer selects the forum upload button
+                                    		\item The application displays a new section that present 3 mandatory fields (the topic/context of the thread, the title and the question content) and a submission button
+                                    		\item The farmer fills all the mandatory fields and selects the submission button
+                                    		\item The application displays a confirm popup revealing the summary of the information is going to be uploaded, asking for Farmer confirmation through a \textit{Confirm Button}
+                                    		\item The farmer confirms the submission by selecting the Confirm Button
+                                        \end{itemize}\\
+        \hline % ---------------------------------------------------------------------
+        \textsc{Exit conditions}    &  The application displays the summary page containing both already submitted forum thread, the previous submitted ones and the ones whose the farmer replied\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Output}             &  \begin{itemize}
+    	    \item The system collects the new forum thread
+    	    \item The farmer can visualize the list containing both current forum thread, the previous submitted ones and the ones whose the farmer replied
+    	   % TODO (where can he visualize it?)
+    	\end{itemize}\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Exceptions}         &   Farmer submits Forum thread without filling all the mandatory fields. In such case, the system displays an error message informing the Farmer about the missing field(s) required in order to achieve the goal\\
+    	\hline % ---------------------------------------------------------------------
+        
+    \end{tabular}
+
+\caption{\label{tab:Forum_generation}Use case table that describes one of the farmer functional requirements: the capability of submitting in the system public forum threads}
+\end{table}
