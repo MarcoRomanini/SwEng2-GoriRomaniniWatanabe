@@ -123,13 +123,20 @@
 \usepackage{amssymb}
 \usepackage[pdftex, colorlinks]{hyperref}
 
-% \hypersetup{
-%     linkcolor=blue,
-%     filecolor=magenta,
-%     urlcolor=cyan,
-%     }
+
+% added to define a cool blue color
+\definecolor{myblue}{RGB}{85, 152, 192}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=myblue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    }
 
 \newcommand{\comment}[1]{{\color{Red}$\blacktriangleright$ Comment: #1 $\blacktriangleleft$}}
+
+
 
 
 % Some utilities\ldots

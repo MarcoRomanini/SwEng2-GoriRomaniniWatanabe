@@ -1,5 +1,5 @@
 % USE CASE TABLE 1: INSERT THE AREA AGRONOMISTS ARE RESPONSIBLE OF
-In this section there will be presented agronomists use case tables \ldots
+ In this section there will be presented agronomists use case tables \ldots
 \begin{table}[H]
     \centering
     \begin{tabular}[c]{|l|p{0.75\textwidth}|}
@@ -126,7 +126,7 @@ In this section there will be presented agronomists use case tables \ldots
         \hline % ---------------------------------------------------------------------
     	\textsc{id}                 &   4\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Name}               &   Access the “Daily Plan” section (visualise, update)\\
+    	\textsc{Name}               &   Visualise and update a daily plan\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Actors}             &   Agronomist\\
     	\hline % ---------------------------------------------------------------------
@@ -142,20 +142,28 @@ In this section there will be presented agronomists use case tables \ldots
                                     		\item Agronomist selects a daily plan
                                     		\item The system displays all the information about that daily plan (day-month-year, farmers to be visited)
                                     		\item Agronomist clicks on the “Update” button
-                                    		\item The system displays the list of farmers ...
+                                    		\item The system displays the list of farmers contained in the selected daily plan
+                                    		\item Agronomist clicks on the “Remove” button near the farmer he wants to remove
+                                            \item The systems displays the updated list of farmers
+                                            \item Agronomist clicks on the “Add farmer” button
+                                            \item The system displays the list of all the farmers for which the agronomist is responsible of and that are not already in the selected daily plan
+                                            \item Agronomist selects a subset of farmers and clicks on “Add”
+                                            \item The system displays the updated list of farmers
+                                            \item Agronomist checks the info and clicks on “Confirm changes”
+
                                         \end{itemize}\\
         \hline % ---------------------------------------------------------------------
-        \textsc{Exit conditions}    &  %TODO
+        \textsc{Exit conditions}    &  The system shows a popup to notify the agronomist of the success of the operation
         \\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Output}             &  \begin{itemize}
-    	    \item %TODO
+    	    \item The updated daily plan is stored in the database
     	\end{itemize}\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Exceptions}         &  \begin{itemize}
     	    \item The selected daily plan has already been confirmed and cannot be updated anymore. The system shows an error message.
     	    \item (X) The selected daily plan is referring to the current day and cannot be updated anymore. The system shows an error message.
-    	\end{itemize}\\
+    	    \item Agronomist has made the wrong modifications to the daily plan. Instead of clicking “Confirm changes”, he/it clicks on “Discard changes”. The system displays the original daily plan and doesn’t store the new one in the database.    	\end{itemize}\\
     	
     	\hline % ---------------------------------------------------------------------
         
@@ -173,7 +181,7 @@ In this section there will be presented agronomists use case tables \ldots
         \hline % ---------------------------------------------------------------------
     	\textsc{id}                 &   5\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Name}               &   Confirm deviations from daily plan\\
+    	\textsc{Name}               &   Confirm execution of daily plan\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Actors}             &   Agronomist\\
     	\hline % ---------------------------------------------------------------------
@@ -185,19 +193,25 @@ In this section there will be presented agronomists use case tables \ldots
     	\textsc{Event flow}         &   \footnotesize
             	                        \begin{itemize}
                                     	    \item Agronomist goes to the “Daily Plan” section, which is divided in “Visualise/Update” and “Confirm/Specify deviation from”. Agronomist selects the “Confirm/Specify deviation from” section.
-                                    		\item The system extracts the data from the database and displays the daily plan for the current day
-                                    		\item Agronomist  \ldots %TODO
+                                    		\item The system extracts the data from the database, displays the daily plan for the current day and enables the agronomist to select the subset of farmers which has not been visited that day
+                                            \item Agronomist checks the info, selects the subset of farmers and clicks on “Continue”
+                                            \item The system displays a compact summary of the info and asks for confirmation
+                                            \item Agronomist checks the info and clicks on “Confirm”
+
                                         \end{itemize}\\
         \hline % ---------------------------------------------------------------------
-        \textsc{Exit conditions}    &  %TODO
+        \textsc{Exit conditions}    &  The system shows a popup to notify the agronomist of the success of the operation
         \\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Output}             &  \begin{itemize}
-    	    \item %TODO
+    	    \item The system stores the completed daily plan in the database, 
+            \item The system increments by one the number of visits received by the farmers that actually have been visited
+            \item The system rearranges the non-visited farmers in future daily plans
+
     	\end{itemize}\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Exceptions}         &  \begin{itemize}
-    	    \item %TODO
+    	    \item Agronomist has selected the wrong subset of farmers. Given the compact summary, it clicks on “Cancel”. The system displays again the daily plan and enables the agronomist to choose another subset of farmers.
     	\end{itemize}\\
     	
     	\hline % ---------------------------------------------------------------------

@@ -122,3 +122,41 @@ Definitions:
 
 \caption{\label{tab:Forum_generation}Use case table that describes one of the farmer functional requirements: the capability of submitting in the system public forum threads}
 \end{table}
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline % ---------------------------------------------------------------------
+    	\textsc{id}                 &   4\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Name}               &   Problem information upload\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Actors}             &   Farmer\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Entry conditions}   &   Farmer has logged in\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Event flow}         &   \footnotesize
+            	                        \begin{itemize}
+                                    	    \item Farmer selects the graphical section responsible for the problem information submission, called informally \textit{Problems section}
+                                    		\item The application displays a section that requires for information (described previously) and a "submit button"
+                                    		\item Farmer fills the mandatory fields and eventually the optional ones, then selects the upload button
+                                    		\item The application displays a confirm popup revealing the summary of the information is going to be uploaded, asking for Farmer confirmation through a \textit{Confirm Button}
+                                    		\item The farmer confirms the submission by selecting the Confirm Button
+                                        \end{itemize}\\
+        \hline % ---------------------------------------------------------------------
+        \textsc{Exit conditions}    &  The application displays the summary page containing both already submitted problem information and the previous submitted ones\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Output}             &  \begin{itemize}
+    	    \item The system collects the new problem information instance
+    	    \item The farmer can visualize the list containing both the current submitted problem information and the previous submitted ones
+    	   % TODO (where can he visualize it?)
+    	\end{itemize}\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Exceptions}         &   Farmer submits problem information without filling all the mandatory fields. In such case, the system displays an error message informing the Farmer about the missing field(s) required in order to achieve the goal\\
+    	\hline % ---------------------------------------------------------------------
+        
+    \end{tabular}
+
+\caption{\label{tab:problem_information}Use case table that describes one of the farmer functional requirements: the capability of submitting in the system problem information}
+\end{table}

@@ -3,21 +3,19 @@ In this chapter there will be defined \ldots
 
 \subsection{External Interface Requirements}
 \subsubsection{User Interfaces}
+% it has to follow DPG standard 
+
 \subsubsection{Hardware Interfaces}
 \subsubsection{Software Interfaces}
 \subsubsection{Communication Interfaces}
 
 
 \subsection{Functional Requirements}
-\subsubsection{User scenarios}
-\subsubsection{Policy maker scenarios}
-\subsubsection{Farmer scenarios}
-\subsubsection{Agronomist scenarios}
-\subsubsection{Requirements}
-\subsubsection{Traceability Matrix}
 
-\subsection{Performance Requirements}
-
+% #################### USE CASES TABLES ####################
+\subsubsection{Users}
+\label{sect:users_requirements}
+\input{Files/3.Specific_Requirements/users}
 
 \subsubsection{Policy makers}
 \label{sect:policy_maker_requirements}
@@ -32,17 +30,66 @@ In this chapter there will be defined \ldots
 \label{sect:agronomist_requirements}
 \input{Files/3.Specific_Requirements/agronomists}
 
+\subsubsection{User scenarios}
+\subsubsection{Policy maker scenarios}
+\subsubsection{Farmer scenarios}
+\subsubsection{Agronomist scenarios}
+\subsubsection{Requirements}
+\subsubsection{Traceability Matrix}
+
+\subsection{Performance Requirements}
+
+The system should have a good general response time, that may change depending on the specific service offered. Here are some numeric examples the system might follow:
+
+- messages and requests for help may be delivered in 5 seconds, or less;
+
+- daily plans may be accessed in 7 seconds, or less;
+
+- data concerning areas, with information about farmers and weather forecasts, may be given in 10 seconds, or less;
+
+- registration and login operations may be confirmed in 6 seconds, or less.
+\newline
+It is important to notice that these numbers will also depend on the Internet connection of the users, which is assumed to be good.
+\newline
+\newline
+The average workload of the system is expected to be very high since the user base is quite big (in the order of hundreds of thousands or even millions, considering Telangana’s population and farming prevalence) and could grow over time, if the system is extended to other states. The system should guarantee millions of operations every day, including messages, requests, access to data, etc. This could be accomplished with a good distribution of the work among the components of the system, especially during daytime. 
+\newline
+\newline
+Since most of the operations are handled by the servers of the system, the mobile app may be lightweight, in order to be reactive and to occupy little memory on the user’s device. Also the web page should be lightweight and responsive. These software elements should take into account communication protocols unreliability.
+\newline
+\newline
+The system interacts a lot with external services, collecting and providing data and exploiting computational analysis on such data. All the data transmission with these third party entities should be reasonably fast and scalable on the increasing number of users over time.
 
 
 \subsection{Design Constraints}
+
 \subsubsection{Standards compliance}
+According to \href{https://github.com/UNDP-India/Data4Policy}{UNDP GitHub repository} the required platform will be compliant to DPG Standards \cite{DPGS} that defines open-source software, open data, open AI models, open standards, and open content that adhere to privacy and other applicable best practices, do no harm by design and are of high relevance for attainment of the United Nations 2030 Sustainable Development Goals (SDGs).
+
+\subsubsection{Privacy constraints}
+The above mentioned collection of standards \cite{DPGS} is responsible to check also privacy related requirements that have to be guaranteed. In particular it shall ensure adherence with relevant privacy, domestic, and international laws such as GDPR or the ECOWAS supplementary act  in order to be accepted as a reliable software. When a user registers to the application, the privacy policy must be read and accepted, otherwise, he/she will not be able to use the service. By the fact that the platform is going to cover Telangana's territory, then STQC directorate of the Ministry of Electronics and Information Technology \cite{DPGS} data privacy standards shall be the minimum required constraints to be satsfied.
+
+
 \subsubsection{Hardware limitations}
 
 \subsection{Software System Attributes}
-\subsubsection{Easy usability}
+\subsubsection{Usability}
+The system should be very easy to use, since the user base is very large and various and also comprehends many farmers. The graphical interface of both the web application and the smartphone application should help the users to identify the proper choice on the screen.
 \subsubsection{Reliability}
+The system should be fault tolerant in order to prevent downtime. The highest number of accesses is expected to be in the early morning (e.g., agronomists accessing the daily plan, policy makers monitoring the results) and in the late afternoon (e.g., agronomists confirming the execution of the daily plan, farmers inserting info about their production and problems).
+\newline
+Redundancy may be considered for a storage implementation, in order to recover from eventual data losses and to guarantee the lowest MTTR (Mean Time To Repair) possible.
 \subsubsection{Availability}
+The system should offer its functionalities as long as possible, with an availability of 99\% or more, so that 3.65 days of downtime per year are allowed. Some critical parts, for example the daily plan handler or the request for help platform, may have an higher availability value of 99.9\%, so that only 8.76 hours of downtime per year are allowed. 
+\newline
+Possible maintenance procedures in the database or in the servers may be performed using replicas or at night, in order to ensure continuity to the service.
 \subsubsection{Security}
-\subsubsection{Cross Platform}
-\subsubsection{Modularity}
+The communication between parties should be encrypted and sent along secure channels (e.g., using SSL and HTTPS protocols), in order to guarantee the protection of user’s sensitive data. 
+\newline
+The system should guarantee that all the operations on the database are always authorized, for example performing Role Based Access Control (RBAC), an authorization scheme that grants access rights based on the role of the user.
 \subsubsection{Portability}
+Since it is a Digital Public Good, the system will be compatible with the principal operating systems, either computers and mobile, and the principal web browsers. The downloadable application will be available for both Android and iOS, using for example cross platform development tools.
+\subsubsection{Maintainability}
+The system may be composed of scalable and reusable modules, which are easier to maintain and replace in case of failure. The source code may be commented as well as possible and the correlated documentation may be kept updated during the whole lifecycle of the system. Ordinary maintenance, for bug fixes and improvements, may be scheduled for night time, when the user traffic is minimal.
+\subsubsection{Scalability}
+The system should guarantee high scalability for future upgrades and expansions. For this purpose, modularity and low coupling are key aspects of the designing and developing phases.
