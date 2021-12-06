@@ -1,17 +1,16 @@
 // User (Farmer, Agronomist, PolicyMaker)
 abstract sig User {
-	userID: one Int,
+	userID: one ID,
 	username: one Username,
 	password: one Password,
 	email: one Email,
 	userType: one UserType
-} {
-	userID > 0
 }
 
 sig Username {}
 sig Password {}
 sig Email {}
+sig ID {}
 
 sig Farmer extends User {
 	performingType: one PerformingType
@@ -80,11 +79,15 @@ abstract sig Message {
 sig Text {}
 
 sig DiscussionMessage extends Message {
+	isStartingMessage: one Bool
+} {
+	messageType = DISCUSSION
 }
 
 sig RequestReplyMessage extends Message {
-	requestType: one RequestType,
 	requestReplyType: one RequestReplyType
+} {
+	messageType = REQUEST_REPLY
 }
 
 // MessageType - enum
@@ -110,28 +113,26 @@ one sig REPLY extends RequestReplyType {}
 
 // Forum e Request
 sig Forum {
-	forumID: one Int,
-	discussionMessageList: set DiscussionMessage
-} {
-	forumID > 0
+	forumID: one ID,
+	discussionMessageList: set DiscussionMessage,
+	startingUser: one Farmer,
+	isSolved: one Bool
 }
 
 sig Request {
-	requestID: one Int,
+	requestID: one ID,
 	requestReplyMessageList: set RequestReplyMessage,
-	securityType: one SecurityType
-} {
-	requestID > 0
+	requestType: one RequestType,
+	participants: set User,
+	startingUser: one Farmer,
+	isSolved: one Bool
 }
-
 
 // Area
 sig Area {
-	areaID: one Int,
+	areaID: one ID,
 	agronomist: one Agronomist,
 	farmers: set Farmer
-} {
-	areaID > 0
 }
 
 
@@ -143,15 +144,6 @@ sig Incentive {}
 
 
 // FACTS
-
-/*
-// userType must be coherent
-fact {
-	all a: Agronomist | a.userType = AGRONOMIST
-	all f: Farmer | f.userType = FARMER
-	all pm: PolicyMaker | pm.userType = POLICY_MAKER
-}
-*/
 
 // credentials constraints
 fact {
@@ -211,20 +203,19 @@ fact {
 
 // Messages constraints
 fact {
-	// User cannot send message to himself
+	// User cannot send messages to himself
 	all m: Message | m.sender not in m.receiver
 
-	// PolicyMakers cannot send or receive messages
+	// PolicyMakers cannot send or receive messages and participate to Requests
 	no m: Message | m.sender.userType = POLICY_MAKER
 	no m: Message | (some r: m.receiver | r.userType = POLICY_MAKER)
+	no r: Request | (some p: r.participants | p.userType = POLICY_MAKER)
 
 	// Agronomist cannot send REQUEST messages or DISCUSSION messages
 	no m: RequestReplyMessage | (m.sender.userType = AGRONOMIST and m.requestReplyType = REQUEST)
+	//all m: RequestReplyMessage | (m.sender.userType = AGRONOMIST implies m.requestReplyType = REPLY)
 	no m: DiscussionMessage | m.sender.userType = AGRONOMIST
 	no m: DiscussionMessage | (some r: m.receiver | r.userType = AGRONOMIST)
-
-	// request_reply messages are sent to all agronomists
-	all m: RequestReplyMessage | (all a: Agronomist | a in m.receiver)
 
 	// discussion messages must belong to a Forum
 	all m: DiscussionMessage |
@@ -234,38 +225,101 @@ fact {
 	all m: RequestReplyMessage |
 		one r: Request | m in r.requestReplyMessageList
 
-	// a private request message can only be sent to agronomists
-	all r: Request |
-		all m: r.requestReplyMessageList |
-			((r.securityType = PRIVATE and m.sender.userType = FARMER) iff (all rcv: m.receiver | rcv.userType = AGRONOMIST))
+	/*
+	// request_reply messages sent by farmers are delivered to all agronomists
+	all m: RequestReplyMessage |
+		(m.sender.userType = FARMER implies (all a: Agronomist | a in m.receiver))
+
+	// request_reply messages sent by agronomists are delivered to all other agronomists (but not to himself) and to farmers
+	all m: RequestReplyMessage | 
+		(m.sender.userType = AGRONOMIST implies
+			(one a: Agronomist | 
+				(m.sender = a and (a not in m.receiver) and (all a2: Agronomist | a2 != a implies a2 in m.receiver))
+			)
+		)
 	
-	// a request discussion must contain a request message
+	// for farmers, private request_reply messages sent by agronomists are delivered only to the farmer that started the conversation
+	all r: Request |
+		r.securityType = PRIVATE implies
+			(all m: r.requestReplyMessageList | 
+				(m.sender.userType = AGRONOMIST implies (r.startingUser in m.receiver)))
+
+	// private request conversation constraints:
+	// the receiver can be an agronomist or the farmer that started the conversation
+	// the only farmer that can send messages is the one that started the conversation
+	all r: Request |
+		r.securityType = PRIVATE implies
+			(all m: r.requestReplyMessageList |
+				((all u: m.receiver | (u.userType = AGRONOMIST or u = r.startingUser))
+				and (m.sender.userType = FARMER implies m.sender = r.startingUser))
+			)
+	*/
+}
+
+// Requests constraints
+fact {
+	// requests from a farmer must have as participant the Agronomist responsible of the farmer's area
+	all r: Request | one a: Area | (r.startingUser in a.farmers and a.agronomist in r.participants)
+
+	// requests must have as participant the farmer that started it
+	all r: Request | r.startingUser in r.participants
+
+	// request messages must be delivered to all the participants, but not to the sender
+	all r: Request | 
+		all m: r.requestReplyMessageList |
+			all p: r.participants | (p in m.receiver or p = m.sender)
+
+	// request messages must be sent by and delivered to participants only
+	all r: Request |	
+		all m: r.requestReplyMessageList |
+			(all u: m.receiver | u in r.participants) and m.sender in r.participants
+
+	// a request message must be sent by the farmer who started the conversation
+	all r: Request |
+		all m: r.requestReplyMessageList | (m.requestReplyType = REQUEST implies (m.sender = r.startingUser and m.sender.userType = FARMER))	
+
+	// a request discussion must contain only one request message
 	all r: Request |
 		one m: r.requestReplyMessageList | m.requestReplyType = REQUEST
+}
+
+// Forum constraints
+fact {
+	// forum messages must be delivered to all farmers, but not to the sender
+	all m: DiscussionMessage |
+		all f: Farmer | (f in m.receiver or f = m.sender)
+
+	// forums can have only one starting message
+	all f: Forum |
+		one m: f.discussionMessageList | m.isStartingMessage = True
+
+	// starting message must belong to starting user
+	all f: Forum |
+		all m: f.discussionMessageList | 
+			m.isStartingMessage = True implies m.sender = f.startingUser
 }
 
 
 
 // ASSERTIONS
 
-assert farmerSendsRequestsAlsoToHisAgronomist {
-	all m: RequestReplyMessage | 
-		(m.requestType = HELP and m.requestReplyType = REQUEST) implies
-			(one a: Area | m.sender in a.farmers and a.agronomist in m.receiver)
+assert agronomistRepliesToARequest {
+	no m: RequestReplyMessage | 
+		m.sender.userType = AGRONOMIST
 }
-//check farmerSendsRequestsAlsoToHisAgronomist for 5
+//check agronomistRepliesToARequest for 20
 
-
-assert justForViewing {
-	all u: User | (u.userType = FARMER and u.userType = AGRONOMIST)
+assert multipleFarmersCanWriteInAForum {
+	no f: Forum |
+		some m: f.discussionMessageList | m.sender != f.startingUser 
 }
-//check justForViewing for 10
+//check multipleFarmersCanWriteInAForum for 20
 
 
 
 // PREDICATES
 
-// simulation 1
+// simulation 1 - Daily Plan and Visit
 pred world1 {
 	#Farmer = 3
 	#Agronomist = 1
@@ -276,15 +330,34 @@ pred world1 {
 }
 //run world1 for 20
 
-// simulation 2
+// simulation 2 - Request
 pred world2 {
-	#Farmer = 2
-	#Agronomist = 1
+	#Farmer = 3
+	#Agronomist = 2
 	#PolicyMaker = 0
 	#DailyPlan = 0
 	#DiscussionMessage = 0
-	//#Request = 1
-	//Request.securityType = PRIVATE
+	#Request = 1
+	#Request.participants = 4
 	#RequestReplyMessage = 3
 }
-run world2 for 20
+//run world2 for 20
+
+// simulation 3 - Forum
+pred world3 {
+	#Farmer = 4
+	#Agronomist = 1
+	#PolicyMaker = 0
+	#DailyPlan = 0
+	#DiscussionMessage = 4
+	#Request = 0
+}
+//run world3 for 20
+
+// simulation 4 - Policy Maker
+pred world4 {
+	#Farmer = 3
+	#Agronomist = 2
+	#PolicyMaker = 4
+}
+run world4 for 10
