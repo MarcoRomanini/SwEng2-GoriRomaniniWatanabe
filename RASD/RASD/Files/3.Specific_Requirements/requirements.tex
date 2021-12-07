@@ -11,6 +11,7 @@ In this chapter there will be defined \ldots
 
 
 \subsection{Functional Requirements}
+In this section we present the main \textbf{functional requirements} of the application while organizing them based on the actor that 
 
 % #################### USE CASES TABLES ####################
 \subsubsection{Users}
@@ -31,8 +32,10 @@ In this chapter there will be defined \ldots
 \input{Files/3.Specific_Requirements/agronomists}
 
 \subsubsection{User scenarios}
+In this section we present a set of possible situations in 
 \subsubsection{Policy maker scenarios}
 \subsubsection{Farmer scenarios}
+
 \subsubsection{Agronomist scenarios}
 \subsubsection{Requirements}
 \subsubsection{Traceability Matrix}
@@ -40,15 +43,12 @@ In this chapter there will be defined \ldots
 \subsection{Performance Requirements}
 
 The system should have a good general response time, that may change depending on the specific service offered. Here are some numeric examples the system might follow:
-
-- messages and requests for help may be delivered in 5 seconds, or less;
-
-- daily plans may be accessed in 7 seconds, or less;
-
-- data concerning areas, with information about farmers and weather forecasts, may be given in 10 seconds, or less;
-
-- registration and login operations may be confirmed in 6 seconds, or less.
-\newline
+\begin{itemize}
+    \item messages and requests for help may be delivered in 5 seconds, or less;
+    \item daily plans may be accessed in 7 seconds, or less;
+    \item data concerning areas, with information about farmers and weather forecasts, may be given in 10 seconds, or less;
+    \item registration and login operations may be confirmed in 6 seconds, or less.
+\end{itemize}
 It is important to notice that these numbers will also depend on the Internet connection of the users, which is assumed to be good.
 \newline
 \newline
