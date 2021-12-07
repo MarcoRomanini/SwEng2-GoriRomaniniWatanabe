@@ -4,13 +4,16 @@ In this chapter there will be defined \ldots
 \subsection{External Interface Requirements}
 \subsubsection{User Interfaces}
 % it has to follow DPG standard 
-
+\input{Files/3.Specific_Requirements/user_interfaces}
 \subsubsection{Hardware Interfaces}
+
 \subsubsection{Software Interfaces}
+
 \subsubsection{Communication Interfaces}
 
 
 \subsection{Functional Requirements}
+In this section we present the main \textbf{functional requirements} of the application while organizing them based on the actor that 
 
 % #################### USE CASES TABLES ####################
 \subsubsection{Users}
@@ -31,8 +34,10 @@ In this chapter there will be defined \ldots
 \input{Files/3.Specific_Requirements/agronomists}
 
 \subsubsection{User scenarios}
+In this section we present a set of possible situations in 
 \subsubsection{Policy maker scenarios}
 \subsubsection{Farmer scenarios}
+
 \subsubsection{Agronomist scenarios}
 \subsubsection{Requirements}
 \subsubsection{Traceability Matrix}
@@ -40,15 +45,12 @@ In this chapter there will be defined \ldots
 \subsection{Performance Requirements}
 
 The system should have a good general response time, that may change depending on the specific service offered. Here are some numeric examples the system might follow:
-
-- messages and requests for help may be delivered in 5 seconds, or less;
-
-- daily plans may be accessed in 7 seconds, or less;
-
-- data concerning areas, with information about farmers and weather forecasts, may be given in 10 seconds, or less;
-
-- registration and login operations may be confirmed in 6 seconds, or less.
-\newline
+\begin{itemize}
+    \item messages and requests for help may be delivered in 5 seconds, or less;
+    \item daily plans may be accessed in 7 seconds, or less;
+    \item data concerning areas, with information about farmers and weather forecasts, may be given in 10 seconds, or less;
+    \item registration and login operations may be confirmed in 6 seconds, or less.
+\end{itemize}
 It is important to notice that these numbers will also depend on the Internet connection of the users, which is assumed to be good.
 \newline
 \newline
@@ -64,10 +66,10 @@ The system interacts a lot with external services, collecting and providing data
 \subsection{Design Constraints}
 
 \subsubsection{Standards compliance}
-According to \href{https://github.com/UNDP-India/Data4Policy}{UNDP GitHub repository} the required platform will be compliant to DPG Standards \cite{DPGS} that defines open-source software, open data, open AI models, open standards, and open content that adhere to privacy and other applicable best practices, do no harm by design and are of high relevance for attainment of the United Nations 2030 Sustainable Development Goals (SDGs).
+According to UNDP GitHub repository (ref.\cite{UNDP_GitHub}) the required platform will be compliant to DPG Standards (ref.\cite{DPGS}) that defines open-source software, open data, open AI models, open standards, and open content that adhere to privacy and other applicable best practices, do no harm by design and are of high relevance for attainment of the United Nations 2030 \href{cell:sdg}{SDGs}.
 
 \subsubsection{Privacy constraints}
-The above mentioned collection of standards \cite{DPGS} is responsible to check also privacy related requirements that have to be guaranteed. In particular it shall ensure adherence with relevant privacy, domestic, and international laws such as GDPR or the ECOWAS supplementary act  in order to be accepted as a reliable software. When a user registers to the application, the privacy policy must be read and accepted, otherwise, he/she will not be able to use the service. By the fact that the platform is going to cover Telangana's territory, then STQC directorate of the Ministry of Electronics and Information Technology \cite{DPGS} data privacy standards shall be the minimum required constraints to be satsfied.
+The above mentioned collection of standards \cite{DPGS} is responsible to check also privacy related requirements that have to be guaranteed. In particular it shall ensure adherence with relevant privacy, domestic, and international laws such as \href{tab:acronyms_table}{GDPR} or the ECOWAS supplementary act  in order to be accepted as a reliable software. When a user registers to the application, the privacy policy must be read and accepted, otherwise, he/she will not be able to use the service. By the fact that the platform is going to cover Telangana's territory, then STQC directorate of the Ministry of Electronics and Information Technology \cite{DPGS} data privacy standards shall be the minimum required constraints to be satsfied.
 
 
 \subsubsection{Hardware limitations}

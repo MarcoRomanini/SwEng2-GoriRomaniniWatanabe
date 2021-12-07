@@ -18,32 +18,212 @@
 % Document Structure
 % \end{itemize}
 % Below you see how to define the header for a subsection.
+DREAM (Data-dRiven prEdictive fArMing) is an easy-to-use application which intent is [cite assignment] to design dynamic anticipatory governance models for food systems using digital public goods and community-centric approaches to strengthen data-driven policy making in the region of Telangana, India.
+
+The region's main means of livelihood is in fact heavily relied on agriculture, typically widely represented by smallholders farmers' activities. These ones are easily affected by complex problems such as climate change and the incoming raise of food demand due to the continuous population increase. In addition to that, the occurrence of Covid-19 pandemic is recently causing further obstacles (such as food supply chains disruption) to the achievement of a resilient food system.
+
+The final aim of the Telengana's government is collecting and analyzing agriculture related real-time conditions in order to monitor and support smallholder's activities resilience capacity against the before mentioned problems.
 
 \subsection{Purpose}
-
+The main purpose of the S2B is forming a bridge between the main actors of the food systems: \textbf{policy makers}, \textbf{farmers} and \textbf{agronomists}. This can be achieved through the development of a multi-user unified platform that allows actors to share data. In particular the system should guarantee the following privileges and functionalities based on the user identity:
+\begin{description}[font=~\normalfont\scshape]
+    \item[\textbf{\textcolor{myblue}{Policy makers privileges}}]
+    \hfill \begin{itemize}[topsep=0pt,leftmargin=0pt]
+                \item Identify those farmers who are performing well, especially when they demonstrate to be resilient to meteorological adverse events, as these farmers will receive special incentives and will be asked to provide useful best practices to the others;
+                \item Identify those farmers who need to be helped as they are performing particularly badly;
+                \item Understand whether the steering initiatives carried out by agronomists with the help of good farmers produce significant results.
+            \end{itemize}
+    \item[\textbf{\textcolor{myblue}{Farmers privileges}}]
+    \hfill \begin{itemize}[topsep=0pt,leftmargin=0pt]
+                \item Visualize data relevant to them –-- for instance, weather forecasts, personalized suggestions concerning specific crops to plant or specific fertilizers to use --– based on their location and type of production;
+                %this is a requirement \item Insert in the system data about their production and any problem they face;
+                \item Request for help and suggestions by agronomists and other farmers;
+                \item Create discussion forums with the other farmers.
+            \end{itemize}
+    \item[\textbf{\textcolor{myblue}{Agronomist privileges}}]
+    \hfill \begin{itemize}[topsep=0pt,leftmargin=0pt]
+                % this is a requirement \item Insert the area they are responsible of;
+                \item Receive information about requests for help and answer to these requests;
+                \item Visualize data concerning weather forecasts in the area and the best performing farmers in the area;
+                \item Visualize and update a daily plan to visit farms in the area, assuming that all farms must be visited at least twice a year, but those that are under-performing should be visited more often, depending on the type of problem they are facing;
+                \item Confirm the execution of the daily plan at the end of each day or specify the deviations from the plan.
+            \end{itemize}
+\end{description}
+Furthermore the system should make use of the already collected data such as:
+\begin{itemize}
+    \item Data concerning meteorological short-term and long-term forecasts;
+    \item Information obtained by the water irrigation system concerning the amount of water used by;
+    \item Information obtained by sensors deployed on the territory and measuring the humidity of soil.
+\end{itemize}
 \subsection{Scope}
-... Here you see a subsubsection
+The environment in which the platform will be involved will be the whole region of Telengana. Policy makers, farmers and agronomist will have the possibility to access the system through their personal devices. Furthermore the devices responsible for the gathering of information such as the ones of the water irrigation system, the humidity sensors are supposed to be shared along the territory in a ditributed system fashion.
 
 \subsubsection{World Phenomena}
 %what you write here is a comment that is not shown in the final text
-In this section are introduced the environment related events that system can't perceive
+In this section are introduced the environment related phenomena that the S2B is supposed to face. As described in \cite{jackson_twatm}, for each phenomenon we specifiy if it is shared and the system that can control it.
 
-\begin{figure}[H]
-	\centering
-    \includegraphics[page=1, width=\textwidth]{Tikz_stuff/Phenomena _table_external_project.pdf}
-	\caption{\label{tab:phenomena}Phenomena table}
-\end{figure}
-
-
+\begin{table}[H]
+    \setlength\arrayrulewidth{1pt}
+    \centering
+    \rowcolors{2}{white}{myblue!25}
+    \begin{tabular}{|l|c|c|}
+        \rowcolor{myblue}
+        \hline
+        \color{white}Phenomenon & \color{white}Who controls it?   & \color{white}Is it shared? \\
+        \hline
+        % USER RELATED PHENOMENA
+        User registration                                               &   M   &   Y \\
+        \hline
+        User login                                                      &   W   &   Y \\
+        \hline
+        Check usernane and password                                     &   M   &   N \\
+        \hline
+        Visualize the data                                              &   M   &   Y \\
+        \hline
+        Gather and send the information about humidity                  &   M   &   Y \\
+        \hline
+        Send the data automatically                                     &   M   &   Y \\
+        \hline
+        % POLICY MAKER RELATED PHENOMENA
+        Setup the systems and locate them                               &   W   &   Y \\
+        \hline
+        Fetch info from the located systems                             &   M   &   Y \\
+        \hline
+        Gather and send the information about each crops condition      &   M   &   Y \\
+        \hline
+        Put the flag according to the given behaviour of each farmers   &   W   &   Y \\
+        \hline
+        Visualize the sorted tendency of farmers characteristics        &   W   &   Y \\
+        \hline
+        Adjust the threshold(distinguish good/problematic farmer)       &   W   &   Y \\
+        % FARMERS RELATED PHENOMENA
+        \hline
+        User insert data about their production                         &   W   &   Y \\
+        \hline
+        User insert problems faced information                          &   W   &   Y \\
+        \hline
+        User asks for suggestion to agronomists and/or farmers          &   W   &   Y \\
+        \hline
+        System notifies addressed users about a farmer request          &   M   &   Y \\
+        \hline
+        Farmers problems take place                                     &   W   &   N \\
+        \hline
+        User create discussion forums                                   &   W   &   Y \\
+        % AGRONOMISTS RELATED PHENOMENA
+        \hline
+        Users insert the area they are responsible for                  &   W   &   Y \\
+        \hline
+        User answers requests for help                                  &   M   &   Y \\
+        \hline
+        Visualize data concerning weather forecast in the area          &   M   &   Y \\
+        \hline
+        Visualize best/under performing farmers in the area             &   M   &   Y \\
+        \hline
+        Visualize daily plan                                            &   M   &   Y \\
+        \hline
+        Update daily plan                                               &   W   &   Y \\
+        \hline
+        Confirm the execution of the daily plan                         &   W   &   Y \\
+        \hline
+        Specify deviation from the plan                                 &   W   &   Y \\
+        \hline
+        Check farmers that are under-performing                         &   M   &   N \\
+        \hline
+        Check farmers that are performing well                          &   M   &   N \\
+        \hline
+        Check farms that need to be visited                             &   M   &   N \\
+        \hline
+    \end{tabular}
+    
+    \caption{\label{tab:phenomena_table}Phenomena table.}
+    
+\end{table}
 
 \subsection{Goals}
 
 \subsection{Definitions, Acronyms, Abbreviations}
+In order to introduce some sort of coherence in an environment--- the physical world--- that is informal, we present in this section the sets of \textbf{definitions}, \textbf{acronyms} and \textbf{abbreviations} used in the following sections. These are supposed to be as more generic as possible, in order to provide more flexibility for the following phases of the Waterfall software lifecycle.
+\subsubsection{Definitions}
+\begin{table}[H]
+    \setlength\arrayrulewidth{1pt}
+    \centering
+    \rowcolors{2}{white}{myblue!25}
+    \begin{tabular}{|m{0.20\textwidth}|m{0.80\textwidth}|}
+        \rowcolor{myblue}
+        \hline
+        \color{white}Concept & \color{white}Definition \\
+        \hline
+        \textsc{Production Data}     &   All general kind of information that describes what the farmer with his activity produces. In order to achieve some form of coherence and uniformity for this kind of information, we consider useful to let the farmer describe it by a set of mandatory properties that are analogous to each product (e.g. type of product, amount of produced items, unit of measurement etc.). In order to achieve a deeper level of understanding we consider useful to let the user the possibility to fill some optional fields like a qualitative descriprion of the produced items or notes relevant for the other users of the system \\
+        \hline
+        \textsc{Problem information}  &   Every kind of information that describes in a functional way the general set of events that [could get in the way of/represent an obstacle to] farmer's ordinary production rate \\
+        \hline
+        \textsc{Help request}     &   The Farmer activity of information retrieval. The farmer should be able to request information in a private way to the other components of the systems, like other farmers and/or agronomists, in order to increase the quality of their activity \\
+        \hline
+        \textsc{\nohyphens{Good  practices document}}     &   Document in which are described the practices that good farmers follows. This document is made to be submitted into the system and can be useful for those farmer who want to improve thei production as documents to rely on \\
+        \hline
+        \textsc{Performance}     &   With the term \textbf{permormance} we refer to the distinction of the farmer's productivity such as they produce the crops well or not. It will be categorized by 3 different types (high performer, medium performer, low performer) \\
+        \hline
+        \textsc{Incentive status (none)}  &   With the term \textbf{incentive status (none)} we refer to the condition that the incentive has not prepared yet \\
+        \hline
+        \textsc{Incentive status (prepared)}     &   With the term \textbf{incentive status (prepared)} we refer to the condition that the incentive exist at a warehouse, but it hasn't been sent yet. \\
+        \hline
+        \textsc{Incentive status (sent)}     &   With the term \textbf{incentive status (sent)} we refer to the condition that the incentive has been sent to the farmer, but the comfirmation from farmer does't exist. \\
+        \hline
+        \textsc{Incentive status (received)}     &   With the term \textbf{incentive status (received)} we refer to the condition that the farmer comfirmed that they have received the incentive successfully \\
+        \hline
+    \end{tabular}
+    
+    \caption{\label{tab:def_table}Table of definitions.}
+    
+\end{table}
+
+% Synonims: system, application, service
+\subsubsection{Acronyms}
+\begin{table}[H]
+    \setlength\arrayrulewidth{1pt}
+    \centering
+    \rowcolors{2}{white}{myblue!25}
+    \begin{tabular}{|l|l|}
+        \rowcolor{myblue}
+        \hline
+        \color{white}Acronym & \color{white}Expansion \\
+        \hline
+        \textsc{S2B}\label{cell:s2b}     &   Software to be \\
+        \hline
+        \textsc{GDPR}\label{cell:gdpr}  &    General Data Protection Regulation\\
+        \hline
+        \textsc{ECOWAS}\label{cell:ecowas}  &    Economic Community of West African States\\
+        \hline
+        \textsc{DPGS}\label{cell:dpgs}  &    Digital Public Goods Standard\\
+        \hline
+        \textsc{STQC}\label{cell:stqc}  &    Standardization Testing and Quality Certification\\
+        \hline
+        \textsc{UML}\label{cell:uml}  &    Unified Modeling Language\\
+        \hline
+        \textsc{BPMN}\label{cell:bpmn}  &    Business Process Model and Notation\\
+        \hline
+        \textsc{SDG}\label{cell:sdg}  &    Sustainable Development Goals\\
+        \hline
+    \end{tabular}
+    
+    \caption{\label{tab:acronyms_table}Table of acronyms.}
+    
+\end{table}
+
 % TODO Define verbs conventions of ISO/IEEE
 % TODO Requirements should be ranked for importance or stability (from Hans Van Vliet book)
 \subsection{Revision history}
-		
+
 \subsection{Reference Documents}
+We present in this section the references we used to gather information about the good practices for the development of this document.
+\begingroup
+\renewcommand{\section}[2]{}%
+%\renewcommand{\chapter}[2]{}% for other classes
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{main}
+\endgroup
+
 %% TODO
 %% UNDP github repository and its sublinks, in particular Digital public goods standard website
 % Hans Van Vliet software engineering book
@@ -51,4 +231,4 @@ In this section are introduced the environment related events that system can't 
 % World/machine paper
 % RASD assignment document
 \subsection{Document structure}
-
+\label{sec:doc_struct}

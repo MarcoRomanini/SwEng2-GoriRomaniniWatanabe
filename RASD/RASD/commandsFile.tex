@@ -137,10 +137,19 @@
 \newcommand{\comment}[1]{{\color{Red}$\blacktriangleright$ Comment: #1 $\blacktriangleleft$}}
 
 
-
-
 % Some utilities\ldots
-\input{util/highlight}
-\input{util/abbrev}
+% \input{util/highlight}
+% \input{util/abbrev}
 
 \date{}
+
+
+% Added by Leo to provide no hyphenation in the first cell of the table of definitions
+\usepackage[none]{hyphenat}
+
+% Added by Leo to reduce globally linespread between \item in \itemize environment
+\setlist[1]{itemsep=-5pt}
+
+
+% Added by Leo to introduce links in references
+\usepackage{url}
