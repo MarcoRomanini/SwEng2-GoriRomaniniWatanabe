@@ -1,12 +1,6 @@
 Synonims: system, application, service
 
-Definitions:
-\begin{itemize}
-    \item Production data: By the term Production data we refer to all general kind of information that the farmer with his activity produces. In order to achieve some form of coherence and uniformity for this kind of information, we consider useful to let the farmer describe it by a set of mandatory properties that are analogous to each product (e.g. type of product, amount of produced items, unit of measurement etc.). In order to achieve a deeper level of understanding we consider useful to let the user the possibility to fill some optional fields like a qualitative description of the produced items or notes relevant for the other users of the system.
-    \item Problem information: With the term \textbf{problem information} we refer to every kind of information that describes in a functional way the general set of events that [could get in the way of/represent an obstacle to] farmer's ordinary production rate.
-    \item Help request/Suggestion request: With the term \textbf{help/suggestion request} we refer to the Farmer activity of information retrieval. The farmer should be able to request information in a private way to the other components of the systems, like other farmers and/or agronomists, in order to increase the quality of their activity.
-
-\end{itemize}
+% ####################### 1 PRODUCTION DATA UPLOAD ###################
 
 \begin{table}[H]
     \centering
@@ -20,7 +14,7 @@ Definitions:
     	\hline % ---------------------------------------------------------------------
     	\textsc{Entry conditions}   &   Farmer has logged in\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Event flow}         &   \footnotesize
+    	\textsc{Event flow}         &   %\footnotesize
             	                        \begin{itemize}
                                     	    \item Farmer selects the graphical element for recording production data, called informally \textit{Record Production Data button} for the sake of simplicity
                                     		\item The application displays a section that asks for more information (mandatory fields like type of production, amount of produced items, unit of measurement and optional one like description of the productivity, notes) and an element to save and upload informations, called informally \textit{Upload Button}
@@ -45,6 +39,15 @@ Definitions:
 \end{table}
 
 
+\begin{figure}[H]
+	\centering
+    \includegraphics[page=1, width=\textwidth]{Images/SeqDiag/product_info_upload_seq_diag.pdf}
+	\caption{\label{fig:product_info_seq_diag}High level UML sequence diagram of the production data submission process}
+\end{figure}
+
+
+% ####################### 2 SUGGESTION REQUEST ###################
+
 \begin{table}[H]
     \centering
     \begin{tabular}{|l|p{0.75\textwidth}|}
@@ -57,7 +60,7 @@ Definitions:
     	\hline % ---------------------------------------------------------------------
     	\textsc{Entry conditions}   &   Farmer has logged in\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Event flow}         &   \footnotesize
+    	\textsc{Event flow}         &   %\footnotesize
             	                        \begin{itemize}
                                     	    \item Farmer selects the graphical section responsible of the private requests, called informally \textit{request section} for the sake of simplicity
                                     		\item The application displays a section that presents an eventual list of previous request chats, and an internal element to send a new private request, called informally \textit{Send request element}
@@ -84,6 +87,14 @@ Definitions:
 
 \end{table}
 
+\begin{figure}[H]
+	\centering
+    \includegraphics[page=1, width=\textwidth]{Images/SeqDiag/help_request_seq_diag.pdf}
+	\caption{\label{fig:help_request_seq_diag}High level UML sequence diagram of the help request process}
+\end{figure}
+
+% ####################### 3 FORUM GENERATION ###################
+
 \begin{table}[H]
     \centering
     \begin{tabular}{|l|p{0.75\textwidth}|}
@@ -96,7 +107,7 @@ Definitions:
     	\hline % ---------------------------------------------------------------------
     	\textsc{Entry conditions}   &   Farmer has logged in\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Event flow}         &   \footnotesize
+    	\textsc{Event flow}         &   %\footnotesize
             	                        \begin{itemize}
                                     	    \item Farmer selects the graphical section responsible of the forum generation, called informally \textit{Forum section} for the sake of simplicity
                                     		\item The application displays a section that presents an eventual list that contains both previous submitted forums and farmer's forum replies, and an internal element to submit a new public forum, called informally \textit{forum upload button}
@@ -123,6 +134,13 @@ Definitions:
 \caption{\label{tab:Forum_generation}Use case table that describes one of the farmer functional requirements: the capability of submitting in the system public forum threads}
 \end{table}
 
+\begin{figure}[H]
+	\centering
+    \includegraphics[page=1, width=\textwidth]{Images/SeqDiag/forum_generation_seq_diag.pdf}
+	\caption{\label{fig:forum_generation_seq_diag}High level UML sequence diagram of the forum generation process}
+\end{figure}
+
+% ####################### 4 PROBLEM INFORMATION ###################
 
 
 \begin{table}[H]
@@ -137,7 +155,7 @@ Definitions:
     	\hline % ---------------------------------------------------------------------
     	\textsc{Entry conditions}   &   Farmer has logged in\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Event flow}         &   \footnotesize
+    	\textsc{Event flow}         &   %\footnotesize
             	                        \begin{itemize}
                                     	    \item Farmer selects the graphical section responsible for the problem information submission, called informally \textit{Problems section}
                                     		\item The application displays a section that requires for information (described previously) and a "submit button"
@@ -160,4 +178,82 @@ Definitions:
     \end{tabular}
 
 \caption{\label{tab:problem_information}Use case table that describes one of the farmer functional requirements: the capability of submitting in the system problem information}
+\end{table}
+
+% ####################### 5 GOOD PRACTICES ###################
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline % ---------------------------------------------------------------------
+    	\textsc{id}                 &   5\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Name}               &   Good practices upload\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Actors}             &   Farmer\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Entry conditions}   &   Farmer has logged in\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Event flow}         &   %\footnotesize
+            	                        \begin{itemize}
+                                    	    \item Farmer selects the graphical section responsible for the good practices document submission, called informally \textit{document section}
+                                    		\item The application displays a section that requires for information (described previously) and a "submit button"
+                                    		\item Farmer fills the mandatory fields and eventually the optional ones, then selects the upload button
+                                    		\item The farmer confirms the submission by selecting the Confirm Button
+                                        \end{itemize}\\
+        \hline % ---------------------------------------------------------------------
+        \textsc{Exit conditions}    &  The application displays the summary page containing both already submitted document and the previous submitted ones\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Output}             &  \begin{itemize}
+    	    \item The system collects the new document
+    	    \item The farmer can visualize the list containing both the current submitted document and the previous submitted ones
+    	   % TODO (where can he visualize it?)
+    	\end{itemize}\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Exceptions}         &   Farmer submits document without filling all the mandatory fields. In such case, the system displays an error message informing the Farmer about the missing field(s) required in order to achieve the goal\\
+    	\hline % ---------------------------------------------------------------------
+        
+    \end{tabular}
+
+\caption{\label{tab:good_practice_submission}Use case table that describes one of the farmer functional requirements: the capability of submitting in the system good practices document}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[page=1, width=\textwidth]{Images/SeqDiag/good_practice_seq_diag.pdf}
+	\caption{\label{fig:good_practice_seq_diag}High level UML sequence diagram of the good practices document submission process}
+\end{figure}
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline % ---------------------------------------------------------------------
+    	\textsc{id}                 &   6\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Name}               &   Visualize relevant data\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Actors}             &   Farmer\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Entry conditions}   &   Farmer has logged in\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Event flow}         &   %\footnotesize
+            	                        \begin{itemize}
+                                    	    \item Farmer selects the graphical section responsible for the relevant data visualization, called informally \textit{Relevant section}
+                                        \end{itemize}\\
+        \hline % ---------------------------------------------------------------------
+        \textsc{Exit conditions}    &  The application displays a section containing information about weather forecasts, farm related tools suggestion, agronomist visit time, amount of water used that month, soil humidity etc.)\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Output}             &  \begin{itemize}
+    	    \item The farmer can visualize relevant informations
+    	    \item Farmer can interact with information (links to shop websites etc.)
+    	   % TODO (where can he visualize it?)
+    	\end{itemize}\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Exceptions}         &   If the internet connection is lost, the application displays a section informing the task cannot be achieved\\
+    	\hline % ---------------------------------------------------------------------
+        
+    \end{tabular}
+
+\caption{\label{tab:visualize_relevant_data}Use case table that describes one of the farmer goals: visualize relevant data}
 \end{table}
