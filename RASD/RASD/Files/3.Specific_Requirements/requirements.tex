@@ -1,12 +1,12 @@
-In this chapter there will be defined \ldots
-
-
 \subsection{External Interface Requirements}
 \subsubsection{User Interfaces}
+\vspace{-6mm}
 % it has to follow DPG standard 
-
+\input{Files/3.Specific_Requirements/user_interfaces}
 \subsubsection{Hardware Interfaces}
+
 \subsubsection{Software Interfaces}
+
 \subsubsection{Communication Interfaces}
 
 
@@ -145,22 +145,48 @@ In this section we define the main \textbf{functional requirements} that the app
 \input{Files/3.Specific_Requirements/users}
 
 \subsubsection{Policy makers}
+\textbf{\textcolor{myblue}{Use case diagram}}
+\begin{figure}[H]
+	\centering
+    \includegraphics[page=1, width=\textwidth]{Images/ud_policy.JPG}
+	\caption{\label{fig:use_case_diagram}Policy maker's use case diagram}
+\end{figure}
 \label{sect:policy_maker_requirements}
 \input{Files/3.Specific_Requirements/policy_makers}
 
 
 \subsubsection{Farmers}
+\textbf{\textcolor{myblue}{Use case diagram}}
+\begin{figure}[H]
+	\centering
+    \includegraphics[page=1, width=\textwidth]{Images/ud_fa.JPG}
+	\caption{\label{fig:use_case_diagram}Farmer's use case diagram}
+\end{figure}
 \label{sect:farmer_requirements}
 \input{Files/3.Specific_Requirements/farmers}
 
 \subsubsection{Agronomists}
+\textbf{\textcolor{myblue}{Use case diagram}}
+\begin{figure}[H]
+	\centering
+    \includegraphics[page=1, width=\textwidth]{Images/ud_ag.JPG}
+	\caption{\label{fig:use_case_diagram}Agronomist's use case diagram}
+\end{figure}
 \label{sect:agronomist_requirements}
 \input{Files/3.Specific_Requirements/agronomists}
 
 \subsubsection{User scenarios}
 In this section we introduce a set of possible scenarios of an ideal future where DREAM has already been developed and deployed in Telangana region. The organization of the following subsections are distinguished w.r.t. the actor (defined in section \ref{sec:actors}) that acts as a subject of the related scenarios.
 \subsubsection{Policy maker scenarios}
-\ldots
+
+\subsubsection*{Scenario 1}
+Kiara Kumar is a policy maker who works in the Indian government. She has a task to make sure that all the positively evaluated farmers will be gain the incentives. She opens her working PC and access to DREAM app to check list of farmers' performance. By observing about the fetched high performing farmers, she finds the ones who are missing incentives. According to their performance behavior she will select which e-voucher to give, and do the modification and registration about it.
+\subsubsection*{Scenario 2}
+Sai Devi is a policy maker who works in the Indian United Nations. He was told by his manager that he needs to make an assumption why the production outcomes in Nalgonda are having issues in recent months. To have ideas of the core issues, he accesses to DREAM app to compare the behavior of low performing farmers against high performing farmers. Firstly he browses several plots which highlights the period when the temperature were particularly higher for consecutive days. Secondly he observed the history of watering done by irrigation systems. He discovered that low performing farmers didn't change the amount of watering for their crops in that period, therefore he concluded that the issue is caused by missing the adjustment of irrigation systems in critical situations.   
+\subsubsection*{Scenario 3}
+Rudra Singh is a policy maker who works in the Indian government. She is a manager of her department and she needs to pick up exceptionally high performing farmers to ask them to write their best practice to standardize the well behaviour with the rest of farmers. As a first step, she checks low performing farmers average behavior on which part they are struggling toughly and define it as a domain. Then she navigates to visualize the high performing farmers list which contains the scores of production result. She fetches the farmer who obtains significantly high score in a critical domain. Lastly she operates the registration of request form to ask them for providing good practices by filling the needed information. It will shortly notify the farmers. 
+\subsubsection*{Scenario 4}
+Saanvi Das is a policy maker who works in the Indian United Nations. Today's her task is to make a report of the agronomist visits outcome. For completing this assignment, she wants to gather the information of the performance transition due to the visits. She navigates the page which contains several domains such as name of agronomist, type of product, and area. She inserts and fetches the interested data and it will be shown as plots. By looking at them, she writes down the insights for sharing her discovery for her colleagues in the next meeting.  
 
 \subsubsection{Farmer scenarios}
 
@@ -185,6 +211,14 @@ X is an agronomist in the Y (Mahbubnagar) district of Telangana. He has the DREA
 
 \subsubsection*{Scenario 2}
 X is an agronomist in the Y district of Telangana. He has the DREAM app installed on his smartphone to be able to keep track of the visits he did in the past and to organize future visits to the farmers of his area. After chatting with a farmer, he decides to delay a planned visit to that farmer. To do so, he opens the daily plan section in the app and selects the daily plan referred to the previously agreed day. He removes that farmer from the selected daily plan and confirms the change. Afterwards, X opens the daily plan of the newly agreed day, adds that farmer and confirms. The system will store the information for the agronomist, so that he can concentrate on his work.
+
+
+
+\subsubsection*{Scenario 3}
+X is an agronomist in the Y district of Telangana. Today he has to visit some farms in his area. X has the DREAM app installed on his smartphone to check the daily plan for the current day, so that he knows the exact list of farmers to visit. Once the visiting day ended, X managed to visit all farmers, except for one who had a last minute emergency and could not be present. X opens the app, goes in the daily plan section and opens the current daily plan. From there, he specifies this deviation by marking the specific farmer as “non-visited” and then confirms the execution of the daily plan. The system will schedule a new visit for that farmer in a future daily plan.
+
+\subsubsection*{Scenario 4}
+X is an agronomist in the Y district of Telangana. He wants to know the situation about the performance of the farmers of his area. For that, X opens the app and goes to the farmers’ performing situation page. From there he can have an overview on how many farmers are performing well and how many of them are under-performing. He sees that there are some farmers with problems who have not received a visit already, so he decides to add them to a daily plan in the near future.
 
 \subsubsection{Requirements}
 \subsubsection{Traceability Matrix}
@@ -257,10 +291,13 @@ The system interacts a lot with external services, collecting and providing data
 \subsection{Design Constraints}
 
 \subsubsection{Standards compliance}
+
 According to UNDP GitHub repository (ref.\cite{UNDP_GitHub}) the required platform will be compliant to \hyperref[tab:acronymsTable]{DPG} Standards (ref.\cite{DPGS}) that defines open-source software, open data, open AI models, open standards, and open content that adhere to privacy and other applicable best practices, do no harm by design and are of high relevance for attainment of the United Nations 2030 \hyperref[tab:acronymsTable]{SDGs}.
 
 \subsubsection{Privacy constraints}
-The above mentioned collection of standards (rfe.\cite{DPGS}) is responsible to check also privacy related requirements that have to be guaranteed. In particular it shall ensure adherence with relevant privacy, domestic, and international laws such as \hyperref[tab:acronymsTable]{GDPR} or the \hyperref[tab:acronymsTable]{ECOWAS} supplementary act  in order to be accepted as a reliable software. When a user registers to the application, the privacy policy must be read and accepted, otherwise, he/she will not be able to use the service. By the fact that the platform is going to cover Telangana's territory, then \hyperref[tab:acronymsTable]{STQC} directorate of the Ministry of Electronics and Information Technology (ref.\cite{DPGS}) data privacy standards shall be the minimum required constraints to be satsfied.
+The above mentioned collection of standards (ref.\cite{DPGS}) is responsible to check also privacy related requirements that have to be guaranteed. In particular it shall ensure adherence with relevant privacy, domestic, and international laws such as \hyperref[tab:acronymsTable]{GDPR} or the \hyperref[tab:acronymsTable]{ECOWAS} supplementary act  in order to be accepted as a reliable software. When a user registers to the application, the privacy policy must be read and accepted, otherwise, he/she will not be able to use the service. By the fact that the platform is going to cover Telangana's territory, then \hyperref[tab:acronymsTable]{STQC} directorate of the Ministry of Electronics and Information Technology (ref.\cite{DPGS}) data privacy standards shall be the minimum required constraints to be satsfied.
+
+
 
 
 \subsubsection{Hardware limitations}
