@@ -139,8 +139,8 @@
 
 
 % Some utilities\ldots
-% \input{util/highlight}
-% \input{util/abbrev}
+\input{util/highlight}
+\input{util/abbrev}
 
 \date{}
 
@@ -161,4 +161,6 @@
 \newcommand{\gref}[1]{\hyperref[tab:goals]{#1}}
 \newcommand{\tmref}[1]{\hyperref[tab:traceabilityMatrix]{#1}}
 
-% \usepackage{multirow}
+% Added by Leo to provide a cool alloy latex highlight
+\usepackage{listings}
+\usepackage{util/alloy-style}

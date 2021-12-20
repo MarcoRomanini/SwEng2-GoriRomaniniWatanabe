@@ -47,30 +47,64 @@ Firstly select sign up button and fill the *information required such as email, 
 Then if the inserted data is accepted, an e-mail is sent to the User for asking their
 verification.
 Lastly if all the step above are done, the User is prompted to login page.
-\subsubsection{Sharing issues to get help, suggestions}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=\textwidth]{Images/BPMN/signup.pdf}
+	\caption{\label{fig:bpmn_sign_up}BPMN diagram of sign Up}
+\end{figure}
+
+
+\subsubsection{Sharing issues to get help and suggestions}
 This functionality is available for farmers and agronomists. The farmer selects request 
 section and the system displays the send request button, if it is clicked, all the saved 
 contacts are shown. After selecting to whom to ask, insert the question in the text form,
 presses send button, then the request is sent successfully.
-\subsubsection{Communication(among farmer) on forum}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=\textwidth]{Images/BPMN/help-suggestion-request.pdf}
+	\caption{\label{fig:bpmn_request}BPMN diagram of help/suggestion request}
+\end{figure}
+
+\subsubsection{Communication (among farmers) on forums}
 This functionality is required for allowing farmers to exchange their opinion. The farmer 
 access forum section which presents an eventual list that contains both previous submitted 
 forums and farmer’s forum replies. By selecting forum upload button, the system displays 
 *insertion form containing topic/context of the thread, title and question content. If the farmer 
 inserts all the required data correctly and presses the submission button, confirmation page 
-is shown. Lastly clicking confirm button the forum is generated.   
-\subsubsection{Visits low performer}
+is shown. Lastly clicking confirm button the forum is generated. 
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=\textwidth]{Images/BPMN/help-suggestion-request.pdf}
+	\caption{\label{fig:bpmn_forum_generation}BPMN diagram of forum generation}
+\end{figure}
+
+\subsubsection{Visits to low performing farmers}
 This functionality is necessary to organize the Visits to make the schedule shared well 
-between an agronomist and a farmer. The agronomist goes to dairy plan section and the 
+between an agronomist and a farmer. The agronomist goes to daily plan section and the 
 application displays visualize or update button. If it is clicked, the system extracts their schedule
-data which is shortly expressed by a *form with day-month-yesr, farmers to be visited.
+data which is shortly expressed by a *form with day-month-year, farmers to be visited.
 If there is a wish to modify the plan, it is possible to modify it in a form guided by selecting 
 *update button.
-\subsubsection{Visualize the performance data}
-This functionality is used by policymakers. The policy maker clicks the farmer's performance 
-button and the system visualize the list of farmers divided by their production performance. If 
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=\textwidth]{Images/BPMN/visit.pdf}
+	\caption{\label{fig:bpmn_visit}BPMN diagram of visit farmers}
+\end{figure}
+
+\subsubsection{Visualize data about performance}
+This functionality is used by policymakers. The policy maker clicks the farmer's performance button and the system visualize the list of farmers divided by their production performance. If 
 there is any interested farmer, selecting their name, application shows the information of their
 *production history (more in detail | of last 10 months) 
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=\textwidth]{Images/BPMN/Performance.pdf}
+	\caption{\label{fig:bpmn_performance}BPMN diagram of farmer performance}
+\end{figure}
 
 \subsection{Actors}
 \label{sec:actors}
