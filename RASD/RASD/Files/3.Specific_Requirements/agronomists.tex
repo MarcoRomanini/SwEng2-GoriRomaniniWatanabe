@@ -5,47 +5,101 @@ In this section there will be presented agronomists use case tables \ldots
     \centering
     \begin{tabular}[c]{|l|p{0.75\textwidth}|}
         \hline % ---------------------------------------------------------------------
-    	\textsc{id}                 &   1\\
+    	\textsc{id}                 &   A.1\\
     	\hline % ---------------------------------------------------------------------
+<<<<<<< HEAD
     	\textsc{Name}               &   Insertion of the area an agronomist is responsible of\\
+=======
+    	\textsc{Name}               &   Add an area under the agronomist's responsibility\\
+>>>>>>> bea6cd44afb95a3d236ec690d06eb9849ecd2ae9
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Actors}             &   Agronomist\\
+    	\textsc{Actor}             &   Agronomist\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Entry conditions}   &   Agronomist has logged in\\
+    	\textsc{Entry condition}   &   Agronomist has logged in\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Event flow}         &   %\footnotesize
+    	\textsc{Events flow}         &   %\footnotesize
             	                        \begin{itemize}
-                                    	    \item Agronomist presses the button “insert the area”
+                                    	    \item Agronomist goes to the "Area management" section
+                                    	    \item The system extracts the data from the database and displays the list of areas under the agronomist's responsibility
+                                    	    \item Agronomist presses the button “Add an area”
                                     		\item The system displays a page with all the available areas and a search bar
                                     		\item Agronomist makes a research based on the name/location of the area
                                     		\item The system shows the results
                                     		\item Agronomist selects the desired area
-                                    		\item The system shows the details of the area selected
-                                    		\item Agronomist clicks on “Insert this area”
+                                    		\item The system shows the details of the area selected (number of farmers, number of agronomists, weather information, etc)
+                                    		\item Agronomist clicks on “Add this area”
                                     		\item The system updates the database and shows a message of insertion completed
                                         \end{itemize}\\
         \hline % ---------------------------------------------------------------------
-        \textsc{Exit conditions}    &  The system returns to the main home\\
+        \textsc{Exit condition}    &  The system displays the "Area management" section\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Output}             &  \begin{itemize}
     	    \item The system has added the agronomist in the database as responsible for that area
     	\end{itemize}\\
     	\hline % ---------------------------------------------------------------------
+<<<<<<< HEAD
     	\textsc{Exceptions}         &  \begin{itemize}
     	    \item Agronomist wrongly clicks “Insert this area”. The system displays a popup notifying that he will be added as responsible for that area and the agronomist clicks on “Cancel” button
     	\end{itemize}\\
+=======
+    	\textsc{Exception}         &  Agronomist wrongly clicks “Add this area”. The system displays a popup notifying that he will be added as responsible for that area and the agronomist clicks on “Cancel” button\\
+>>>>>>> bea6cd44afb95a3d236ec690d06eb9849ecd2ae9
     	\hline % ---------------------------------------------------------------------
         
     \end{tabular}
-    \caption{\label{tab:responsible_area_insertion}Agronomist caption \textnumero 1}
+    \caption{\label{tab:responsible_area_insertion}Add an area for an agronomist}
 \end{table}
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.75]{Images/Sequence diagrams/Agronomist - Insert area.pdf}
-    \caption{Caption}
+
+    \caption{Add an area for an agronomist - sequence diagram}
     \label{fig:fig:seq_diag_insert_area}
+
+    
 \end{figure}
+
+
+% USE CASE 2: REMOVING AN AREA UNDER THE AGRONOMIST'S RESPONSIBILITY
+\begin{table}[H]
+    \centering
+    \begin{tabular}[c]{|l|p{0.75\textwidth}|}
+        \hline % ---------------------------------------------------------------------
+    	\textsc{id}                 &   A.2\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Name}               &   Remove an area under the agronomist's responsibility\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Actor}             &   Agronomist\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Entry conditions}   &  
+    	\begin{itemize}
+                                    	    \item Agronomist has logged in
+                                    	    \item Agronomist is responsible for at least one area
+                                        \end{itemize}\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Events flow}         &   %\footnotesize
+            	                        \begin{itemize}
+                                    	    \item Agronomist goes to the "Area management" section
+                                    	    \item The system extracts the data from the database and displays the list of areas under the agronomist's responsibility
+                                    	    \item Agronomist presses the button “Remove this area” next to the desired area
+                                    		\item The system displays a popup asking for confirmation
+                                    		\item Agronomist clicks on “Confirm”
+                                    		\item The system updates the database and shows a message of removal completed
+                                        \end{itemize}\\
+        \hline % ---------------------------------------------------------------------
+        \textsc{Exit condition}    &  The system displays the "Area management" section\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Output}             &  \begin{itemize}
+    	    \item The system has removed the agronomist in the database as responsible for that area
+    	\end{itemize}\\
+    	\hline % ---------------------------------------------------------------------
+    	\textsc{Exception}         &  Agronomist wrongly clicks “Remove this area”. The system displays a popup notifying that he will be removed as responsible for that area and the agronomist clicks on “Cancel” button\\
+    	\hline % ---------------------------------------------------------------------
+        
+    \end{tabular}
+    \caption{\label{tab:responsible_area_insertion}Remove an area for an agronomist}
+\end{table}
 
 % USE CASE TABLE 2: ACCESS THE "REQUEST FOR HELP" SECTION
 
@@ -53,15 +107,15 @@ In this section there will be presented agronomists use case tables \ldots
     \centering
     \begin{tabular}[c]{|l|p{0.75\textwidth}|}
         \hline % ---------------------------------------------------------------------
-    	\textsc{id}                 &   2\\
+    	\textsc{id}                 &   A.3\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Name}               &   Visualise and answer to requests for help\\
+    	\textsc{Name}               &   Visualize and answer to requests for help\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Actors}             &   Agronomist\\
+    	\textsc{Actor}             &   Agronomist\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Entry conditions}   &   Agronomist has logged in\\
+    	\textsc{Entry condition}   &   Agronomist has logged in\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Event flow}         &   %\footnotesize
+    	\textsc{Events flow}         &   %\footnotesize
             	                        \begin{itemize}
                                     	    \item Agronomist goes to the “Requests for help” section
                                     		\item The system extracts the data from the database and displays a search bar and the list of conversations (sorted by recent activity), marking the ones which contains new messages
@@ -71,24 +125,25 @@ In this section there will be presented agronomists use case tables \ldots
                                     		\item The system adds the message to the database
                                         \end{itemize}\\
         \hline % ---------------------------------------------------------------------
-        \textsc{Exit conditions}    &  The system remains in the same page, refreshing its content\\
+        \textsc{Exit condition}    &  The system remains in the same page, refreshing its content\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Output}             &  \begin{itemize}
     	    \item The system adds the message to the database
     	    \item The system notifies the participants of that conversation about the new message
     	\end{itemize}\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Exceptions}         &  The system cannot connect to the database/server. The system displays an error message.\\
+    	\textsc{Exception}         &  The system cannot connect to the database/server. The system displays an error message.\\
     	\hline % ---------------------------------------------------------------------
         
     \end{tabular}
-    \caption{\label{tab:help_request_section_access}Agronomist caption \textnumero 2}
+    \caption{\label{tab:help_request_section_access}Visualize and answer to requests for help}
 \end{table}
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.75]{Images/Sequence diagrams/Agronomist - visualise and answer requests for help.pdf}
-    \caption{Caption}
+
+    \caption{Visualize and answer to requests for help - sequence diagram}
     \label{fig:fig:seq_diag_answer_request}
 \end{figure}
 
@@ -98,17 +153,27 @@ In this section there will be presented agronomists use case tables \ldots
     \centering
     \begin{tabular}[c]{|l|p{0.75\textwidth}|}
         \hline % ---------------------------------------------------------------------
-    	\textsc{id}                 &   3\\
+    	\textsc{id}                 &   A.4\\
     	\hline % ---------------------------------------------------------------------
+<<<<<<< HEAD
     	\textsc{Name}               &   Visualize data of the area (weather forecasts, best/under performing farmers, problems encountered by farmers)\\
+=======
+    	\textsc{Name}               &   Visualize data of an area\\
+>>>>>>> bea6cd44afb95a3d236ec690d06eb9849ecd2ae9
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Actors}             &   Agronomist\\
+    	\textsc{Actor}             &   Agronomist\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Entry conditions}   &   Agronomist has logged in\\
+    	\textsc{Entry condition}   &   Agronomist has logged in\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Event flow}         &   %\footnotesize
+    	\textsc{Events flow}         &   %\footnotesize
             	                        \begin{itemize}
+<<<<<<< HEAD
                                     	    \item Agronomist goes to the “Information about the area” section
+=======
+                                    	    \item Agronomist goes to the “Information about areas” section
+                                    	    \item The system extract the data from the database and displays the list of areas under the agronomist's responsibility
+                                    	    \item Agronomist selects an area
+>>>>>>> bea6cd44afb95a3d236ec690d06eb9849ecd2ae9
                                     		\item The system displays a page with three main options: “Weather forecasts”, “Farmers’ performing situation” and "Problems encountered"
                                     		\item Agronomist selects  the “Weather forecasts” section
                                     		\item The system extracts the data from the database and shows all the information concerning the weather forecasts in that area
@@ -120,24 +185,30 @@ In this section there will be presented agronomists use case tables \ldots
                                     		\item The system displays the list of problems inserted by the farmers belonging to the Agronomist's area
                                         \end{itemize}\\
         \hline % ---------------------------------------------------------------------
+<<<<<<< HEAD
         \textsc{Exit conditions}    &  The system returns to the main page\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Output}             &  \begin{itemize}
     	    \item %TODO
     	\end{itemize}\\
     	\hline % ---------------------------------------------------------------------
+=======
+        \textsc{Exit condition}    &  The system returns to the main page\\
+    	\hline % ---------------------------------------------------------------------
+>>>>>>> bea6cd44afb95a3d236ec690d06eb9849ecd2ae9
     	\textsc{Exceptions}         &  The system cannot connect to the database/server. The system displays an error message.
     	\\
     	\hline % ---------------------------------------------------------------------
         
     \end{tabular}
-    \caption{\label{tab:Area_information_access}Agronomist caption \textnumero 3}
+    \caption{\label{tab:Area_information_access}Visualize data of an area}
 \end{table}
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.65]{Images/Sequence diagrams/Agronomist - visualise data of the area.pdf}
-    \caption{Caption}
+
+    \caption{Visualize data of an area - sequence diagram}
     \label{fig:fig:seq_diag_visualize_area}
 \end{figure}
 
@@ -148,9 +219,9 @@ In this section there will be presented agronomists use case tables \ldots
     \centering
     \begin{tabular}[c]{|l|p{0.75\textwidth}|}
         \hline % ---------------------------------------------------------------------
-    	\textsc{id}                 &   4\\
+    	\textsc{id}                 &   A.5\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Name}               &   Visualise and update a daily plan\\
+    	\textsc{Name}               &   Visualize and update a daily plan\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Actors}             &   Agronomist\\
     	\hline % ---------------------------------------------------------------------
@@ -159,9 +230,9 @@ In this section there will be presented agronomists use case tables \ldots
                                     	    \item At least one daily plan is present
                                         \end{itemize}\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Event flow}         &   %\footnotesize
+    	\textsc{Events flow}         &   %\footnotesize
             	                        \begin{itemize}
-                                    	    \item Agronomist goes to the “Daily Plan” section, which is divided in “Visualise/Update” and “Confirm/Specify deviation from”. Agronomist selects the “Visualise/Update” section
+                                    	    \item Agronomist goes to the “Daily Plan” section, which is divided in “Visualize/Update” and “Confirm/Specify deviation from”. Agronomist selects the “Visualise/Update” section
                                     		\item The system extracts the data from the database and displays the list of daily plans for that agronomist
                                     		\item Agronomist selects a daily plan
                                     		\item The system displays all the information about that daily plan (day-month-year, farmers to be visited)
@@ -177,7 +248,7 @@ In this section there will be presented agronomists use case tables \ldots
 
                                         \end{itemize}\\
         \hline % ---------------------------------------------------------------------
-        \textsc{Exit conditions}    &  The system shows a popup to notify the agronomist of the success of the operation
+        \textsc{Exit condition}    &  The system shows a popup to notify the agronomist of the success of the operation
         \\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Output}             &  \begin{itemize}
@@ -192,13 +263,14 @@ In this section there will be presented agronomists use case tables \ldots
     	\hline % ---------------------------------------------------------------------
         
     \end{tabular}
-    \caption{\label{tab:daily_plan_section_access}Agronomist caption \textnumero 4}
+    \caption{\label{tab:daily_plan_section_access}Visualize and update a daily plan}
 \end{table}
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.45]{Images/Sequence diagrams/Agronomist - visualise and update daily plan.pdf}
-    \caption{Caption}
+
+    \caption{Visualize and update a daily plan - sequence diagram}
     \label{fig:fig:seq_diag_update_daily_plan}
 \end{figure}
 
@@ -209,20 +281,20 @@ In this section there will be presented agronomists use case tables \ldots
     \centering
     \begin{tabular}[c]{|l|p{0.75\textwidth}|}
         \hline % ---------------------------------------------------------------------
-    	\textsc{id}                 &   5\\
+    	\textsc{id}                 &   A.6\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Name}               &   Confirm execution of daily plan\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Actors}             &   Agronomist\\
+    	\textsc{Actor}             &   Agronomist\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Entry conditions}   &   \begin{itemize}
                                     	    \item Agronomist has logged in
                                     	    \item Agronomist has at least one daily plan
                                         \end{itemize}\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Event flow}         &   %\footnotesize
+    	\textsc{Events flow}         &   %\footnotesize
             	                        \begin{itemize}
-                                    	    \item Agronomist goes to the “Daily Plan” section, which is divided in “Visualise/Update” and “Confirm/Specify deviation from”. Agronomist selects the “Confirm/Specify deviation from” section.
+                                    	    \item Agronomist goes to the “Daily Plan” section, which is divided in “Visualize/Update” and “Confirm/Specify deviation from”. Agronomist selects the “Confirm/Specify deviation from” section.
                                     		\item The system extracts the data from the database, displays the daily plan for the current day and enables the agronomist to select the subset of farmers which has not been visited that day
                                             \item Agronomist checks the info, selects the subset of farmers and clicks on “Continue”
                                             \item The system displays a compact summary of the info and asks for confirmation
@@ -230,7 +302,7 @@ In this section there will be presented agronomists use case tables \ldots
 
                                         \end{itemize}\\
         \hline % ---------------------------------------------------------------------
-        \textsc{Exit conditions}    &  The system shows a popup to notify the agronomist of the success of the operation
+        \textsc{Exit condition}    &  The system shows a popup to notify the agronomist of the success of the operation
         \\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Output}             &  \begin{itemize}
@@ -240,19 +312,18 @@ In this section there will be presented agronomists use case tables \ldots
 
     	\end{itemize}\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Exceptions}         &  \begin{itemize}
-    	    \item Agronomist has selected the wrong subset of farmers. Given the compact summary, it clicks on “Cancel”. The system displays again the daily plan and enables the agronomist to choose another subset of farmers.
-    	\end{itemize}\\
+    	\textsc{Exception}         &  Agronomist has selected the wrong subset of farmers. Given the compact summary, it clicks on “Cancel”. The system displays again the daily plan and enables the agronomist to choose another subset of farmers.\\
     	
     	\hline % ---------------------------------------------------------------------
         
     \end{tabular}
-    \caption{\label{tab:confirm_deviations_section}Agronomist caption \textnumero 5}
+    \caption{\label{tab:confirm_deviations_section}Confirm execution of daily plan}
 \end{table}
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.75]{Images/Sequence diagrams/Agronomist - confirm execution of daily plan.pdf}
-    \caption{Caption}
+
+    \caption{Confirm execution of daily plan - sequence diagram}
     \label{fig:fig:seq_diag_confirm_daily_plan}
 \end{figure}

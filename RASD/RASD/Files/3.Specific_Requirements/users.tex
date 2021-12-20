@@ -4,17 +4,17 @@
     \centering
     \begin{tabular}[c]{|l|p{0.75\textwidth}|}
         \hline % ---------------------------------------------------------------------
-    	\textsc{id}                 &   1\\
+    	\textsc{id}                 &   U.1\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Name}               &   Sign up User with email\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Actors}             &   User\\
+    	\textsc{Actor}             &   User\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Entry conditions}   &   User has opened the Web page OR User has downloaded and opened the application on his smartphone\\
+    	\textsc{Entry condition}   &   User has opened the Web page OR User has downloaded and opened the application on his smartphone\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Input}   &   Email to use for the registration\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Event flow}         &   %\footnotesize
+    	\textsc{Events flow}         &   %\footnotesize
             	                        \begin{itemize}
                                     	    \item The system displays the “Sign in” page
                                             \item User clicks on “Sign up”
@@ -26,7 +26,7 @@
 
                                         \end{itemize}\\
         \hline % ---------------------------------------------------------------------
-        \textsc{Exit conditions}    &  User registration has been successful: user data are stored in the system’s database. User can now login with his credentials\\
+        \textsc{Exit condition}    &  User registration has been successful: user data are stored in the system’s database. User can now login with his credentials\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Output}             &  \begin{itemize}
     	    \item User’s email is stored in the system’s database
@@ -42,13 +42,14 @@
     	\hline % ---------------------------------------------------------------------
         
     \end{tabular}
-    \caption{\label{tab:user_sign_up}User caption \textnumero 1}
+    \caption{\label{tab:user_sign_up}Sign up User}
 \end{table}
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{Images/Sequence diagrams/User - sign up.pdf}
-    \caption{Caption}
+
+    \caption{Sign up User - sequence diagram}
     \label{fig:fig:seq_diag_sign_up}
 \end{figure}
 
@@ -56,17 +57,17 @@
     \centering
     \begin{tabular}[c]{|l|p{0.75\textwidth}|}
         \hline % ---------------------------------------------------------------------
-    	\textsc{id}                 &   2\\
+    	\textsc{id}                 &   U.2\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Name}               &   Login User\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Actors}             &   User\\
+    	\textsc{Actor}             &   User\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Entry conditions}   &   User has opened the Web page OR User has downloaded and opened the application on his smartphone\\
+    	\textsc{Entry condition}   &   User has opened the Web page OR User has downloaded and opened the application on his smartphone\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Input}   &   User’s valid email and password\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Event flow}         &   %\footnotesize
+    	\textsc{Events flow}         &   %\footnotesize
             	                        \begin{itemize}
                                     	    \item The system displays the “Login” page
                                             \item User inserts his credentials (email, password) and clicks the “Login” button
@@ -76,7 +77,7 @@
 
                                         \end{itemize}\\
         \hline % ---------------------------------------------------------------------
-        \textsc{Exit conditions}    &  User is logged in\\
+        \textsc{Exit condition}    &  User is logged in\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Output}             &  \begin{itemize}
     	    \item User inserts a wrong combination of email and password. The system displays the same page with an error message.
@@ -95,13 +96,14 @@
  
 
     
-    \caption{\label{tab:user_login}User caption \textnumero 2}
+    \caption{\label{tab:user_login}Login User}
 \end{table}
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{Images/Sequence diagrams/User - sign in.pdf}
-    \caption{Caption}
+
+    \caption{Login User - sequence diagram}
     \label{fig:fig:seq_diag_sign_in}
 \end{figure}
 
