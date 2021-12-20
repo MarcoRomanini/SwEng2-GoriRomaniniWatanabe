@@ -217,25 +217,20 @@ fact {
 
 	// PolicyMakers cannot send or receive messages and participate to Requests
 	//no m: Message | m.sender.userType = POLICY_MAKER
-<<<<<<< HEAD
+
 	// PolicyMakers cannot send messages
 	no m: Message | m. sender in PolicyMaker
 	// PolicyMakers cannot receive messages
 	no m: Message | (some r: m.receiver | r in PolicyMaker)
 	// PolicyMakers cannot participate to requests
-=======
-	no m: Message | m. sender in PolicyMaker
-	no m: Message | (some r: m.receiver | r in PolicyMaker)
->>>>>>> bea6cd44afb95a3d236ec690d06eb9849ecd2ae9
+
 	no r: RequestChat | (some p: r.participants | p in PolicyMaker)
 
 	// Agronomist cannot send REQUEST messages or DISCUSSION messages
 	no m: RequestReplyMessage | (m.sender in Agronomist and m.requestReplyType = REQUEST)
-<<<<<<< HEAD
+
 	/* all m: RequestReplyMessage | (m.sender.userType = AGRONOMIST implies m.requestReplyType = REPLY)*/
-=======
-	//all m: RequestReplyMessage | (m.sender.userType = AGRONOMIST implies m.requestReplyType = REPLY)
->>>>>>> bea6cd44afb95a3d236ec690d06eb9849ecd2ae9
+
 	no m: DiscussionMessage | m.sender in Agronomist
 	no m: DiscussionMessage | (some r: m.receiver | r in Agronomist)
 
@@ -250,12 +245,11 @@ fact {
 
 // Requests constraints
 fact {
-<<<<<<< HEAD
+
 	/* requests from a farmer must have as participant at least one Agronomist
 	responsible of the farmer's area*/
-=======
-	// requests from a farmer must have as participant at least one Agronomist responsible of the farmer's area
->>>>>>> bea6cd44afb95a3d236ec690d06eb9849ecd2ae9
+
+
 	all r: RequestChat | one a: Area | 
 		(r.startingUser in a.farmers and 
 		(some ag: a.agronomists | ag in r.participants))
@@ -275,12 +269,9 @@ fact {
 
 	// a request message must be sent by the farmer who started the conversation
 	all r: RequestChat |
-<<<<<<< HEAD
 		all m: r.requestReplyMessageList | (m.requestReplyType = REQUEST
 		implies (m.sender = r.startingUser and m.sender in Farmer))	
-=======
-		all m: r.requestReplyMessageList | (m.requestReplyType = REQUEST implies (m.sender = r.startingUser and m.sender in Farmer))	
->>>>>>> bea6cd44afb95a3d236ec690d06eb9849ecd2ae9
+
 
 	// a request discussion must contain only one request message
 	all r: RequestChat |
