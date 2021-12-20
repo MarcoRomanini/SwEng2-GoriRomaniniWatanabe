@@ -18,36 +18,36 @@
 % Document Structure
 % \end{itemize}
 % Below you see how to define the header for a subsection.
-DREAM (Data-dRiven prEdictive fArMing) is an easy-to-use application which intent is [cite assignment] to design dynamic anticipatory governance models for food systems using digital public goods and community-centric approaches to strengthen data-driven policy making in the region of Telangana, India.
+\hyperref[tab:acronymsTable]{DREAM} is an easy-to-use application which intent is [cite assignment] to design dynamic anticipatory governance models for food systems using digital public goods and community-centric approaches to strengthen data-driven policy making in the region of Telangana, India.
 
 The region's main means of livelihood is in fact heavily relied on agriculture, typically widely represented by smallholders farmers' activities. These ones are easily affected by complex problems such as climate change and the incoming raise of food demand due to the continuous population increase. In addition to that, the occurrence of Covid-19 pandemic is recently causing further obstacles (such as food supply chains disruption) to the achievement of a resilient food system.
 
 The final aim of the Telengana's government is collecting and analyzing agriculture related real-time conditions in order to monitor and support smallholder's activities resilience capacity against the before mentioned problems.
 
 \subsection{Purpose}
-The main purpose of the S2B is forming a bridge between the main actors of the food systems: \textbf{policy makers}, \textbf{farmers} and \textbf{agronomists}. This can be achieved through the development of a multi-user unified platform that allows actors to share data. In particular the system should guarantee the following privileges and functionalities based on the user identity:
+The main purpose of the \hyperref[tab:acronymsTable]{S2B} is acting as a bridge between the main actors of the food systems: \textbf{policy makers}, \textbf{farmers} and \textbf{agronomists}. This can be achieved through the development of a multi-user unified platform that allows actors to share data. In particular the system should guarantee the following privileges and functionalities based on the user identity: we prsent them in the following list, extracted from the original assignment.
 \begin{description}[font=~\normalfont\scshape]
-    \item[\textbf{\textcolor{myblue}{Policy makers privileges}}]
-    \hfill \begin{itemize}[topsep=0pt,leftmargin=0pt]
+    \item[\textbf{\textcolor{myblue}{Policy makers privileges}}]\label{line:policyMakersPrivileges}
+    \hfill \begin{enumerate}[topsep=0pt,leftmargin=0pt]
                 \item Identify those farmers who are performing well, especially when they demonstrate to be resilient to meteorological adverse events, as these farmers will receive special incentives and will be asked to provide useful best practices to the others;
                 \item Identify those farmers who need to be helped as they are performing particularly badly;
                 \item Understand whether the steering initiatives carried out by agronomists with the help of good farmers produce significant results.
-            \end{itemize}
-    \item[\textbf{\textcolor{myblue}{Farmers privileges}}]
-    \hfill \begin{itemize}[topsep=0pt,leftmargin=0pt]
+            \end{enumerate}
+    \item[\textbf{\textcolor{myblue}{Farmers privileges}}]\label{line:farmersPrivileges}
+    \hfill \begin{enumerate}[topsep=0pt,leftmargin=0pt, resume]
                 \item Visualize data relevant to them –-- for instance, weather forecasts, personalized suggestions concerning specific crops to plant or specific fertilizers to use --– based on their location and type of production;
-                %this is a requirement \item Insert in the system data about their production and any problem they face;
+                \item Insert in the system data about their production and any problem they face;
                 \item Request for help and suggestions by agronomists and other farmers;
                 \item Create discussion forums with the other farmers.
-            \end{itemize}
-    \item[\textbf{\textcolor{myblue}{Agronomist privileges}}]
-    \hfill \begin{itemize}[topsep=0pt,leftmargin=0pt]
-                % this is a requirement \item Insert the area they are responsible of;
+            \end{enumerate}
+    \item[\textbf{\textcolor{myblue}{Agronomist privileges}}]\label{line:agronomistPrivileges}
+    \hfill \begin{enumerate}[topsep=0pt,leftmargin=0pt, resume]
+                \item Insert the area they are responsible of;
                 \item Receive information about requests for help and answer to these requests;
                 \item Visualize data concerning weather forecasts in the area and the best performing farmers in the area;
                 \item Visualize and update a daily plan to visit farms in the area, assuming that all farms must be visited at least twice a year, but those that are under-performing should be visited more often, depending on the type of problem they are facing;
                 \item Confirm the execution of the daily plan at the end of each day or specify the deviations from the plan.
-            \end{itemize}
+            \end{enumerate}
 \end{description}
 Furthermore the system should make use of the already collected data such as:
 \begin{itemize}
@@ -56,6 +56,7 @@ Furthermore the system should make use of the already collected data such as:
     \item Information obtained by sensors deployed on the territory and measuring the humidity of soil.
 \end{itemize}
 \subsection{Scope}
+\label{sec:scope}
 The environment in which the platform will be involved will be the whole region of Telengana. Policy makers, farmers and agronomist will have the possibility to access the system through their personal devices. Furthermore the devices responsible for the gathering of information such as the ones of the water irrigation system, the humidity sensors are supposed to be shared along the territory in a ditributed system fashion.
 
 \subsubsection{World Phenomena}
@@ -140,9 +141,74 @@ In this section are introduced the environment related phenomena that the S2B is
 \end{table}
 
 \subsection{Goals}
+According to \cite{jackson_dsfr} (revised) it's stakeholders' prerogative to determine the goals: thus in this section, in order to introduce some sort of atomicity of the goals, we derive a list of formal description of them from the requested functionalities presented in section \ref{sec:scope}. Furthermore in order to justify the definition of each goal, we also map each of them to the related assignment exctract.
+\newline\newline
+\rref{link to requirements table}
+\newline\newline
+\daref{link to domain assumption table}
+\newline\newline
+\tmref{link to traceability matrix}
+
+\textbf{USE THE TERM SHOULD}
+\begin{table}[H]
+    \setlength\arrayrulewidth{1pt}
+    \centering
+    \rowcolors{2}{white}{myblue!25}
+    \begin{tabular}{|l|m{0.85\textwidth}|l|}
+        \rowcolor{myblue}
+        \hline
+        \color{white}GX & \color{white}Description   & \color{white}Cfr.\\
+        \hline
+        % POLICY MAKER GOALS
+        G.1                                               &     Policy maker should be able to see best performing and under-performing farmers in all the areas &   \hyperref[line:policyMakersPrivileges]{1,2} \\
+        \hline
+        G.2                                                      &  Policy maker should be able to handle incentives for high performing farmer   &    \hyperref[line:policyMakersPrivileges]{1}\\
+        \hline
+        G.3                                     &   Policy maker should be able to ask high performing farmers to write good practices   &   \hyperref[line:policyMakersPrivileges]{1} \\
+        \hline
+        G.4                                              &   Policy maker should be able to compare the performance difference of farmer between the current data and the past data(before agronomist visits)     &   \hyperref[line:policyMakersPrivileges]{3} \\
+        \hline
+        % FARMER GOALS
+        G.5                                  &   Farmers should be able to visualize data relevant to them, based on their location and type of product   &   \hyperref[line:farmersPrivileges]{4} \\
+        \hline
+        G.6                                                      &  Farmers should be able to manipulate data about their production and any problem faced   &    \hyperref[line:farmersPrivileges]{5}\\% should it be splitted in 2 parts?
+        \hline
+        G.7                                               &     Farmers should be able to request for help and suggestions by agronomists and other farmers &   \hyperref[line:farmersPrivileges]{6} \\
+        \hline
+        G.8                                              &   Farmers should be able to create discussion forums with other farmers     &   \hyperref[line:farmersPrivileges]{7} \\
+        \hline
+        % AGRONOMIST GOALS
+        G.9                                  &   Agronomists should be able to insert the area they are responsible for   &   \hyperref[line:agronomistPrivileges]{8} \\
+        \hline
+        G.10                                                      &  Agronomists should be able to receive information about requests for help and answer to these requests   &    \hyperref[line:agronomistPrivileges]{9}\\% should it be splitted in 2 parts?
+        \hline
+        G.11                                               &     Agronomists should be able to see best performing and under-performing farmers in the area &   \hyperref[line:agronomistPrivileges]{11} \\
+        \hline
+        G.12                                              &   Agronomists should be able to see data concerning weather forecasts in the area     &   \hyperref[line:agronomistPrivileges]{10} \\
+        \hline
+        G.13                                               &     Agronomists should be able to visualize and update a daily plan to visit farms in the area &   \hyperref[line:agronomistPrivileges]{11} \\
+        \hline
+        G.14                                              &   Agronomists should be able to confirm the execution of the daily plan at the end of each day or specify the deviations from the plan     &   \hyperref[line:agronomistPrivileges]{12} \\
+        \hline
+    \end{tabular}
+    
+    \caption{\label{tab:goals}Goals table.}
+    
+\end{table}
 
 \subsection{Definitions, Acronyms, Abbreviations}
 In order to introduce some sort of coherence in an environment--- the physical world--- that is informal, we present in this section the sets of \textbf{definitions}, \textbf{acronyms} and \textbf{abbreviations} used in the following sections. These are supposed to be as more generic as possible, in order to provide more flexibility for the following phases of the Waterfall software lifecycle.
+
+
+\textbf{It is important to agree in advance on the specific keywords and terms that signal the presence of specific entity. Following the convention defined in \cite{iso_ieee_standard} we therefore adopt the following terms to identify and describe requirements, goals and domain assumptions.}
+
+%# SOURCE : https://reqexperts.com/2012/10/09/using-the-correct-terms-shall-will-should/
+\begin{itemize}
+    \item \textbf{Shall}: Shall is used to indicate a requirement that is contractually binding, meaning it must be implemented, and its implementation verified.  Period!  Don’t think of “shall” as a word, but rather as an icon that SCREAMS: “This is a requirement.”  If a statement does not contain the word “shall” it is not a requirement.
+    \item \textbf{Will}: Will is used to indicate a domain assumption.  Will statements are not subject to verification.
+    \textbf{Should}: Should is used to indicate a goal which must be addressed by the design team but is not formally verified.
+\end{itemize}
+
 \subsubsection{Definitions}
 \begin{table}[H]
     \setlength\arrayrulewidth{1pt}
@@ -188,7 +254,8 @@ In order to introduce some sort of coherence in an environment--- the physical w
         \hline
         \color{white}Acronym & \color{white}Expansion \\
         \hline
-
+        \textsc{DREAM}  &    Data-dRiven prEdictive fArMing \\
+        \hline
         \textsc{S2B}     &   Software to be \\
         \hline
         \textsc{GDPR}  &    General Data Protection Regulation\\
@@ -203,9 +270,21 @@ In order to introduce some sort of coherence in an environment--- the physical w
         \hline
         \textsc{BPMN}  &    Business Process Model and Notation\\
         \hline
+        \textsc{SDG}  &    Sustainable Development Goals\\
+        \hline
+        \textsc{MTTR}  &    Mean Time To Repair\\
+        \hline
+        \textsc{RBAC}  &    Role Based Access Control \\
+        \hline
+        \textsc{DBMS}  &    Data base Management System \\
+        \hline
+        \textsc{API}  &    Application programming interface \\
+        \hline
+        \textsc{GUI}  &    Graphical User Interface \\
+        \hline
     \end{tabular}
     
-    \caption{\label{tab:acronyms_table}Table of acronyms.}
+    \caption{\label{tab:acronymsTable}Table of acronyms.}
     
 \end{table}
 

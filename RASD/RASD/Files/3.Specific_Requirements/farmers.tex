@@ -63,12 +63,12 @@ Synonims: system, application, service
     	\textsc{Events flow}         &   %\footnotesize
             	                        \begin{itemize}
                                     	    \item Farmer selects the graphical section responsible of the private requests, called informally \textit{request section} for the sake of simplicity
-                                    		\item The application displays a section that presents an eventual list of previous request chats, and an internal element to send a new private request, called informally \textit{Send request element}
+                                    		\item The application displays a section that presents an eventual list of previous request chats and an additional button to send a new private request, called informally \textit{Send request element}
                                     		\item Farmer selects the send request button
-                                    		\item The application displays a new section that present all the Farmer's saved contacts
+                                    		\item The application displays a new section asking for the selection of the receivers
                                     		\item The farmer selects the contact he wants to send the request
-                                    		\item The system displays a section with an editable text form and a send button.
-                                    		\item The farmer writes the request and selects the send button
+                                    		\item The system displays a section with an editable text form and asking for the selection of the topic of the request and a send button.
+                                    		\item The farmer writes the request, fills the topic form and selects the send button
                                         \end{itemize}\\
         \hline % ---------------------------------------------------------------------
         \textsc{Exit condition}    &  The application displays the summary page of both already sent request chat and the previous submitted ones\\
@@ -109,7 +109,7 @@ Synonims: system, application, service
     	\textsc{Events flow}         &   %\footnotesize
             	                        \begin{itemize}
                                     	    \item Farmer selects the graphical section responsible of the forum generation, called informally \textit{Forum section} for the sake of simplicity
-                                    		\item The application displays a section that presents an eventual list that contains both previous submitted forums and farmer's forum replies, and an internal element to submit a new public forum, called informally \textit{forum upload button}
+                                    		\item The application displays a section that presents an eventual list that contains both previous submitted forums and the ones farmer replied, and an internal element to submit a new public forum, called informally \textit{forum upload button}
                                     		\item Farmer selects the forum upload button
                                     		\item The application displays a new section that present 3 mandatory fields (the topic/context of the thread, the title and the question content) and a submission button
                                     		\item The farmer fills all the mandatory fields and selects the submission button
@@ -129,7 +129,8 @@ Synonims: system, application, service
         
     \end{tabular}
 
-\caption{\label{tab:Forum_generation}Forum generation}
+
+    \caption{\label{tab:Forum_generation}Forum generation}
 \end{table}
 
 \begin{figure}[H]

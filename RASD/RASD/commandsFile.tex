@@ -127,6 +127,7 @@
 % added to define a cool blue color
 \definecolor{myblue}{RGB}{85, 152, 192}
 
+% added to change colors of links
 \hypersetup{
     colorlinks=true,
     linkcolor=myblue,
@@ -153,3 +154,11 @@
 
 % Added by Leo to introduce links in references
 \usepackage{url}
+
+% Added by Leo to introduce a new command for internal section references
+\newcommand{\rref}[1]{\hyperref[tab:requirements]{#1}}
+\newcommand{\daref}[1]{\hyperref[tab:domainAssumptions]{#1}}
+\newcommand{\gref}[1]{\hyperref[tab:goals]{#1}}
+\newcommand{\tmref}[1]{\hyperref[tab:traceabilityMatrix]{#1}}
+
+% \usepackage{multirow}
