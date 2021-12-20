@@ -75,8 +75,8 @@ sig DiscussionMessage extends Message {
 	isStartingMessage: one Bool
 }
 
-sig RequestReplyMessage extends Message {
-	requestReplyType: one RequestReplyType
+sig ChatMessage extends Message {
+	isRequestMessage: one Bool
 }
 
 
@@ -84,12 +84,6 @@ sig RequestReplyMessage extends Message {
 abstract sig RequestType {}
 one sig HELP extends RequestType {}
 one sig SUGGESTION extends RequestType {}
-
-
-// RequestReplyType
-abstract sig RequestReplyType {}
-one sig REQUEST extends RequestReplyType {}
-one sig REPLY extends RequestReplyType {}
 
 
 // Forum e Request
@@ -103,7 +97,7 @@ sig Forum {
 sig RequestChat{
 	requestID: one ID,
 	title: one ChatTitle,
-	requestReplyMessageList: set RequestReplyMessage,
+	chatMessageList: set ChatMessage,
 	requestType: one RequestType,
 	participants: set User,
 	startingUser: one Farmer,
@@ -117,6 +111,10 @@ sig Area {
 	areaID: one ID,
 	agronomists: set Agronomist,
 	farmers: set Farmer
+} {
+	// area must not be empty
+	#agronomists > 0
+	#farmers > 0
 }
 
 
@@ -173,10 +171,10 @@ fact {
 		one d: DailyPlan | v in d.visitList
 }
 
-// Agronomists are assigned to only one area
+// Agronomists are assigned to at least one area
 fact {
 	all ag: Agronomist | 
-		one ar: Area | ag in ar.agronomists
+		some ar: Area | ag in ar.agronomists
 }
 
 // Farmers are assigned to only one area
@@ -197,7 +195,7 @@ fact {
 	no r: RequestChat | (some p: r.participants | p in PolicyMaker)
 
 	// Agronomist cannot send REQUEST messages or DISCUSSION messages
-	no m: RequestReplyMessage | (m.sender in Agronomist and m.requestReplyType = REQUEST)
+	no m: ChatMessage | (m.sender in Agronomist and m.isRequestMessage = True)
 	//all m: RequestReplyMessage | (m.sender.userType = AGRONOMIST implies m.requestReplyType = REPLY)
 	no m: DiscussionMessage | m.sender in Agronomist
 	no m: DiscussionMessage | (some r: m.receiver | r in Agronomist)
@@ -207,8 +205,8 @@ fact {
 		one f: Forum | m in f.discussionMessageList
 
 	// request_reply message must belong to a Request
-	all m: RequestReplyMessage |
-		one r: RequestChat | m in r.requestReplyMessageList
+	all m: ChatMessage |
+		one r: RequestChat | m in r.chatMessageList
 }
 
 // Requests constraints
@@ -223,21 +221,21 @@ fact {
 
 	// request messages must be delivered to all the participants, but not to the sender
 	all r: RequestChat | 
-		all m: r.requestReplyMessageList |
+		all m: r.chatMessageList |
 			all p: r.participants | (p in m.receiver or p = m.sender)
 
 	// request messages must be sent by and delivered to participants only
 	all r: RequestChat |	
-		all m: r.requestReplyMessageList |
+		all m: r.chatMessageList |
 			(all u: m.receiver | u in r.participants) and m.sender in r.participants
 
 	// a request message must be sent by the farmer who started the conversation
 	all r: RequestChat |
-		all m: r.requestReplyMessageList | (m.requestReplyType = REQUEST implies (m.sender = r.startingUser and m.sender in Farmer))	
+		all m: r.chatMessageList | (m.isRequestMessage = True implies (m.sender = r.startingUser and m.sender in Farmer))	
 
 	// a request discussion must contain only one request message
 	all r: RequestChat |
-		one m: r.requestReplyMessageList | m.requestReplyType = REQUEST
+		one m: r.chatMessageList | m.isRequestMessage = True
 }
 
 // Forum constraints
@@ -273,6 +271,25 @@ assert multipleFarmersCanWriteInAForum {
 }
 //check multipleFarmersCanWriteInAForum for 20
 
+assert agronomistCanHandleMultipleAreas {
+	some disj a1, a2: Area |
+		some ag: Agronomist | ag in a1.agronomists and ag in a2.agronomists
+}
+//check agronomistCanHandleMultipleAreas for 20
+
+assert eachFarmerIsSupervisedByAnAgronomist {
+	all f: Farmer |
+		one a: Area | f in a.farmers and 
+			some ag: Agronomist | ag in a.agronomists
+}
+//check eachFarmerIsSupervisedByAnAgronomist for 20
+
+assert farmersAndAgronomistsCanCommunicate {
+	some r: RequestChat |
+		some f: Farmer | f in r.participants and
+			some a: Agronomist | a in r.participants
+}
+check farmersAndAgronomistsCanCommunicate for 20
 
 
 // PREDICATES
@@ -297,7 +314,7 @@ pred world2 {
 	#DiscussionMessage = 0
 	#RequestChat = 1
 	#RequestChat.participants = 4
-	#RequestReplyMessage = 3
+	#ChatMessage = 3
 }
 //run world2 for 20
 
