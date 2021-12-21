@@ -17,9 +17,9 @@ Synonims: system, application, service
     	\hline % ---------------------------------------------------------------------
     	\textsc{Events flow}         &   %\footnotesize
             	                        \begin{itemize}
-                                    	    \item Farmer selects the graphical element for recording production data, called informally \textit{Record Production Data button} for the sake of simplicity
-                                    		\item The application displays a section that asks for more information (mandatory fields like type of production, amount of produced items, unit of measurement and optional one like description of the productivity, notes) and an element to save and upload informations, called informally \textit{Upload Button}
-                                    		\item Farmer fills the mandatory fields of the current section and eventually the optional ones. Then press the Upload Button.
+                                    	    \item Farmer goes to the \textit{Record Production Data} section
+                                    		\item The application displays a section that asks for \hyperref[tab:definitionsTable]{product information} and an \textit{Upload Button}
+                                    		\item Farmer fills the mandatory fields of the current section and eventually the optional ones. Then press the \textit{Upload Button}.
                                     		\item The application displays a confirm popup revealing the summary of the information is going to be recorded, asking for Farmer confirmation through a \textit{Confirm Button}
                                     		\item The farmer confirms the submission by selecting the Confirm Button
                                         \end{itemize}\\
@@ -64,11 +64,11 @@ Synonims: system, application, service
             	                        \begin{itemize}
                                     	    \item Farmer selects the graphical section responsible of the private requests, called informally \textit{request section} for the sake of simplicity
                                     		\item The application displays a section that presents an eventual list of previous request chats and an additional button to send a new private request, called informally \textit{Send request element}
-                                    		\item Farmer selects the send request button
+                                    		\item Farmer clicks on the send request button
                                     		\item The application displays a new section asking for the selection of the receivers
                                     		\item The farmer selects the contact he wants to send the request
-                                    		\item The system displays a section with an editable text form and asking for the selection of the topic of the request and a send button.
-                                    		\item The farmer writes the request, fills the topic form and selects the send button
+                                    		\item The system displays a section with an editable text form, asks for the selection of the topic of the request and displays a send button
+                                    		\item The farmer writes the request, fills the topic form and clicks on the send button
                                         \end{itemize}\\
         \hline % ---------------------------------------------------------------------
         \textsc{Exit condition}    &  The application displays the summary page of both already sent request chat and the previous submitted ones\\
@@ -78,7 +78,7 @@ Synonims: system, application, service
     	    \item The farmer can visualize the list of both current request chat and the previous ones
     	\end{itemize}\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Exception}         &  Farmer selects the request button without editing the text form. In such case, the system displays an error message informing the Farmer about the missing field required in order to achieve the goal\\
+    	\textsc{Exception}         &  Farmer clicks on the request button without editing the text form. In such case, the system displays an error message informing the Farmer about the missing field required in order to achieve the goal\\
     	\hline % ---------------------------------------------------------------------
         
     \end{tabular}
@@ -117,7 +117,7 @@ Synonims: system, application, service
                                     		\item The farmer confirms the submission by selecting the Confirm Button
                                         \end{itemize}\\
         \hline % ---------------------------------------------------------------------
-        \textsc{Exit condition}    &  The application displays the summary page containing both already submitted forum thread, the previous submitted ones and the ones whose the farmer replied\\
+        \textsc{Exit condition}    &  The application displays the summary page containing both already submitted forum thread, the previous submitted ones and the ones to which the farmer replied\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Output}             &  \begin{itemize}
     	    \item The system collects the new forum thread

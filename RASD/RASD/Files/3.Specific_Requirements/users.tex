@@ -72,19 +72,19 @@
                                     	    \item The system displays the “Login” page
                                             \item User inserts his credentials (email, password) and clicks the “Login” button
                                             \item The system checks the correctness of the inserted credentials
-                                            \item The system displays the home page
 
 
                                         \end{itemize}\\
         \hline % ---------------------------------------------------------------------
-        \textsc{Exit condition}    &  User is logged in\\
+        \textsc{Exit condition}    &  The system displays the home page\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Output}             &  \begin{itemize}
-    	    \item User inserts a wrong combination of email and password. The system displays the same page with an error message.
-
+    	\textsc{Output}             & 
+    	\begin{itemize}
+    	    \item User is logged in
     	\end{itemize}\\
     	\hline % ---------------------------------------------------------------------
     	\textsc{Exceptions}         &  \begin{itemize}
+    	    \item User inserts a wrong combination of email and password. The system displays the same page with an error message
     	    \item User inserts an email which is already stored in the database. So, after User clicks on “Confirm”, the system displays an error page which tells that User is already registered to the service and invites him to login with that email
             \item User inserts an invalid email. So, after User clicks on “Confirm”, the system displays the same sign up page with an error message, which suggests User to check the inserted email or to change it
 
