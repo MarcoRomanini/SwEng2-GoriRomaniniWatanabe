@@ -29,7 +29,7 @@
     	    \item Policy maker has obtained the farmer's production data they were looking for
     	\end{itemize}\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Exception}         &  Policy maker could not find the name of farmer who should exist. The system suggests the user to change the selected filter.\\
+    	\textsc{Exception}         &  Policy maker could not find the name of farmer who should exist. The system displays the error message\\
     	\hline % ---------------------------------------------------------------------
         
     \end{tabular}
@@ -38,7 +38,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{Images/Sequence diagrams/PolicyMaker - visualize performance.pdf}
+    \includegraphics[scale=0.5]{Images/Sequence diagrams/SE2 - visualize performance (pm).png}
     \caption{Visualize the performance data of farmers - sequence diagram}
     \label{fig:my_label}
 \end{figure}
@@ -61,7 +61,7 @@
                                     		\item The system displays a page with the list of farmers (grouped by performance) and a column which clarifies the status of their incentives 
                                        		\item Policy maker selects the interested farmer’s incentive column
                                     		\item The system shows detailed information about farmer’s incentives status
-                                    		\item Policy maker clicks the incentive column
+                                    		\item Policy maker clicks "Select incentive" button
                                     		\item The system shows the possible choices
                                     		\item Policy maker selects the incentive to give
                                     		\item The system shows the popup to ask a confirmation to proceed
@@ -86,7 +86,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{Images/Sequence diagrams/PolicyMaker - visualise incentive status.pdf}
+    \includegraphics[scale=0.5]{Images/Sequence diagrams/SE2 - manage incentive status (pm).png}
     \caption{Manage the incentives of farmers - sequence diagram}
     \label{fig:my_label}
 \end{figure}
@@ -119,7 +119,7 @@
     	    \item Policy maker has obtained the history of performance data and interaction between farmers and agronomists they were looking for
     	\end{itemize}\\
     	\hline % ---------------------------------------------------------------------
-    	\textsc{Exception}         &  Policy maker couldn’t find the name of farmer who should exist. The system suggests the user to change the selected filter.\\
+    	\textsc{Exception}         &  Policy maker couldn’t find the name of farmer who should exist. The system displays the error message\\
     	\hline % ---------------------------------------------------------------------
         
     \end{tabular}
@@ -128,7 +128,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{Images/Sequence diagrams/PolicyMaker - visualise correlation and improvement.pdf}
+    \includegraphics[scale=0.5]{Images/Sequence diagrams/SE2 - visualise effectiveness of steering initiatives (pm).png}
     \caption{Visualize the effectiveness of the steering initiatives - sequence diagram}
     \label{fig:my_label}
 \end{figure}
@@ -151,7 +151,7 @@
                                     		\item The system displays a page with the list of farmers grouped by performance
                                     		\item Policy maker selects interested high performing farmer’s name
                                     		\item The system shows the detailed information about farmer’s production and "request writing" button
-                                    		\item Policy maker clicks "request writing" button
+                                    		\item Policy maker clicks "equest writing" button
                                     		\item The system shows a popup to ask the confirmation to proceed
                                     		\item Policy maker clicks "Confirm" button
                                     		\item The system sends the request to the selected farmer and shows a message to notify the success of the operation
@@ -170,3 +170,10 @@
     \end{tabular}
     \caption{\label{tab:visualize_iprovement}Ask a farmer to write good practices} 
 \end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{Images/Sequence diagrams/SE2 - Ask request to write good practice (pm).png}
+    \caption{Ask request to write good practice - sequence diagram}
+    \label{fig:my_label}
+\end{figure}
