@@ -29,7 +29,7 @@ The main purpose of the \hyperref[tab:acronymsTable]{S2B} is acting as a bridge 
 \begin{description}[font=~\normalfont\scshape]
     \item[\textbf{\textcolor{myblue}{Policy makers privileges}}]\label{line:policyMakersPrivileges}
     \hfill \begin{enumerate}[topsep=0pt,leftmargin=0pt]
-                \item Identify those farmers who are performing well, especially when they demonstrate to be resilient to meteorological adverse events, as these farmers will receive special incentives and will be asked to provide useful best practices to the others;
+                \item \label{itm:first} Identify those farmers who are performing well, especially when they demonstrate to be resilient to meteorological adverse events, as these farmers will receive special incentives and will be asked to provide useful best practices to the others;
                 \item Identify those farmers who need to be helped as they are performing particularly badly;
                 \item Understand whether the steering initiatives carried out by agronomists with the help of good farmers produce significant results.
             \end{enumerate}
@@ -50,20 +50,19 @@ The main purpose of the \hyperref[tab:acronymsTable]{S2B} is acting as a bridge 
             \end{enumerate}
 \end{description}
 
-
-\textbf{Aggiungere che si assume che i policy maker siano responsabili di inviare incentivi}
-
-
+Referring to point \ref{itm:first} we assume that is policy maker responsibility, given information about well performing farmers by the system, to send incentives through the platform itself.
 Furthermore the system should make use of the already collected data such as:
 \begin{itemize}
     \item Data concerning meteorological short-term and long-term forecasts;
     \item Information obtained by the water irrigation system concerning the amount of water used by each farmer;
     \item Information obtained by sensors deployed on the territory and measuring the humidity of soil.
 \end{itemize}
+
+
 \subsection{Scope}
 \label{sec:scope}
 The environment in which the platform will be involved will be the whole region of Telangana. Policy makers, farmers and agronomist will have the possibility to access the system through their personal devices. Furthermore the devices responsible for the gathering of information such as the ones of the water irrigation system, the humidity sensors are supposed to be shared along the territory in a ditributed system fashion.
-
+\newpage
 \subsubsection{World Phenomena}
 %what you write here is a comment that is not shown in the final text
 In this section are introduced the environment related phenomena that the S2B is supposed to face. As described in \cite{jackson_twatm}, for each phenomenon we specifiy if it is shared and the system that can control it.
@@ -144,7 +143,7 @@ In this section are introduced the environment related phenomena that the S2B is
     \caption{\label{tab:phenomena_table}Phenomena table.}
     
 \end{table}
-
+\newpage
 \subsection{Goals}
 According to \cite{jackson_dsfr} (revised) it's stakeholders' prerogative to determine the goals: thus in this section, in order to introduce some sort of atomicity of the goals, we derive a list of formal description of them from the requested functionalities presented in section \ref{sec:scope}. Furthermore in order to justify the definition of each goal, we also map each of them to the related assignment exctract.
 \newline\newline
@@ -198,20 +197,19 @@ According to \cite{jackson_dsfr} (revised) it's stakeholders' prerogative to det
     \end{tabular}
     
     \caption{\label{tab:goals}Goals table.}
-    
 \end{table}
 
+\newpage
 \subsection{Definitions, Acronyms, Abbreviations}
 In order to introduce some sort of coherence in an environment--- the physical world--- that is informal, we present in this section the sets of \textbf{definitions}, \textbf{acronyms} and \textbf{abbreviations} used in the following sections. These are supposed to be as more generic as possible, in order to provide more flexibility for the following phases of the Waterfall software lifecycle.
 
-
-\textbf{It is important to agree in advance on the specific keywords and terms that signal the presence of specific entity. Following the convention defined in \cite{iso_ieee_standard} we therefore adopt the following terms to identify and describe requirements, goals and domain assumptions.}
+It is important to agree in advance on the specific keywords and terms that signal the presence of specific entity. Following the convention defined in \cite{iso_ieee_standard} we therefore adopt the following terms to identify and describe requirements, goals and domain assumptions.
 
 %# SOURCE : https://reqexperts.com/2012/10/09/using-the-correct-terms-shall-will-should/
 \begin{itemize}
-    \item \textbf{Shall}: Shall is used to indicate a requirement that is contractually binding, meaning it must be implemented, and its implementation verified.  Period!  Don’t think of “shall” as a word, but rather as an icon that SCREAMS: “This is a requirement.”  If a statement does not contain the word “shall” it is not a requirement.
-    \item \textbf{Will}: Will is used to indicate a domain assumption.  Will statements are not subject to verification.
-    \textbf{Should}: Should is used to indicate a goal which must be addressed by the design team but is not formally verified.
+    \item \textbf{Shall}: used to indicate a requirement that is contractually binding, meaning it must be implemented, and its implementation verified;
+    \item \textbf{Will}: used to indicate a domain assumption.  Will statements are not subject to verification;
+    \item \textbf{Should}: used to indicate a goal which must be addressed by the design team but is not formally verified.
 \end{itemize}
 
 \subsubsection{Definitions}
