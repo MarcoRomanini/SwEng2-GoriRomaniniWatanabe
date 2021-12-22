@@ -10,7 +10,68 @@ This product is designed to run on a wide variety of machines, including operati
 	\caption{\label{fig:uml_class_diagram}High level UML diagram}
 \end{figure}
 
-\subsubsection{User interfaces} % TODO revise the verbs
+
+\subsubsection*{UML description}
+\begin{center}
+    \setlength\arrayrulewidth{1pt}
+    \rowcolors{2}{white}{myblue!25}
+    \begin{longtable}{|c|m{0.7\textwidth}|}
+            
+            \hline
+            \rowcolor{myblue}\color{white}Class & \color{white}Description \\
+            \hline
+            
+            \textsc{User}  &    This class represents the people registered to the system, with their credentials  \\
+            \hline
+            \textsc{Farmer}     &   This class represents the farmers, with their performing type and their street address (information useful to agronomists) \\
+            \hline
+            \textsc{Agronomist}  &    This class represents the agronomists, with their specialization type \\
+            \hline
+            \textsc{PolicyMaker}  &    This class represents the policy makers, with their background (e.g., India’s government, Telangana’s government, United Nations, etc)  \\
+            \hline
+            \textsc{Area}  &    This class represents the areas in which Telangana has been divided for the management of this system. Areas can be the 33 districts in which Telangana is formally divided, but a different subdivision criteria can be used  \\
+            \hline
+            \textsc{WeatherType}  &    This class represents some characteristics of the area regarding weather aspects (e.g., humidity, rainfall frequency, average temperature, etc)  \\
+            \hline
+            \textsc{Forum}  &    This class represents the discussion forums that farmers can use to communicate with each other, to get information and to exchange ideas. Only farmers can write in forums  \\
+            \hline
+            \textsc{RequestChat}  &    This class represents the requests that farmers can send to agronomists and to other farmers. Requests can be for help or for suggestions. A request is modelled as a chat where the participants are selected by the farmer that makes the request. A request always has at least one agronomist as a participant \\
+            \hline
+            \textsc{Message}  &    This class represents the messages exchanged in forums and chats across the platform, with their sender, receivers and text  \\
+            \hline
+            \textsc{DiscussionMessage}  &    This class represents the messages belonging to forums. For every forum there is only one starting message, while all the other messages are considered as replies to that message  \\
+            \hline
+            \textsc{ChatMessage}  &    This class represents the messages belonging to request chats. For every request there is only one message of type “request ”(the first message), while all the other messages are considered as “reply”. Every chat message is delivered to all the participants of that chat (excluding the sender, of course)  \\
+            \hline
+            \textsc{DailyPlan}  &    This class represents the daily plans of the agronomists, with the date, the list of visits for that day and the list of unvisited farmers (once the plan has been executed)  \\
+            \hline
+            \textsc{Visit}  &    This class represents the visits that agronomists arrange for checking the farmers’ activity  \\
+            \hline
+            \textsc{Product}  &    This class represents the products that are inserted in the system by the farmers, with their type and their amount  \\
+            \hline
+            \textsc{Problem}  &    This class represents the problems that farmers may encounter, with their category and description  \\
+            \hline
+            \textsc{Incentive}  &    This class represents the incentives that are available for farmers, with their description, their value and their set of requirements. Incentives are modelled as some sort of vouchers  \\
+            \hline
+            \textsc{IncentiveAssigning}  &    This class represents the assignments of incentives, expressed as a mapping between “when”, “to who” and “from who” a certain incentive has been given  \\
+            \hline
+            \hline
+            \textsc{PerformingType}  &    This enumeration represents the performance type of farmers, giving information about how good a farmer is doing (for example: well-performing, normal-performing, under-performing)  \\
+            \hline
+            \textsc{SpecializationType}  &    This enumeration represents the type of agronomists’ specializations \\
+            \hline
+            \textsc{RequestType}  &    This enumeration represents the type of requests, which can be for help or for suggestions  \\
+            \hline
+            \textsc{ProblemCategory}  &    This enumeration represents the type of problems that farmers can face and insert into the system  \\
+            \hline
+        
+        \rowcolor{white}\caption{UML description table}
+        \label{tab:UML_description_table}
+    \end{longtable}
+\end{center}
+
+
+\subsubsection{User interfaces}
 \label{sect:user_interfaces}
 According to the assignment document, the system will interact with 3 different user classes: policy makers, farmers and agronomists. In order to be more accessible and to fulfill the user needs, the application will be supported by different devices. These users should interface to the service through electronic devices with an internet connection. Users that need to access the service will have the possibility to connect through:
 \begin{itemize}
