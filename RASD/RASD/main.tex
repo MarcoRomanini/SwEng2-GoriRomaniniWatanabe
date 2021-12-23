@@ -9,14 +9,24 @@
 
 %LOGO
 
-{\begin{table}[t!]
-\centering
-\begin{tabu} to \textwidth { X[1.3,r,p] X[1.7,l,p] }
-\textcolor{Blue}
-{\textbf{\small{}}} & \includegraphics[scale=0.5]{Images/PolimiLogo}
-\end{tabu}
-\end{table}}~\\ [7cm]
+% {\begin{table}[t!]
+% \centering
+% \begin{tabu} to \textwidth { X[1.3,r,p] X[1.7,l,p] }
+% \textcolor{Blue}
+% {\textbf{\small{}}} & \includegraphics[scale=0.5]{Images/PolimiLogo}
+% \end{tabu}
+% \end{table}}~\\ [7cm]
 
+\begin{tikzpicture}[remember picture,overlay]
+    \node [fill, rectangle, top color={myblue!40}, bottom color=white, anchor=north, minimum width=\paperwidth, minimum height=\paperheight] (box) at (current page.north){};
+  \end{tikzpicture}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=0.8\textwidth]{Images/PolimiLogo}
+\end{figure}
+
+\vfill
 %TITLE 
 
 % \begin{flushleft}
@@ -26,6 +36,9 @@
 \textcolor{myblue}{\textit{\textline[t]{Requirement Analysis}{\&}{Specification Document}}}
 \end{center}
 % \end{flushleft}
+
+\vfill
+\vfill
 
 \end{titlepage}
 
