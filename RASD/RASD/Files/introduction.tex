@@ -25,50 +25,32 @@ The state's main means of livelihood indeed heavily rely on agriculture, widely 
 The final aim of Telengana's government is collecting and analyzing agriculture related real-time conditions in order to monitor and support smallholders' activity resilience capacity against the above mentioned problems.
 
 \subsection{Purpose}
-\label{sec:purpose}
 The main purpose of the \hyperref[tab:acronymsTable]{S2B} is acting as a bridge between the main actors of the food systems: \textbf{policy makers}, \textbf{farmers} and \textbf{agronomists}. This can be achieved through the development of a multi-user unified platform that allows actors to share data. In particular, the system should guarantee the following needs and functionalities based on the user identity; we present them in the following list, extracted from the original assignment.
+\begin{description}[font=~\normalfont\scshape]
+    \item[\textbf{\textcolor{myblue}{Policy makers needs}}]\label{line:policyMakersPrivileges}
+    \hfill \begin{enumerate}[topsep=0pt,leftmargin=0pt]
+                \item \label{itm:first} Identify those farmers who are performing well, especially when they demonstrate to be resilient to meteorological adverse events, as these farmers will receive special incentives and will be asked to provide useful best practices to the others;
+                \item Identify those farmers who need to be helped as they are performing particularly badly;
+                \item Understand whether the steering initiatives carried out by agronomists with the help of good farmers produce significant results.
+            \end{enumerate}
+    \item[\textbf{\textcolor{myblue}{Farmers needs}}]\label{line:farmersPrivileges}
+    \hfill \begin{enumerate}[topsep=0pt,leftmargin=0pt, resume]
+                \item Visualize data relevant to them –-- for instance, weather forecasts, personalized suggestions concerning specific crops to plant or specific fertilizers to use --– based on their location and type of production;
+                \item Insert in the system data about their production and any problem they face;
+                \item Request for help and suggestions by agronomists and other farmers;
+                \item Create discussion forums with the other farmers.
+            \end{enumerate}
+    \item[\textbf{\textcolor{myblue}{Agronomist needs}}]\label{line:agronomistPrivileges}
+    \hfill \begin{enumerate}[topsep=0pt,leftmargin=0pt, resume]
+                \item Insert the area they are responsible of;
+                \item Receive information about requests for help and answer to these requests;
+                \item Visualize data concerning weather forecasts in the area and the best performing farmers in the area;
+                \item Visualize and update a daily plan to visit farms in the area, assuming that all farms must be visited at least twice a year, but those that are under-performing should be visited more often, depending on the type of problem they are facing;
+                \item Confirm the execution of the daily plan at the end of each day or specify the deviations from the plan.
+            \end{enumerate}
+\end{description}
 
-\subsection*{\textsc{\textcolor{myblue}{Policy makers needs}}}
-\label{sec:policyMakersNeeds}
-    \begin{enumerate}
-        \item \label{itm:first} Identify those farmers who are performing well, especially when they demonstrate to be resilient to meteorological adverse events, as these farmers will receive special incentives and will be asked to provide useful best practices to the others
-        \item \label{itm:badly_performing_farmers} Identify those farmers who need to be helped as they are performing particularly badly
-        \item Understand whether the steering initiatives carried out by agronomists with the help of good farmers produce significant results
-    \end{enumerate}
-\subsection*{\textsc{\textcolor{myblue}{Farmers needs}}}
-\label{sec:farmersNeeds}
-    \begin{enumerate}[resume]
-        \item \label{itm:data_relevant_to_farmers} Visualize data relevant to them –-- for instance, weather forecasts, personalized suggestions concerning specific crops to plant or specific fertilizers to use --– based on their location and type of production
-        \item Insert in the system data about their production and any problem they face
-        \item Request for help and suggestions by agronomists and other farmers
-        \item Create discussion forums with the other farmers
-    \end{enumerate}
-\subsection*{\textsc{\textcolor{myblue}{Agronomist needs}}}
-\label{sec:agronomistsNeeds}
-    \begin{enumerate}[resume]
-        \item Insert the area they are responsible of;
-        \item Receive information about requests for help and answer to these requests
-        \item Visualize data concerning weather forecasts in the area and the best performing farmers in the area
-        \item \label{itm:daily_plan} Visualize and update a daily plan to visit farms in the area, assuming that all farms must be visited at least twice a year, but those that are under-performing should be visited more often, depending on the type of problem they are facing
-        \item Confirm the execution of the daily plan at the end of each day or specify the deviations from the plan
-    \end{enumerate}
-
-Referring to point \ref{itm:first}, we assume that is policy maker responsibility, given information about well performing farmers by the system, to send incentives through the platform itself. 
-\newline
-
-% point 3 of the review notes
-Referring to points \ref{itm:first} and \ref{itm:badly_performing_farmers}, we assume that the system is able to provide a well desired evaluation of farmers performance status. The evaluation could be made based on their production rates, climate change resiliency and the location of their activity.
-\newline
-
-% point 2 of the review notes
-Referring to point \ref{itm:data_relevant_to_farmers}, we provide an informal definition of the information that is relevant for farmers in section \ref{sec:definitions}. We also assume that weather forecasts and personalized suggestion are internal behaviors of the \hyperref[tab:acronymsTable]{S2B}.
-\newline
-
-% point 1 of the review notes
-Referring to point \ref{itm:daily_plan}, we assume that the system automatically prepares for the agronomists some sketches of the daily plans. Agronomists are then allowed to edit them as they feel more comfortable.
-The suggestion could be made based on their current assigned farmers information (such as the performance status and the number of previous visits) and the areas they chosen to be responsible of.
-\newline
-
+Referring to point \ref{itm:first}, we assume that is policy maker responsibility, given information about well performing farmers by the system, to send incentives through the platform itself.
 Furthermore the system should make use of the already collected data such as:
 \begin{itemize}
     \item Data concerning meteorological short-term and long-term forecasts;
@@ -80,7 +62,7 @@ Furthermore the system should make use of the already collected data such as:
 \subsection{Scope}
 \label{sec:scope}
 The environment in which the platform will be involved will be the whole state of Telangana. Policy makers, farmers and agronomist will have the possibility to access the system through their personal devices. Furthermore, the devices responsible for gathering information, such as the ones of the water irrigation system and the humidity sensors, are supposed to be shared along the territory in a distributed system fashion.
-
+\newpage
 \subsubsection{World Phenomena}
 %what you write here is a comment that is not shown in the final text
 In this section the environment related phenomena that the S2B is supposed to face are introduced. As described in \cite{jackson_twatm}, for each phenomenon we specify if it is shared and who controls it.
@@ -161,11 +143,17 @@ In this section the environment related phenomena that the S2B is supposed to fa
     \caption{\label{tab:phenomena_table}Phenomena table}
     
 \end{table}
-
+\newpage
 \subsection{Goals}
-\label{sec:goals}
 According to \cite{jackson_dsfr} (revised), it is stakeholders' prerogative to determine the goals. Thus, in this section, in order to introduce some sort of atomicity of the goals, we derive a formal description of them from the requested functionalities presented in section \ref{sec:scope}. Furthermore, in order to justify the definition of each goal, we also map each of them to the related assignment exctract.
+\newline\newline
+\rref{link to requirements table}
+\newline\newline
+\daref{link to domain assumption table}
+\newline\newline
+\tmref{link to traceability matrix}
 
+\textbf{USE THE TERM SHOULD}
 \begin{table}[H]
     \setlength\arrayrulewidth{1pt}
     \centering
@@ -176,46 +164,43 @@ According to \cite{jackson_dsfr} (revised), it is stakeholders' prerogative to d
         \color{white}GX & \color{white}Definition   & \color{white}Cfr.\\
         \hline
         % POLICY MAKER GOALS
-        G.1                                               &     Policy maker should be able to see best performing and under-performing farmers in all the areas &   \hyperref[sec:policyMakersNeeds]{1,2} \\
+        G.1                                               &     Policy maker should be able to see the performance data of farmers &   \hyperref[line:policyMakersPrivileges]{1,2} \\
         \hline
-        G.2                                                      &  Policy maker should be able to handle incentives for high performing farmer   &    \hyperref[sec:policyMakersNeeds]{1}\\
+        G.2                                                      &  Policy maker should be able to assign incentives   &    \hyperref[line:policyMakersPrivileges]{1}\\
         \hline
-        G.3                                     &   Policy maker should be able to ask high performing farmers to write good practices   &   \hyperref[sec:policyMakersNeeds]{1} \\
+        G.3                                     &  Policy maker should be able to see the effectiveness of the steering initiatives carried out by farmers and agronomists  &   \hyperref[line:policyMakersPrivileges]{2,3} \\
         \hline
-        G.4                                              &   Policy maker should be able to compare the performance difference of farmer between the current data and the past data(before agronomist visits)     &   \hyperref[sec:policyMakersNeeds]{3} \\
+        G.4                                              &   Policy maker should be able to ask farmers to write good practices      &   \hyperref[line:policyMakersPrivileges]{1} \\
         \hline
         % FARMER GOALS
-        G.5                                  &   Farmers should be able to visualize data relevant to them, based on their location and type of product   &   \hyperref[sec:farmersNeeds]{4} \\
+        G.5                                  &   Farmers should be able to visualize data relevant to them, based on their location and type of product   &   \hyperref[line:farmersPrivileges]{4} \\
         \hline
-        G.6                                                      &  Farmers should be able to manipulate data about their production and any problem faced   &    \hyperref[sec:farmersNeeds]{5}\\% should it be splitted in 2 parts?
+        G.6                                                      &  Farmers should be able to manipulate data about their production and any problem faced   &    \hyperref[line:farmersPrivileges]{5}\\% should it be splitted in 2 parts?
         \hline
-        G.7                                               &     Farmers should be able to request for help and suggestions by agronomists and other farmers &   \hyperref[sec:farmersNeeds]{6} \\
+        G.7                                               &     Farmers should be able to request for help and suggestions by agronomists and other farmers &   \hyperref[line:farmersPrivileges]{6} \\
         \hline
-        G.8                                              &   Farmers should be able to create discussion forums with other farmers     &   \hyperref[sec:farmersNeeds]{7} \\
+        G.8                                              &   Farmers should be able to create discussion forums with other farmers     &   \hyperref[line:farmersPrivileges]{7} \\
         \hline
         % AGRONOMIST GOALS
-        G.9                                  &   Agronomists should be able to insert the area they are responsible for   &   \hyperref[sec:agronomistsNeeds]{8} \\
+        G.9                                  &   Agronomists should be able to insert the area they are responsible for   &   \hyperref[line:agronomistPrivileges]{8} \\
         \hline
-        G.10                                                      &  Agronomists should be able to receive information about requests for help and answer to these requests   &    \hyperref[sec:agronomistsNeeds]{9}\\% should it be splitted in 2 parts?
+        G.10                                                      &  Agronomists should be able to receive information about requests for help and answer to these requests   &    \hyperref[line:agronomistPrivileges]{9}\\% should it be splitted in 2 parts?
         \hline
-        G.11                                               &     Agronomists should be able to see best performing and under-performing farmers in the area &   \hyperref[sec:agronomistsNeeds]{11} \\
+        G.11                                               &     Agronomists should be able to see best performing and under-performing farmers in the area &   \hyperref[line:agronomistPrivileges]{10} \\
         \hline
-        G.12                                              &   Agronomists should be able to see data concerning weather forecasts in the area     &   \hyperref[sec:agronomistsNeeds]{10} \\
+        G.12                                              &   Agronomists should be able to see data concerning weather forecasts in the area     &   \hyperref[line:agronomistPrivileges]{10} \\
         \hline
-        G.13                                               &     Agronomists should be able to visualize and update a daily plan to visit farms in the area &   \hyperref[sec:agronomistsNeeds]{11} \\
+        G.13                                               &     Agronomists should be able to visualize and update a daily plan to visit farms in the area &   \hyperref[line:agronomistPrivileges]{11} \\
         \hline
-        G.14                                              &   Agronomists should be able to confirm the execution of the daily plan at the end of each day or specify the deviations from the plan     &   \hyperref[sec:agronomistsNeeds]{12} \\
+        G.14                                              &   Agronomists should be able to confirm the execution of the daily plan at the end of each day or specify the deviations from the plan     &   \hyperref[line:agronomistPrivileges]{12} \\
         \hline
     \end{tabular}
     
     \caption{\label{tab:goals}Goals table}
 \end{table}
 
-
-For each of them we provide the \textbf{traceability matrix} in section \ref{sec:traceability_matrix}.
-
+\newpage
 \subsection{Definitions, Acronyms, Abbreviations}
-\label{sec:def_acr_abr}
 In order to introduce some sort of coherence in an environment--- the physical world--- that is informal, we present in this section the sets of \textbf{definitions}, \textbf{acronyms} and \textbf{abbreviations} used in the following sections. These are supposed to be as more generic as possible, in order to provide more flexibility for the following phases of the Waterfall software lifecycle.
 
 It is important to agree in advance on the specific keywords and terms that signal the presence of specific entity. Following the convention defined in \cite{iso_ieee_standard}, we therefore adopt the following terms to identify and describe requirements, goals and domain assumptions.
@@ -228,7 +213,6 @@ It is important to agree in advance on the specific keywords and terms that sign
 \end{itemize}
 
 \subsubsection{Definitions}
-\label{sec:definitions}
 \begin{table}[H]
     \setlength\arrayrulewidth{1pt}
     \centering
@@ -250,11 +234,9 @@ It is important to agree in advance on the specific keywords and terms that sign
         \hline
         \textsc{Incentive}  &   With the term \textbf{incentive} we refer to some sort of voucher which can be given to farmers if they satisfy certain conditions \\
         \hline
-        \textsc{Farmer's relevant information}  &   The information that is considered to concern farmers: weather forecasts, personalized suggestion, soil humidity data, water irrigation system details, visits calendar of assigned agronomists, history of past faced problems and uploaded product information \\
-        \hline
     \end{tabular}
     
-    \caption{\label{tab:def}Table of definitions}
+    \caption{\label{tab:def_table}Table of definitions}
     
 \end{table}
 
@@ -306,105 +288,8 @@ It is important to agree in advance on the specific keywords and terms that sign
 % TODO Define verbs conventions of ISO/IEEE
 % TODO Requirements should be ranked for importance or stability (from Hans Van Vliet book)
 \subsection{Revision history}
-\label{sec:history}
-\begin{center}
-    \setlength\arrayrulewidth{1pt}
-    \rowcolors{2}{myblue!25}{white}
-    \begin{longtable}{ll}
-        
-        \hline
-        \rowcolor{myblue}\color{white}Date & \color{white}Description \\
-        \hline
-        29/10	&	World and Machine phenomena\\
-        \hline
-        31/10	&	UML	class diagram\\
-        \hline
-        10/11	&	Goals, Domain assumptions, Requirements	\\
-        \hline
-        17/11	&	UML	class diagram\\
-        \hline
-        19/11	&	Functional requirements	\\
-        \hline
-        22/11	&	Actors\\
-        	&	Perspective (interfaces)\\
-        	&	Interface requirements\\
-        \hline
-        24/11	&	Perspective (interfaces)		\\
-        	&	Software system attributes	\\
-        	&	Interface requirements	\\
-        	&	Functional requirements	\\
-        \hline
-        26/11	&	Performance requirements	\\
-        	&	Design constraints	\\
-        	&	Functional requirements\\
-        	&	Product functions	\\
-        	&	UI description	\\
-        \hline
-        29/11	&	Functional requirements	\\
-        	&	Farmer BPMN\\
-        \hline
-        1/12	&	Alloy code\\
-        	&	farmer sequence diagram	\\
-        	&	Users section introduction	\\
-        \hline
-        3/12	&	Goals, Domain assumptions, Requirements	\\
-        	&	Alloy code \\
-        	&	Farmers goals mapping\\
-        \hline
-        06/12	&	Alloy code	\\
-        	&	UML	\\
-        	&	UI description	\\
-        	&	Goals, Domain assumptions, Requirements		\\
-        	&	Introduction	\\
-        \hline
-        07/12	&	Functional Requirements (sequence diagrams, scenarios)\\
-        	&	UI design\\
-        	&	Sequence diagram	\\
-        	&	bibliography\\
-        	&	latex edits, acronyms table	\\
-        \hline
-        10/12	&	UML diagram	\\
-        	&	Functional Requirements \\
-        	&	Product functions\\
-        	&	Farmers scenarios	\\
-        	&	Use case diagram	\\
-        	&	Policy maker scenarios	\\
-        \hline
-        13/12	&	Architecture Structure (Microservices)	\\
-        \hline
-        15/12	&	BPMN\\
-        	&	Alloy code	\\
-        	&	Architecture Structure (Microservices)\\
-        	&	UML diagram		\\
-        	&	Goals, Domain assumptions, Requirements		\\
-        	&	Use case	\\
-        	&	transcribed goals and requirements\\
-     	    &	transcribed domain assumptions and traceability matrix  \\
-        \hline
-        17/12	&	UML description	\\
-        	&	Added Alloy code with assertion		\\
-        \hline
-        20/12	&	Functional requirements	\\
-        	&	Architecture Structure (Microservices)	\\
-        	&	Alloy code	\\
-        	&	UML diagram		\\
-        	&	Goals, Domain assumptions, Requirements\\
-        	&	Sequence diagram	\\
-        	&	Use cases	\\
-        	&	Alloy code transcription	\\
-        	&	Sequence diagram update		\\
-        	&	Introduction revise		\\
-        \hline
-        21/12 & Effort table \\
-         & Whole document review \\
-        \hline
-        
-        \rowcolor{white}\caption{\label{tab:history}History table}
-        
-    \end{longtable}
-\end{center}
+
 \subsection{Reference Documents}
-\label{sec:ref_docs}
 We present in this section the references we used to gather information about the good practices for the development of this document.
 \begingroup
 \renewcommand{\section}[2]{}%
@@ -420,36 +305,5 @@ We present in this section the references we used to gather information about th
 % ISO/IEE document
 % World/machine paper
 % RASD assignment document
-
-% 1.3 sec:goals
-%1.5 \ref{sec:def_acr_abr}
-% 1.6 \label{sec:ref_docs}
-
-%2.1 sec:prod_perspective
-% 2.2 sec:product_functions
-% 2.3 sec:actors
-% 2.4 sec:domain_assumptions
-
-% 3.1 sec:ex_interface_req
-% 3.2 sec:fun_req
-% 3.3 sec:per_req
-% 3.4 sec:design_constraints
-% 3.5 sec:sw_sys_attributes
-
 \subsection{Document structure}
 \label{sec:doc_struct}
-The overall document is organized in 5 main sections. For each of them we provide a brief explanation of the contents of their subsections, except for the current one.
-
-\subsection*{\textsc{\textcolor{myblue}{\ref{sect:introduction} Introduction}}}
-Here in section \ref{sec:purpose} we offer a brief description of the problem and required functionalities, with some of our assumptions about the terms used in the original assignment. In section \ref{sec:scope} we briefly describe the environment in which the \hyperref[tab:def]{S2B} will be involved and present the phenomena analysis table.
-In section \ref{sec:goals} a table of the required goals is presented and defined, while section \ref{sec:def_acr_abr} contains the list of definitions of terms and acronyms used along the document. Section \ref{sec:history} contains the history of reviewed section of the document during time passing. Finally, section \ref{sec:ref_docs} provides the list of useful sources that have been exploited to build the document.
-
-\subsection*{\textsc{\textcolor{myblue}{\ref{sect:overview} Overall description}}}
-This section offers a summary description about the overall organization of the system, the Hardware and Software constraints and the interfaces needed to get it work. In particular section \ref{sec:prod_perspective} proposes the UML high level class diagram structure of the application and a brief discussion about the entities contained in it. In section \ref{sec:product_functions} we provide a description of the main features offered by the application and the relatives BPMN diagrams for deeper understanding. The main actors that are supposed to interact with the application are defined in section \ref{sec:actors}, while in section \ref{sec:domain_assumptions} we define the list of domain assumptions.
-\subsection*{\textsc{\textcolor{myblue}{\ref{sect:requirements} Specific Requirements}}}
-In section \ref{sec:ex_interface_req} some mock-ups of the web and application \hyperref[tab:acronymsTable]{GUIs} are showed and described. Section \ref{sec:fun_req} represents the main portion of the document and contains the list of functional requirements described by means of actor's scenarios, use case diagrams, tables and sequence diagrams. Performance requirements are defined in section \ref{sec:per_req}, while in section \ref{sec:design_constraints} we present the design constraints. Finally in section \ref{sec:sw_sys_attributes} we provide the main expected qualitative properties the platform is required to hold.
-\subsection*{\textsc{\textcolor{myblue}{\ref{sect:alloy} Formal Analysis using Alloy}}}
-Finally in section \ldots
-
-\subsection*{\textsc{\textcolor{myblue}{\ref{sect:effort} Effort spent}}}
-Here we provide the table of the overall efforts building the documents since last update for each team member.
