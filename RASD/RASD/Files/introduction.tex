@@ -81,6 +81,8 @@ Furthermore the system should make use of the already collected data such as:
 \label{sec:scope}
 The environment in which the platform will be involved will be the whole state of Telangana. Policy makers, farmers and agronomist will have the possibility to access the system through their personal devices. Furthermore, the devices responsible for gathering information, such as the ones of the water irrigation system and the humidity sensors, are supposed to be shared along the territory in a distributed system fashion.
 
+\newpage
+
 \subsubsection{World Phenomena}
 %what you write here is a comment that is not shown in the final text
 In this section the environment related phenomena that the S2B is supposed to face are introduced. As described in \cite{jackson_twatm}, for each phenomenon we specify if it is shared and who controls it.
@@ -162,9 +164,11 @@ In this section the environment related phenomena that the S2B is supposed to fa
     
 \end{table}
 
+\newpage
+
 \subsection{Goals}
 \label{sec:goals}
-According to \cite{jackson_dsfr} (revised), it is stakeholders' prerogative to determine the goals. Thus, in this section, in order to introduce some sort of atomicity of the goals, we derive a formal description of them from the requested functionalities presented in section \ref{sec:scope}. Furthermore, in order to justify the definition of each goal, we also map each of them to the related assignment exctract.
+According to \cite{jackson_dsfr} (revised), it is stakeholders' prerogative to determine the goals. Thus, in this section, in order to introduce some sort of atomicity of the goals, we derive a formal description of them from the requested functionalities presented in section \ref{sec:scope}. Furthermore, in order to justify the definition of each goal, we also map each of them to the related assignment extract.
 
 \begin{table}[H]
     \setlength\arrayrulewidth{1pt}
@@ -180,9 +184,9 @@ According to \cite{jackson_dsfr} (revised), it is stakeholders' prerogative to d
         \hline
         G.2                                                      &  Policy maker should be able to handle incentives for high performing farmer   &    \hyperref[sec:policyMakersNeeds]{1}\\
         \hline
-        G.3                                     &   Policy maker should be able to ask high performing farmers to write good practices   &   \hyperref[sec:policyMakersNeeds]{1} \\
+        G.3                                     &   Policy maker should be able to ask high performing farmers to write good practices   &   \hyperref[sec:policyMakersNeeds]{2,3} \\
         \hline
-        G.4                                              &   Policy maker should be able to compare the performance difference of farmer between the current data and the past data(before agronomist visits)     &   \hyperref[sec:policyMakersNeeds]{3} \\
+        G.4                                              &   Policy maker should be able to compare the performance difference of farmer between the current data and the past data(before agronomist visits)     &   \hyperref[sec:policyMakersNeeds]{1} \\
         \hline
         % FARMER GOALS
         G.5                                  &   Farmers should be able to visualize data relevant to them, based on their location and type of product   &   \hyperref[sec:farmersNeeds]{4} \\
@@ -198,7 +202,7 @@ According to \cite{jackson_dsfr} (revised), it is stakeholders' prerogative to d
         \hline
         G.10                                                      &  Agronomists should be able to receive information about requests for help and answer to these requests   &    \hyperref[sec:agronomistsNeeds]{9}\\% should it be splitted in 2 parts?
         \hline
-        G.11                                               &     Agronomists should be able to see best performing and under-performing farmers in the area &   \hyperref[sec:agronomistsNeeds]{11} \\
+        G.11                                               &     Agronomists should be able to see best performing and under-performing farmers in the area &   \hyperref[sec:agronomistsNeeds]{10} \\
         \hline
         G.12                                              &   Agronomists should be able to see data concerning weather forecasts in the area     &   \hyperref[sec:agronomistsNeeds]{10} \\
         \hline
@@ -257,6 +261,8 @@ It is important to agree in advance on the specific keywords and terms that sign
     \caption{\label{tab:def}Table of definitions}
     
 \end{table}
+
+\newpage
 
 % Synonims: system, application, service
 \subsubsection{Acronyms}

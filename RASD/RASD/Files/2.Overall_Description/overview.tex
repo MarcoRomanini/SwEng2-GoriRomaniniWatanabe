@@ -83,10 +83,18 @@ According to the assignment document, the system will interact with 3 different 
 \subsubsection{Software interfaces}
 In order to improve software flexibility and quality, \hyperref[tab:acronymsTable]{DREAM} will use a set of external software interfaces. Rather than providing names of real specific services, we consider reasonable referring to them as functionalities to be later defined in the design phase:
 \begin{description}[font=~\normalfont\scshape]
-    \item[\textbf{\textcolor{myblue}{universal logins}}] \hfill \\login \hyperref[tab:acronymsTable]{APIs} that also provide access by using their Facebook, Twitter, or Google profile login details are good candidates in order to quickly autenthicate the user while guaranteeing security;
-    \item[\textbf{\textcolor{myblue}{big data manipulation}}] \hfill \\since a wide quantity of information needs to be recorded and accessed in a distributed system fashion, \hyperref[tab:acronymsTable]{DBMS} \hyperref[tab:acronymsTable]{APIs} are necessary for data extraction performances optimization;
-    \item[\textbf{\textcolor{myblue}{third party payment processing}}] \hfill \\for guaranteeing secure payment transactions online payment \hyperref[tab:acronymsTable]{APIs} such as PayPal should be used;
-    \item[\textbf{\textcolor{myblue}{third party data science research}}] \hfill \\% TODO
+    \item[\textbf{\textcolor{myblue}{universal logins}}] \hfill \\Login \hyperref[tab:acronymsTable]{APIs} that also provide access by using their Facebook, Twitter, or Google profile login details are good candidates in order to quickly authenticate the user while guaranteeing security.
+    \item[\textbf{\textcolor{myblue}{big data manipulation}}] \hfill \\Since a wide quantity of information needs to be recorded and accessed in a distributed system fashion, \hyperref[tab:acronymsTable]{DBMS} \hyperref[tab:acronymsTable]{APIs} are necessary for data extraction performances optimization.
+    \item[\textbf{\textcolor{myblue}{third party data sets access}}] \hfill \\
+    The system will use open data sets to obtain information about weather forecasts, soil moisture, water irrigation, humidity and so on.
+    \item[\textbf{\textcolor{myblue}{farmers evaluation}}] \hfill \\
+    To evaluate the performance of farmers, the system relies on external \hyperref[tab:acronymsTable]{APIs} that use specific algorithms to understand how good a farmer is doing (positive or negative deviance).
+    \item[\textbf{\textcolor{myblue}{incentives management}}] \hfill \\
+    The system will rely on an external service for the definition of incentives and for their money collection by the farmers.
+    \item[\textbf{\textcolor{myblue}{weather types categorization}}] \hfill \\
+    To define the weather type categories of the areas, the system will use some sort of \hyperref[tab:acronymsTable]{API} to analyse areas characteristics and tendencies in order to define shared phenomena. 
+    
+    
 \end{description}
 
 \subsubsection{Hardware interfaces \& constraints}
@@ -158,13 +166,13 @@ This functionality is used by policy makers. The policy maker clicks the farmer'
 \subsection{Actors}
 \label{sec:actors}
 In this section are defined the professional figures which, according to the assignment, the system will interact with: \textbf{policy makers}, \textbf{farmers} and \textbf{agronomists}. In order to avoid redundancy, we also introduce the concept of \textbf{user} as an abstract entity that collects their common properties. As shown in figure \ref{fig:uml_class_diagram}, they inherit user's properties.
-\subsubsection{User}
+\subsubsection*{User}
 It is a person who wants to use the service. In order to access the system, it has to register to the platform (the first time) and be logged in (the following times). It also requires an Internet connection to properly use the system.
-\subsubsection{Policy maker}
+\subsubsection*{Policy maker}
 It is someone interested in the overall performing situation of Telangana’s farmers (e.g., Telangana’s government). It is able to surf on \hyperref[tab:acronymsTable]{DREAM}’s website. It uses the service to visualise information about well and under-performing farmers and to understand if the steering initiatives are producing significant results. We assume that those who register to the platform as policy makers are some sort of "authorized" people (for example, people working for public institutions or government) since they are allowed to actively assign incentives.
-\subsubsection{Farmer}
+\subsubsection*{Farmer}
 It is a farmer of Telangana. It is able to surf on \hyperref[tab:acronymsTable]{DREAM}’s website (or to use the smartphone application). It uses the service in order to discuss with other farmers, to send requests for help to an agronomist, to insert product information, to know when it will receive a visit from an agronomist. It takes advantage in using the system because it can receive incentives if it is well-performing or can receive help if it is under-performing.
-\subsubsection{Agronomist}
+\subsubsection*{Agronomist}
 It is an agronomist of Telangana. It is able to surf on \hyperref[tab:acronymsTable]{DREAM}’s website (or to use the smartphone application). It uses the service to answer farmers' requests for help, to visualise data concerning their areas (weather forecasts, well and under-performing farmers, problems encountered by farmers), to visualise and update a daily plan to visit farms in the area, to confirm the execution or specify deviation from the daily plan.
 
 \newpage
