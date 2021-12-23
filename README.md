@@ -21,7 +21,7 @@ We proposed a solution can be used as
 # Software used
 * Overleaf: Latex editor
 
-* Pencil: mockup designer website
+* Pencil: mockup user interface
 
 * sequencediagram.org: sequence diagrams
 
