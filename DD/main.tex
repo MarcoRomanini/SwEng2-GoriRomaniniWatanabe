@@ -1,0 +1,165 @@
+\input{commandsFile}
+
+\begin{document}
+
+%TITLE PAGE
+
+\begin{titlepage}
+
+
+%LOGO
+
+% {\begin{table}[t!]
+% \centering
+% \begin{tabu} to \textwidth { X[1.3,r,p] X[1.7,l,p] }
+% \textcolor{Blue}
+% {\textbf{\small{}}} & \includegraphics[scale=0.5]{Images/PolimiLogo}
+% \end{tabu}
+% \end{table}}~\\ [7cm]
+
+\begin{tikzpicture}[remember picture,overlay]
+    \node [fill, rectangle, top color={myblue!30}, bottom color=white, anchor=north, minimum width=\paperwidth, minimum height=\paperheight] (box) at (current page.north){};
+  \end{tikzpicture}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=\textwidth]{Images/PolimiLogo}
+\end{figure}
+
+\vfill
+\vfill
+%TITLE 
+
+% \begin{flushleft}
+\begin{center}
+%Replace the text string with your title
+% \textcolor{Blue}{\textbf{\Huge{Requirement Analysis\\ and \\Specification Document}}}
+% \textcolor{myblue}{\textit{\textline[t]{Requirement Analysis}{\&}{Specification Document}}}
+\textcolor{myblue}{\textit{\Huge{\textbf{Design Document}}}}
+\end{center}
+% \end{flushleft}
+
+
+
+% \begin{figure}[H]
+% 	\centering
+%     \includegraphics[width=0.3\textwidth]{Images/logo.pdf}
+% \end{figure}
+
+% \begin{center}
+%     \textcolor{myblue}{\Huge{\textbf{DREAM}}}
+% \end{center}
+
+\vfill
+
+\begin{center}
+    \begin{adjustbox}{width=0.4\textwidth}
+        \begin{tikzpicture}
+        \node [circle, minimum width = 7cm,
+            path picture = {
+                \node [] at (path picture bounding box.center) {
+                \includegraphics[scale=0.12]{Images/logo/logo.jpg}};
+                \node [] at (path picture bounding box.center) {{
+                \transparent{0.8}\includegraphics[scale=0.4]{Images/logo/onu.png}}};
+            }] {};
+        % \path 
+            % [rotate=125,postaction={decoration={text along path,text={|\huge\bfseries|\ DREAM - Data-dRiven prEdictive fArMing -},
+            %   text align=fit to path,reverse path}, decorate}]
+            %  circle[radius=3cm] ; 
+        \path 
+            [rotate=232,postaction={decoration={text along path,text={|\huge\bfseries|\ Data-dRiven prEdictive fArMing {\Large\textbullet} {\myrotate{M}}{\myrotate{A}}{\myrotate{E}}{\myrotate{R}}{\myrotate{D}} {\Large\textbullet}}, text align=fit to path,reverse path}, decorate}]
+            circle[radius=4cm];
+        \end{tikzpicture}
+    \end{adjustbox}
+\end{center}
+
+\vfill
+\end{titlepage}
+
+
+%Define deliverable specific info
+%Replace cell contents where needed
+% \begin{table}[h!]
+% \begin{tabu} to \textwidth { X[0.2,r,p] X[0.7,l,p] }
+% \hline
+
+% \textbf{Deliverable:} & RASD\\
+% \textbf{Title:} & Requirement Analysis and Verification Document \\
+% \textbf{Authors:} & Leonardo Gori, Marco Romanini, Yui Watanabe \\
+% \textbf{Version:} & 1.0 \\ 
+% \textbf{Date:} & 31-January-2016 \\
+% \textbf{Download page:} & https://github.com/MarcoRomanini/GoriRomaniniWatanabe \\
+% \textbf{Copyright:} & Copyright © 2017, Leonardo Gori, Marco Romanini, Yui Watanabe – All rights reserved \\
+% \hline
+% \end{tabu}
+% \end{table}
+
+
+\begin{table}[H]
+    \setlength\arrayrulewidth{1pt}
+    \centering
+    \rowcolors{1}{myblue!25}{white}
+    \begin{tabular}{rl}
+        \hline
+        \textbf{Deliverable:} & DD\\
+        \textbf{Title:} & Design Document \\
+        \textbf{Authors:} & Leonardo Gori, Marco Romanini, Yui Watanabe \\
+        \textbf{Version:} & 1.0 \\ 
+        \textbf{Date:} & \today \\
+        \textbf{Download page:} & \url{https://github.com/MarcoRomanini/GoriRomaniniWatanabe} \\
+        \textbf{Copyright:} & Copyright © 2021, Leonardo Gori, Marco Romanini, Yui Watanabe – All rights reserved \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\setcounter{page}{2}
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+\newpage
+\addcontentsline{toc}{section}{Table of Contents}
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+\clearpage
+{\color{Blue}{\section{\label{sect:introduction}Introduction}}}
+
+\input{Files/introduction}
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+\clearpage
+{\color{Blue}{\section{\label{sect:architectural_design}Architectural design}}}
+
+\input{Files/2.Architectural design/main_design}
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+\clearpage
+{\color{Blue}{\section{\label{sect:user_interface_design}User interface design}}}
+
+\input{Files/3.User interface design/main_uid}
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+\clearpage
+{\color{Blue}{\section{\label{sect:req_traceability}Requirements traceability}}}
+
+\input{Files/4.req_traceability/req_traceability}
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+\clearpage
+{\color{Blue}{\section{\label{sect:impl_int_test}Implementation, integration and testing plan}}}
+
+\input{Files/5.IIT_plan/main_IIT}
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+\clearpage
+{\color{Blue}{\section{\label{sect:effort}Effort Spent}}}
+
+\input{Files/effort}
+
+
+\end{document}
