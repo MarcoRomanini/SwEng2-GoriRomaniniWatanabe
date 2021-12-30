@@ -2,7 +2,7 @@
 It is a course assignment of "Software Engineering 2" at Politecnico di Milano (2021/2022).
 
 
-Teacher Tamburri Damian Andrew
+Professor Tamburri Damian Andrew
 
 # Project description
 Aiming for making a contribution on a project of [Data4Policy](https://github.com/UNDP-India/Data4Policy) from UNDP-India.
@@ -14,14 +14,14 @@ strengthen data-driven policy making in the state of Telangana, India.
 
 We proposed a solution can be used as
 
-* web application for farmer
+* web application for policy maker
 
-* mobile application for policy maker, agronomist
+* mobile application for farmer, agronomist
 
 # Software used
 * Overleaf: Latex editor
 
-* Pencil: mockup user interface
+* Figma: mockup user interface
 
 * sequencediagram.org: sequence diagrams
 
