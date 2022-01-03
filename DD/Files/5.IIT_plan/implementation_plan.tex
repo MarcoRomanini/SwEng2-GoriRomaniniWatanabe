@@ -1,3 +1,20 @@
 % ############ 5.1) IMPLEMENTATION PLAN ########################
 
-bla bla bla
+In this section we present all the preliminary considerations needed to implement and test the S2B from the beginning of his life.
+\newline
+\newline
+The S2B will be divided as follows:
+\begin{itemize}
+    \item Client (Web App and Mobile App)
+    \item API gateway (with Discovery Service)
+    \item Authorization Server
+    \item Microservices
+    \item External services
+\end{itemize}
+ 
+A bottom-up approach is suggested to implement these elements, in order to avoid stub structures that would be more difficult to implement and test. An incremental integration facilitates bug tracking and generates working software quickly during the software life cycle.
+
+Given the Microservice Architecture, each microservice can (and should) be developed independently, starting from the ones that are more critical.
+\newline
+
+Unit testing should be done before integrating a component with the rest of the system, in order to ensure that the offered functionalities work correctly in an isolated environment. After the integration, integration tests should follow to guarantee the correct behavior of the system at each step. These tests should not only check the interactions of the new component with the old elements, but should also guarantee that previous checked behaviours between old components have not been changed or compromised.

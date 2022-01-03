@@ -1,0 +1,12 @@
+% ############### 2.7) OTHER DESIGN DECISIONS ####################
+
+\subsubsection{Scale-out}
+This method consists of cloning the nodes in which we expect to have a bottleneck, in order to increase the overall availability and scalability of the system. In particular, elements such as the API gateway, the Authorization Server and the Discovery Service should necessarily  be replicated since they represent a single point of failure. 
+
+Also the microservices can be replicated: the managing process of redirecting the incoming requests to the node with the lowest workload could be done in the load balancer already implemented in the Discovery Service (see 2.6.11 for more details).
+
+\subsubsection{Thin and thick client}
+The web application will be the thin client. This means that it will have only presentation duties, with no business logic inside. In this way, the machines that run the web application are not required to have high computational power. However, a stable internet connection is required to guarantee the proper usage of the application.
+
+The mobile application, instead, will be the thick client. In fact, it is reasonable to save useful information on the local memory of the device (for example chats) in order to avoid continuous requests to the platform (less computational load) and to guarantee also some functionalities when the Internet connection is not available.
+

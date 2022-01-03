@@ -1,3 +1,87 @@
-% ############### 2.7) ARCHITECTURAL STYLES AND PATTERNS ####################
+% ############### 2.6) ARCHITECTURAL STYLES AND PATTERNS ####################
 
-bla bla bla
+\subsubsection{Microservice Architecture}
+The S2B will be implemented using Microservice architecture, an architectural style that breaks the business logic into small and independent modules. 
+\newline
+\newline
+Adopting a microservice-based approach grants many benefits:
+\begin{itemize}
+    \item modularity: this makes the software easier to understand, develop, test, and become more resilient to architecture erosion; this aspect is very important for complex systems such as DREAM.
+    \item scalability: since microservices are implemented and deployed independently of each other (i.e. they run within independent processes), they can be monitored and scaled independently; scalability is a crucial aspect for DREAM, considering the wide user base and the possibility of future expansions.
+    \item distributed development: development can be parallelized, enabling small autonomous teams to develop, deploy and scale their respective services independently; it also allows the architecture of an individual service to emerge through continuous refactoring; in general, microservice-based architectures facilitate continuous integration, continuous delivery and deployment.
+    \item digital public good fitting: since DREAM tries to follow the Digital Public Good principles (being the product of a United Nations initiative), a microservice architecture enables the system to be well-structured and to adopt open APIs with great flexibility.
+\end{itemize}
+
+\subsubsection{RESTful Architecture}
+The S2B will adopt the REST (Representational state transfer) architecture, which is based on the concept of stateless sessions and connections. Since each application is designed as an independent service, REST is a valuable architectural style for microservices, thanks to its simplicity, flexibility, and scalability. 
+
+One of the strongest advantages of REST for microservices is that services can communicate without requiring internal knowledge of one another. Furthermore, in RESTful microservices, APIs are standardized according to the OpenAPI Specification, which provides a documented contract for how services are expected to communicate across ongoing development.
+
+\subsubsection{API Gateway}
+The API gateway pattern is very often used in Microservice architecture to handle the complexity of a distributed and fragmented system. The API gateway represents the single entry point for all clients. It handles requests in one of two ways: some requests are simply proxied/routed to the appropriate service, while other requests are fanned out to multiple services. 
+
+Moreover, rather than provide a one-size-fits-all style API, the API gateway can expose a different API for each client (i.e. Web app API gateway, Mobile API gateway, Public API gateway). This pattern allows to simplify the client’s logic by hiding the microservice structure internally and by handling multiple service calls server-side.
+
+\subsubsection{Event Sourcing}
+Given the fragmented nature of microservices, a service must atomically update the database and send messages in order to avoid data inconsistencies and bugs.  Event sourcing persists the state of a business entity as a sequence of state-changing events. Whenever the state of a business entity changes, a new event is appended to the list of events. The application can reconstruct an entity’s current state by replaying the events.
+
+Applications persist events in an event store, which is a database of events. The store has an API for adding and retrieving an entity’s events. The event store also behaves like a message broker. It provides an API that enables services to subscribe to events. When a service saves an event in the event store, it is delivered to all interested subscribers.
+
+This particular pattern is required from other patterns used in the overall database management process.
+
+\subsubsection{Domain Event}
+Since a service often needs to publish events when it updates its data, the Domain Event pattern is used to organize the business logic of a service as a collection of DDD (Domain-Driven Design) aggregates that emit domain events when they are created or updated. The service publishes these domain events so that they can be consumed by other services. 
+
+This pattern is required from other patterns used in the overall database management process, such as CQRS and Saga.
+
+\subsubsection{Database per Service}
+The Database per Service pattern is used to keep each microservice’s persistent data private to that service and accessible only via its API. In this way, the service’s database is effectively part of the implementation of that service and it cannot be accessed directly by other services.
+
+Depending on the resources available for the real deployment of the system, there are different ways to keep a service’s persistent data private:
+\newline
+- Private-tables-per-service: each service owns a set of tables that must only be accessed by that service
+\newline
+- Schema-per-service: each service has a database schema that’s private to that service
+\newline
+- Database-server-per-service: each service has its own database server
+
+It is a good idea to create barriers that enforce this modularity. Without some kind of barrier to enforce encapsulation, developers may be tempted to bypass a service’s API and access its data directly.
+
+In this document we assumed a database-server-per-service approach.
+
+\subsubsection{Saga}
+This pattern implements each business transaction that spans multiple services as a saga. A saga is a sequence of local transactions. Each local transaction updates the database and publishes a message or event to trigger the next local transaction in the saga. 
+
+If a local transaction fails because it violates a business rule, then the saga executes a series of compensating transactions that undo the changes that were made by the preceding local transactions.
+
+To coordinate these sagas, a choreography approach may be chosen: each local transaction publishes domain events that trigger local transactions in other services.
+
+The Saga pattern enables the application to maintain data consistency across multiple services without using distributed transactions.
+
+\subsubsection{CQRS (Command Query Responsibility Segregation)}
+Given the fragmented nature of microservices, it is no longer straightforward to implement queries that join data from multiple services. 
+
+The Command Query Responsibility Segregation (CQRS) pattern defines a view database, which is a read-only replica that is designed to support that query. The application keeps the replica up to data by subscribing to Domain events published by the service that own the data. 
+
+This pattern works together with other patterns in the overall database management process.
+
+\subsubsection{Access Token}
+The Access Token pattern is used for security reasons, in order to communicate the identity of the requestor to the services that handle the request. The API Gateway authenticates the request through an Authorization server and passes an access token (e.g. JSON Web Token) that securely identifies the requestor in each request to the services. 
+
+A service can include the access token in requests it makes to other services. In this way, the identity of the requestor is securely passed around the system and the services can verify that the requestor is authorized to perform a specific operation.
+
+\subsubsection{Circuit Breaker}
+The Circuit Breaker is used to efficiently handle synchronous calls to microservices in order to prevent a network or service failure from cascading to other services.
+A service client invokes a remote service via a proxy. When the number of consecutive failures crosses a threshold, the circuit breaker trips, and for the duration of a timeout period all attempts to invoke the remote service will fail immediately. After the timeout expires the circuit breaker allows a limited number of test requests to pass through. If those requests succeed the circuit breaker resumes normal operation. Otherwise, if there is a failure the timeout period begins again.
+
+This is due to the fact that, when one service synchronously invokes another, there is always the possibility that the other service is unavailable or is exhibiting such high latency it is essentially unusable, causing the caller to waste resources in the meanwhile.
+
+\subsubsection{Server-side Discovery}
+The Server-side Discovery pattern is used to manage the virtualized or containerized environment in which the microservice-based application runs, where the number of instances of a service and their locations changes dynamically.
+
+With this pattern, when making a request to a service, the caller makes a request via a router (a.k.a load balancer) that runs at a well known location. The router queries a service registry, which might be built into the router, and forwards the request to an available service instance.
+
+This pattern allows to keep the client code simpler, since it does not have to deal with discovery. In addition, the possibility of using virtualization inside the system’s modules increases the availability and the scalability of the software since it is possible to dynamically generate new service instances when needed.
+
+\subsubsection{Client-side UI composition}
+The Client-side UI composition pattern is used to implement a UI screen or page that displays data from multiple services. Different teams develop a client-side UI component (i.e. AngularJS directive) that implements the region of the page/screen for their service. A UI team is responsible for implementing the page skeletons that build pages/screens by composing multiple, service-specific UI components. 
