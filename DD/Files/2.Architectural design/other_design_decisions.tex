@@ -10,3 +10,17 @@ The web application will be the thin client. This means that it will have only p
 
 The mobile application, instead, will be the thick client. In fact, it is reasonable to save useful information on the local memory of the device (for example chats) in order to avoid continuous requests to the platform (less computational load) and to guarantee also some functionalities when the Internet connection is not available.
 
+\subsubsection{Client-side UI composition (for the future)}
+As mentioned in the Monolithic front-end paragraph (section 2.6.12), we suggest a future transition to micro front-ends, which can be achieved by the Client-side UI composition pattern. This pattern will be used to implement a UI screen or page that displays data from multiple services. 
+
+Different teams will develop a client-side UI component (i.e. AngularJS directive) that implements the region of the page/screen for their service. A UI team will be responsible for implementing the page skeletons that build pages/screens by composing multiple, service-specific UI components.
+
+\subsubsection{External APIs and Datasets}
+The system will interact with external interfaces and services, in particular with:
+\begin{itemize}
+    \item IdP providers (such as Google, Facebook, etc.) to simplify the process of user registration
+    \item open datasets that collect information from the territory about weather forecasts, soil moisture, water irrigation, humidity, wildfires, etc. through sensors and satellite technologies
+    \item evaluating algorithms to understand the performance of farmers (positive or negative deviance)
+    \item incentives companies to manage the definition and collection of the vouchers that are assigned to farmers
+    \item weather analysis algorithms to categorize the different weather types and characteristics of the areas, in order to support more specific personalized suggestions and statistics
+\end{itemize}

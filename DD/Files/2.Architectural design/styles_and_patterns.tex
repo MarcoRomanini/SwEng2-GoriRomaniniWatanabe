@@ -83,5 +83,5 @@ With this pattern, when making a request to a service, the caller makes a reques
 
 This pattern allows to keep the client code simpler, since it does not have to deal with discovery. In addition, the possibility of using virtualization inside the system’s modules increases the availability and the scalability of the software since it is possible to dynamically generate new service instances when needed.
 
-\subsubsection{Client-side UI composition}
-The Client-side UI composition pattern is used to implement a UI screen or page that displays data from multiple services. Different teams develop a client-side UI component (i.e. AngularJS directive) that implements the region of the page/screen for their service. A UI team is responsible for implementing the page skeletons that build pages/screens by composing multiple, service-specific UI components. 
+\subsubsection{Monolithic front-end}
+For the first implementation and deployment of the system, we decided to adopt a monolithic front-end that handles the calls to the system and puts together all the information gathered by querying the platform, thanks to its simplicity and easy deployment. A future implementation of micro front-ends is suggested in order to guarantee scalability also on the client side, increasing however the complexity of the software, but assuring easier updates for long-term operations. For this particular transition, the user experience could be retrieved through some sort of feedback mechanism in order to develop the most suitable application possible.
