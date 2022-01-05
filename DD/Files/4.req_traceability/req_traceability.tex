@@ -1,1 +1,16 @@
 (possible) requirements summary, requirements to component mapping
+
+In addition, also the software system attributes (described in the RASD) are guaranteed by the architectural design choices made and explained in this document. 
+
+In particular:
+\begin{itemize}
+    \item \textbf{Usability}: it is achieved through a simple and intuitive interface, as shown in section 3. The possible choices are clearly presented to the user, both in the mobile app and in the web application. With this simple type of interface, the application could be used by all types of users, for example also by elders and by people that are not very experienced with electronic devices.
+    
+    \item \textbf{Reliability and Availability}: they are accomplished through replication and the subdivision in microservices. Thanks to modularity and low coupling, possible problems are limited to a single microservice, without affecting others. Moreover, the replication of nodes allows the system to be even more fault tolerant, especially in critical elements such as the API gateway, the Authorization server, the Discovery Service and the shared read-only database. 
+
+    \item \textbf{Security}: it is guaranteed through the Authorization Server and the Access Token pattern. Since the API gateway represents a single point of entrance, the identity of a user can be checked before forwarding his request to the microservices. Moreover, since the access token is passed around the system together with the request, a Role Based Access Protocol (RBAC) could be adopted because the information about the role of a user can be put inside the token. In addition, communication running on HTTP is encrypted thanks to protocols such as HTTPS and SSL.
+
+    \item \textbf{Portability}: it is achieved through the implementation of a web application and the existence of an API gateway. The lightweight web application allows the system to be accessed from any device provided with an internet browser. The API gateway, instead, allows the development of a mobile app for different operating systems (mainly Android and iOS) thanks to the fact that it offers a dedicated interface for each client type, guaranteeing compatibility and providing additional elasticity to the developers.
+
+    \item \textbf{Maintainability and Scalability}: they are accomplished through the Microservice architecture itself. A microservice-based approach grants high modularity and low coupling, with independent components that are easier to maintain, test and fix. Microservices also grant high scalability because new modules can constantly be added to the system for future upgrades, introducing new functionalities, without affecting the behaviour of the other components of the application.
+\end{itemize}
