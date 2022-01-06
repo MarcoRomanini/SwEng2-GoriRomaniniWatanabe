@@ -1,5 +1,138 @@
 (possible) requirements summary, requirements to component mapping
 
+This section provides a visual representation of the relationship between micro-services (defined in section \ref{sec:component_view}) and requirements presented in the \href{https://github.com/MarcoRomanini/GoriRomaniniWatanabe/tree/main/DeliveryFolder}{RASD} document (\S 3.2) (please refer always to the latest version).
+
+\begin{table}[H]
+    \setlength\arrayrulewidth{1pt}
+    \centering
+    \rowcolors{2}{white}{myblue!25}
+    \begin{tabular}{|l|c|}
+        \rowcolor{myblue}
+        \hline
+        \color{white}MX & \color{white}Micro-service\\
+        \hline
+        % USER RELATED PHENOMENA
+        M1      &   Login\\
+        \hline
+        M2      &   Sign up\\
+        \hline
+        M3      &   Daily plan\\
+        \hline
+        M4      &   Help request\\
+        \hline
+        M5      &   Suggestion request\\
+        \hline
+        M6      &   Forum\\
+        \hline
+        M7      &   Good practice\\
+        \hline
+        M8      &   Problem information\\
+        \hline
+        M9      &   Production information\\
+        \hline
+        M10      &   Soil moisture\\
+        \hline
+        M11      &   Water irrigation system\\
+        \hline
+        M12      &   Wildfire\\
+        \hline
+        M13      &   Farmer performance quality\\
+        \hline
+        M14      &   Personalized suggestion\\
+        \hline
+        M15      &   Weather forecasts\\
+        \hline
+        M16      &   Incentive\\
+        \hline
+        M17      &   Water irrigation system\\
+        \hline
+    \end{tabular}
+    
+    \caption{\label{tab:microservices_table}Micro-services table}
+    
+\end{table}
+
+
+
+
+% \begin{table}[H]
+%     \setlength\arrayrulewidth{1pt}
+%     \centering
+%     % \rowcolors{2}{white}{myblue!25}
+%     \begin{adjustbox}{width=\textwidth}
+%         \begin{tabular}{|>{\columncolor{myblue}}c|ccccccccccccccccc|}
+%             \rowcolor{myblue}
+            
+            
+%         \end{tabular}
+%     \end{adjustbox}
+    
+%     \caption{\label{tab:requirements matrix}Micro-services table}
+    
+% \end{table}
+
+
+\begin{center}
+    \setlength\arrayrulewidth{1pt}
+    % \rowcolors{2}{white}{myblue!25}
+    \footnotesize
+    \begin{longtable}{|>{\columncolor{myblue}}c|ccccccccccccccccc|}
+            
+            \hline
+            \rowcolor{myblue}& \color{white}M1 & \color{white}M2 & \color{white}M3 & \color{white}M4 & \color{white}M5 & \color{white}M6 & \color{white}M7 & \color{white}M8 & \color{white}M9 & \color{white}M10 & \color{white}M11 & \color{white}M12 &
+            \color{white}M13 & \color{white}M14 &
+            \color{white}M15 & \color{white}M16 &
+            \color{white}M17\\
+            \hline
+            % USER RELATED PHENOMENA
+            \color{white} R1 &  & \cellcolor{myblue!25}\checkmark &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+            \hline
+            \color{white} R2 &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  \\
+            \hline
+            \color{white} R3 &  &  &  &  &  &  &  &  &  &  &  &  & ? &  &  &  &  \\
+            \hline
+            \color{white} R4 &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  \\
+            \hline
+            \color{white} R5 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  \\
+            \hline
+            \color{white} R6 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  \\
+            \hline
+            \color{white} R7 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  &  &  &  &  \\
+            \hline
+            \color{white} R8 &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  \\
+            \hline
+            \color{white} R9 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  &  &  &  &  \\
+            \hline
+            \color{white} R10 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  \\
+            \hline
+            \color{white} R11 &  & \cellcolor{myblue!25}\checkmark &  & \cellcolor{myblue!25}\checkmark &  & \cellcolor{myblue!25}\checkmark & \cellcolor{myblue!25}\checkmark & \cellcolor{myblue!25}\checkmark & \cellcolor{myblue!25}\checkmark & \cellcolor{myblue!25}\checkmark & \cellcolor{myblue!25}\checkmark &  &  &  &  &  &  \\
+            \hline
+            \color{white} R12 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  \\
+            \hline
+            \color{white} R13 &  &  &  &  &  &  &  &  &  &  &  &  & ? &  &  &  &  \\
+            \hline
+            \color{white} R14 &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  \\
+            \hline
+            \color{white} R15 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  \\
+            \hline
+            \color{white} R16 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  \\
+            \hline
+            \color{white} R17 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  &  &  &  &  \\
+            \hline
+            \color{white} R18 &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  \\
+            \hline
+            \color{white} R19 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  &  &  &  &  \\
+            \hline
+            \color{white} R10 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  \\
+            \hline
+            
+        
+        \rowcolor{white}\caption{\label{tab:requirements}Table of requirements}
+        
+    \end{longtable}
+\end{center}
+
+
 In addition, also the software system attributes (described in the RASD) are guaranteed by the architectural design choices made and explained in this document. 
 
 In particular:
