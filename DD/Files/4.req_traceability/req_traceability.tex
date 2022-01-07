@@ -46,6 +46,14 @@ This section provides a visual representation of the relationship between micro-
         \hline
         M17      &   Water irrigation system\\
         \hline
+        M18     & Visit \\
+        \hline
+        M19     & Location\\
+        \hline
+        M20     & Notification service\\
+        \hline
+        M21     & Farmer history\\
+        \hline
     \end{tabular}
     
     \caption{\label{tab:microservices_table}Micro-services table}
@@ -53,87 +61,102 @@ This section provides a visual representation of the relationship between micro-
 \end{table}
 
 
-
-
-% \begin{table}[H]
-%     \setlength\arrayrulewidth{1pt}
-%     \centering
-%     % \rowcolors{2}{white}{myblue!25}
-%     \begin{adjustbox}{width=\textwidth}
-%         \begin{tabular}{|>{\columncolor{myblue}}c|ccccccccccccccccc|}
-%             \rowcolor{myblue}
-            
-            
-%         \end{tabular}
-%     \end{adjustbox}
-    
-%     \caption{\label{tab:requirements matrix}Micro-services table}
-    
-% \end{table}
-
-
 \begin{center}
+
     \setlength\arrayrulewidth{1pt}
     % \rowcolors{2}{white}{myblue!25}
     \footnotesize
-    \begin{longtable}{|>{\columncolor{myblue}}c|ccccccccccccccccc|}
+    \setlength\tabcolsep{3pt}
+    \begin{longtable}{@{\extracolsep{\fill}}|>{\columncolor{myblue}}c|ccccccccccccccccccccc|}
             
-            \hline
-            \rowcolor{myblue}& \color{white}M1 & \color{white}M2 & \color{white}M3 & \color{white}M4 & \color{white}M5 & \color{white}M6 & \color{white}M7 & \color{white}M8 & \color{white}M9 & \color{white}M10 & \color{white}M11 & \color{white}M12 &
-            \color{white}M13 & \color{white}M14 &
-            \color{white}M15 & \color{white}M16 &
-            \color{white}M17\\
-            \hline
-            % USER RELATED PHENOMENA
-            \color{white} R1 &  & \cellcolor{myblue!25}\checkmark &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
-            \hline
-            \color{white} R2 &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  \\
-            \hline
-            \color{white} R3 &  &  &  &  &  &  &  &  &  &  &  &  & ? &  &  &  &  \\
-            \hline
-            \color{white} R4 &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  \\
-            \hline
-            \color{white} R5 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  \\
-            \hline
-            \color{white} R6 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  \\
-            \hline
-            \color{white} R7 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  &  &  &  &  \\
-            \hline
-            \color{white} R8 &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  \\
-            \hline
-            \color{white} R9 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  &  &  &  &  \\
-            \hline
-            \color{white} R10 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  \\
-            \hline
-            \color{white} R11 &  & \cellcolor{myblue!25}\checkmark &  & \cellcolor{myblue!25}\checkmark &  & \cellcolor{myblue!25}\checkmark & \cellcolor{myblue!25}\checkmark & \cellcolor{myblue!25}\checkmark & \cellcolor{myblue!25}\checkmark & \cellcolor{myblue!25}\checkmark & \cellcolor{myblue!25}\checkmark &  &  &  &  &  &  \\
-            \hline
-            \color{white} R12 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  \\
-            \hline
-            \color{white} R13 &  &  &  &  &  &  &  &  &  &  &  &  & ? &  &  &  &  \\
-            \hline
-            \color{white} R14 &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  \\
-            \hline
-            \color{white} R15 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  \\
-            \hline
-            \color{white} R16 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  \\
-            \hline
-            \color{white} R17 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  &  &  &  &  \\
-            \hline
-            \color{white} R18 &  &  &  &  &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  \\
-            \hline
-            \color{white} R19 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  &  &  &  &  \\
-            \hline
-            \color{white} R10 &  &  &  &  &  &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  & \cellcolor{myblue!25}\checkmark &  &  &  &  \\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \rowcolor{myblue}	&	\color{white}M1	&	\color{white}M2 	&	\color{white}M3	&	\color{white}M4	&	\color{white}M5	&	\color{white}M6	&	\color{white}M7	&	\color{white}M8	&	\color{white}M9	&	\color{white}M10	&	\color{white}M11	&	\color{white}M12	&	\color{white}M13	&	\color{white}M14	&	\color{white}M15	&	\color{white}M16	&	\color{white}M17	&	\color{white}M18	&	\color{white}M19	&	\color{white}M20	&	\color{white}M21	\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R1	&	\cellcolor{myblue!25}\checkmark	&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R2	&		&		&		&		&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R3	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R4	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R5	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R6	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R7	&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R8	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R9	&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R10	&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R11	&		&		&		&	\cellcolor{myblue!25}\checkmark	&	\cellcolor{myblue!25}\checkmark	&	\cellcolor{myblue!25}\checkmark	&	\cellcolor{myblue!25}\checkmark	&	\cellcolor{myblue!25}\checkmark	&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R12	&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R13	&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R14	&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R15	&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R16	&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R17	&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R18	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R19	&		&		&		&	\cellcolor{myblue!25}\checkmark	&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R20	&		&		&		&	\cellcolor{myblue!25}\checkmark	&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R21	&	\cellcolor{myblue!25}\checkmark	&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R22	&	\cellcolor{myblue!25}\checkmark	&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R23	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R24	&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R25	&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R26	&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R27	&		&		&		&	\cellcolor{myblue!25}\checkmark	&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R28	&		&		&		&	\cellcolor{myblue!25}\checkmark	&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R29	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R30	&		&		&		&		&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R31	&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R32	&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R33	&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R34	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R35	&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R36	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark        	&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R37	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&	\cellcolor{myblue!25}\checkmark        	&		&		\\
+            \hline % ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \color{white}R38	&		&		&	\cellcolor{myblue!25}\checkmark	&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		&		\\
             \hline
             
         
-        \rowcolor{white}\caption{\label{tab:requirements}Table of requirements}
+        \rowcolor{white}\caption{\label{tab:requirements}Requirements traceability matrix}
         
     \end{longtable}
 \end{center}
 
 
-In addition, also the software system attributes (described in the RASD) are guaranteed by the architectural design choices made and explained in this document. 
+In addition, also the software system attributes (described in the RASD) are guaranteed by the architectural design choices made and explained in this document.
 
 In particular:
 \begin{itemize}

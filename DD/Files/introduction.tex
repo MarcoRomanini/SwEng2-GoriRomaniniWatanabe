@@ -23,6 +23,7 @@ The system defines three main actors that will interact with the application: po
 
 Farmers can access the platform to see data relevant for them, such as weather forecasts and personalized suggestions, to insert data about their production and any problem they face, to request for help and suggestions by agronomists and other farmers and to create discussions with other farmers.
 
+
 Agronomists can insert the area they are responsible of, they can receive and answer to request by farmers, they can see relevant data about their areas, such as weather forecasts, best/under-performing farmers and problems encountered by farmers, and they can also manage daily plans in order to visit periodically the farmers.
 
 Finally, policy makers can visualize information and statistics about the overall process, they can see if the steering initiatives are producing significant results, they can ask well-performing farmers to write good practices and can assign incentives to them.
@@ -67,8 +68,41 @@ It is important to agree in advance on the specific keywords and terms that sign
         \hline
         \color{white}Acronym & \color{white}Expansion \\
         \hline
-        \textsc{LoL}  &    Lots of Laughs \\
+        \textsc{DREAM}  &    Data-dRiven prEdictive fArMing \\
         \hline
+        \textsc{S2B}     &   Software to be \\
+        \hline
+        \textsc{DPGS}  &    Digital Public Goods Standard\\
+        \hline
+        \textsc{UML}  &    Unified Modeling Language\\
+        \hline
+        \textsc{DBMS}  &    Data base Management System \\
+        \hline
+        \textsc{API}  &    Application programming interface \\
+        \hline
+        \textsc{GUI}  &    Graphical User Interface \\
+        \hline
+        \textsc{CQRS}  &    Command Query Responsibility Segregation \\
+        \hline
+        \textsc{REST}  &    Representational State Transfer \\
+        \hline
+        \textsc{CRUD}  &    Create, Read, Update, Delete \\
+        \hline
+        \textsc{HTTPS}  &    Hypertext Transfer Protocol Secure \\
+        \hline
+        \textsc{URL}  &    Uniform Resource Locator \\
+        \hline
+        \textsc{DB}  &    Data Base \\
+        \hline
+        \textsc{DDD}  &    Domain Driven Design \\
+        \hline
+        \textsc{JSON}  &    JavaScript Object Notation \\
+        \hline
+        \textsc{TDD}  &    Test Driven Development \\
+        \hline
+        \textsc{SSL}  &    Secure Sockets Layer \\
+        \hline
+        
         
     \end{tabular}
     
@@ -80,6 +114,7 @@ It is important to agree in advance on the specific keywords and terms that sign
 % TODO Requirements should be ranked for importance or stability (from Hans Van Vliet book)
 \subsection{Revision history}
 \label{sec:history}
+
 \begin{center}
     \setlength\arrayrulewidth{1pt}
     \rowcolors{2}{myblue!25}{white}
@@ -88,13 +123,59 @@ It is important to agree in advance on the specific keywords and terms that sign
         \hline
         \rowcolor{myblue}\color{white}Date & \color{white}Description \\
         \hline
-        28/11	&	sample\\
+        28/12 & Architecure Structure (Microservices) \\
+                & Implementation, integration and test plan \\
+        \hline
+        29/12 & Implementation, integration and test plan \\
+                & UI diagram \\
+        \hline
+        30/12 & Architecture Overview \\
+                & component view \\
+                & Architecure Structure (Microservices) \\
+                & UI diagram \\
+        \hline
+        31/12 & Architectural Styles and Patterns \\
+                & component/deployment diagram \\
+                & Sequence diagram \\
+                & UI diagram \\
+        \hline
+        1/1 & component/deployment diagram \\
+         & Component view section \\
+        \hline
+        2/1 & Functional requirements \\
+         & Architectural Styles and Patterns \\
+         & requirement treceability matrix \\
+        \hline
+        3/1 & Architecture Overview \\
+         & Implementation, integration and test plan \\
+         & Architectural Styles and Patterns \\
+         & Other Design Decisions \\
+         & Sequence diagram \\
+         & requirements traceability matrix \\
+        \hline
+        4/1 & Architecure Structure (Microservices) \\
+         & Introduction (Purpose, Scope) \\
+         & Requirements traceability (software system attributes) \\
+         & Other design decisions \\
+         & Sequence diagram \\
+         & Component diagram \\
+        \hline
+        5/1 & Integration Plan \\
+         & Component Interfaces \\
+         & Component view \\
+         & Sequence diagram \\
+        \hline
+        6/1 & Deployment view \\
+        \hline
+        7/1 & Whole document review \\
+         & Components Interfaces \\
         \hline
         
         \rowcolor{white}\caption{\label{tab:history}History table}
         
     \end{longtable}
 \end{center}
+
 \subsection{Reference Documents}
 \label{sec:ref_docs}
 We present in this section the references we used to gather information about the good practices for the development of this document.
@@ -133,21 +214,22 @@ We present in this section the references we used to gather information about th
 The overall document is organized in 5 main sections. For each of them we provide a brief explanation of the contents of their subsections, except for the current one.
 
 \subsection*{\textsc{\textcolor{myblue}{\ref{sect:introduction} Introduction}}}
-blablabla
+
+Section \ref{sec:purpose} offers a brief description of the document content. In section \ref{sec:scope} we briefly introduce the desired functionalities that the S2B should achieve, organized for each actor involved in the application's domain. Section \ref{sec:def_acr_abr} contains the list of definitions of terms and acronyms used along the document. Section \ref{sec:history} contains the history of reviewed section of the document during time passing. Finally, section \ref{sec:ref_docs} provides the list of useful sources that have been exploited to build the document.
 
 \subsection*{\textsc{\textcolor{myblue}{\ref{sect:architectural_design} Architectural design}}}
-blablabla
-
+Section \ref{sect:architectural_design} provides a complete description of the designed software architecture. In particular section \ref{sec:overview} presents the architecture diagram from an high level perspective. Section \ref{sec:component_view} shows the structure of the components that compose the platform as well as the relationship between them through a component diagram. Section \ref{sec:deployment_view} provides a deployment diagram and describes the tiers of the S2B planned architecture. In section \ref{sec:runtime_view} we present the sequence diagrams showing the main functional requirements of the application, while section \ref{sec:component_interfaces} introduces the interfaces that handle basic required operations. Finally in sections \ref{sec:styles_patterns} and \ref{sec:other_decisionS} we respectively introduce the main patterns that are useful to architect the application and the design decisions that could lead to improvements of the planned architecture.
+ 
 \subsection*{\textsc{\textcolor{myblue}{\ref{sect:user_interface_design} User interface design}}}
-blablabla
+Where we propose a series of diagrams showing the application user interface and its transitions in different use cases.
 
 \subsection*{\textsc{\textcolor{myblue}{\ref{sect:req_traceability} Requirements traceability}}}
-blablabla
+This section provides a requirements traceability matrix that justifies the design choices of the platform. In addition, a description of the attributes the software system guarantees is presented in the same chapter.
 
 \subsection*{\textsc{\textcolor{myblue}{\ref{sect:impl_int_test} Implementation, integration and testing plan}}}
-blablabla
+As the title suggests this chapter is splitted in different subsections that briefly describe the implementation (section \ref{sec:implementation_plan}), integration (section \ref{sec:integration_plan}) and test (\ref{sec:test_plan}) plans of the components that make up the architecture.
 
 
 \subsection*{\textsc{\textcolor{myblue}{\ref{sect:effort} Effort spent}}}
-blablabla
+Here we provide the table of the overall efforts building the documents since last update for each team member.
 
