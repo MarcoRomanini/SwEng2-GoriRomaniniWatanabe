@@ -1,7 +1,7 @@
 % ############### 2.7) OTHER DESIGN DECISIONS ####################
 
 \subsubsection{Scale-out}
-This method consists of cloning the nodes in which we expect to have a bottleneck, in order to increase the overall availability and scalability of the system. In particular, elements such as the API gateway, the Authorization Server and the Discovery Service should necessarily  be replicated since they represent a single point of failure. 
+This method consists of cloning the nodes in which we expect to have a bottleneck, in order to increase the overall availability and scalability of the system. In particular, elements such as the API gateway, the Authorization Server, the Discovery Service and the CQRS database should necessarily be replicated since they represent a single point of failure.
 
 Also the microservices can be replicated: the managing process of redirecting the incoming requests to the node with the lowest workload could be done in the load balancer already implemented in the Discovery Service (see 2.6.11 for more details).
 

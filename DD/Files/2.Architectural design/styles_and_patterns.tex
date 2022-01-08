@@ -61,7 +61,7 @@ The Saga pattern enables the application to maintain data consistency across mul
 \subsubsection{CQRS (Command Query Responsibility Segregation)}
 Given the fragmented nature of microservices, it is no longer straightforward to implement queries that join data from multiple services. 
 
-The Command Query Responsibility Segregation (CQRS) pattern defines a view database, which is a read-only replica that is designed to support that query. The application keeps the replica up to data by subscribing to Domain events published by the service that own the data. 
+The Command Query Responsibility Segregation (CQRS) pattern defines a view database, which is a read-only replica that is designed to support that query. The application keeps the replica up-to-date by subscribing to Domain events published by the service that owns the data. 
 
 This pattern works together with other patterns in the overall database management process.
 
@@ -72,7 +72,7 @@ A service can include the access token in requests it makes to other services. I
 
 \subsubsection{Circuit Breaker}
 The Circuit Breaker is used to efficiently handle synchronous calls to microservices in order to prevent a network or service failure from cascading to other services.
-A service client invokes a remote service via a proxy. When the number of consecutive failures crosses a threshold, the circuit breaker trips, and for the duration of a timeout period all attempts to invoke the remote service will fail immediately. After the timeout expires the circuit breaker allows a limited number of test requests to pass through. If those requests succeed the circuit breaker resumes normal operation. Otherwise, if there is a failure the timeout period begins again.
+A service client invokes a remote service via a proxy. When the number of consecutive failures crosses a threshold, the circuit breaker trips, and for the duration of a timeout period all attempts to invoke the remote service will fail immediately. After the timeout expires, the circuit breaker allows a limited number of test requests to pass through. If those requests succeed, the circuit breaker resumes normal operation. Otherwise, if there is a failure the timeout period begins again.
 
 This is due to the fact that, when one service synchronously invokes another, there is always the possibility that the other service is unavailable or is exhibiting such high latency it is essentially unusable, causing the caller to waste resources in the meanwhile.
 

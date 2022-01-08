@@ -34,7 +34,7 @@ Finally, policy makers can visualize information and statistics about the overal
 \label{sec:def_acr_abr}
 In order to introduce some sort of coherence in an environment--- the physical world--- that is informal, we present in this section the sets of \textbf{definitions}, \textbf{acronyms} and \textbf{abbreviations} used in the following sections. These are supposed to be as more generic as possible, in order to provide more flexibility for the following phases of the Waterfall software lifecycle.
 
-It is important to agree in advance on the specific keywords and terms that signal the presence of specific entity. 
+It is important to agree in advance on the specific keywords and terms that signal the presence of specific entity.
 
 \subsubsection{Definitions}
 \label{sec:definitions}
@@ -47,7 +47,17 @@ It is important to agree in advance on the specific keywords and terms that sign
         \hline
         \color{white}Concept & \color{white}Definition \\
         \hline
-        \textsc{something}     &   something is ... \\
+        \textsc{Event BUS}     &    With Event BUS we refer to all the system elements used to handle the database management process, in order to guarantee data consistency across the fragmented datasets. The Event BUS is the result of the implementation of different architectural patterns, such as Database per Service, Event Sourcing, Domain Event, CQRS and Saga. \\
+        \hline
+        \textsc{Client-Server paradigm}     &    Distributed application structure that splits functionalities between the providers of a service, called servers, and the ones that ask for it, called clients \\
+        \hline
+        \textsc{Service}     &    Indipendent lightweight application that implements narrowly focused functionalities\\
+        \hline
+        \textsc{Microservice architecture}     &    Architectural style that functionally decomposes an application into a set of services\\
+        \hline
+        \textsc{Software interfaces}     &    Languages, codes and messages that programs use to communicate with each other and to the hardware\\
+        \hline
+        \textsc{Pattern}     &    General reusable solution for the common problems that occur in software design\\
         \hline
     \end{tabular}
     
@@ -194,20 +204,6 @@ We present in this section the references we used to gather information about th
 % World/machine paper
 % RASD assignment document
 
-% 1.3 sec:goals
-%1.5 \ref{sec:def_acr_abr}
-% 1.6 \label{sec:ref_docs}
-
-%2.1 sec:prod_perspective
-% 2.2 sec:product_functions
-% 2.3 sec:actors
-% 2.4 sec:domain_assumptions
-
-% 3.1 sec:ex_interface_req
-% 3.2 sec:fun_req
-% 3.3 sec:per_req
-% 3.4 sec:design_constraints
-% 3.5 sec:sw_sys_attributes
 
 \subsection{Document structure}
 \label{sec:doc_struct}
@@ -229,7 +225,5 @@ This section provides a requirements traceability matrix that justifies the desi
 \subsection*{\textsc{\textcolor{myblue}{\ref{sect:impl_int_test} Implementation, integration and testing plan}}}
 As the title suggests this chapter is splitted in different subsections that briefly describe the implementation (section \ref{sec:implementation_plan}), integration (section \ref{sec:integration_plan}) and test (\ref{sec:test_plan}) plans of the components that make up the architecture.
 
-
 \subsection*{\textsc{\textcolor{myblue}{\ref{sect:effort} Effort spent}}}
 Here we provide the table of the overall efforts building the documents since last update for each team member.
-
