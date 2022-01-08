@@ -47,7 +47,7 @@ Depending on the resources available for the real deployment of the system, ther
 
 It is a good idea to create barriers that enforce this modularity. Without some kind of barrier to enforce encapsulation, developers may be tempted to bypass a service’s API and access its data directly.
 
-In this document we assumed a database-server-per-service approach.
+In this document we assumed an hybrid approach, as shown in section 2.3: different “domains” have different machines, but inside each machine a logical separation is used.
 
 \subsubsection{Saga}
 This pattern implements each business transaction that spans multiple services as a saga. A saga is a sequence of local transactions. Each local transaction updates the database and publishes a message or event to trigger the next local transaction in the saga. 
@@ -68,7 +68,7 @@ This pattern works together with other patterns in the overall database manageme
 \subsubsection{Access Token}
 The Access Token pattern is used for security reasons, in order to communicate the identity of the requestor to the services that handle the request. The API Gateway authenticates the request through an Authorization server and passes an access token (e.g. JSON Web Token) that securely identifies the requestor in each request to the services. 
 
-A service can include the access token in requests it makes to other services. In this way, the identity of the requestor is securely passed around the system and the services can verify that the requestor is authorized to perform a specific operation.
+A service can include the access token in requests it makes to other services. In this way, the identity of the requestor is securely passed around the system and the services can verify that the requestor is authorized to perform a specific operation, especially when accessing data resources.
 
 \subsubsection{Circuit Breaker}
 The Circuit Breaker is used to efficiently handle synchronous calls to microservices in order to prevent a network or service failure from cascading to other services.
