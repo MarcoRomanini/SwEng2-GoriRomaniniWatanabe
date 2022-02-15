@@ -43,7 +43,7 @@ The main purpose of the \hyperref[tab:acronymsTable]{S2B} is acting as a bridge 
         \item Request for help and suggestions by agronomists and other farmers
         \item Create discussion forums with the other farmers
     \end{enumerate}
-\subsection*{\textsc{\textcolor{myblue}{Agronomist needs}}}
+\subsection*{\textsc{\textcolor{myblue}{Agronomists needs}}}
 \label{sec:agronomistsNeeds}
     \begin{enumerate}[resume]
         \item Insert the area they are responsible of;
@@ -57,7 +57,7 @@ Referring to point \ref{itm:first}, we assume that is policy maker responsibilit
 \newline
 
 % point 3 of the review notes
-Referring to points \ref{itm:first} and \ref{itm:badly_performing_farmers}, we assume that the system is able to provide a well desired evaluation of farmers performance status. The evaluation could be made based on their production rates, climate change resiliency and the location of their activity.
+Referring to points \ref{itm:first} and \ref{itm:badly_performing_farmers}, we assume that the system is able to retrieve a well desired evaluation of farmers performance status from third party analysis. The evaluation could be made based on their production rates, climate change resiliency and the location of their activity.
 \newline
 
 % point 2 of the review notes
@@ -65,8 +65,8 @@ Referring to point \ref{itm:data_relevant_to_farmers}, we provide an informal de
 \newline
 
 % point 1 of the review notes
-Referring to point \ref{itm:daily_plan}, we assume that the system automatically prepares for the agronomists some sketches of the daily plans. Agronomists are then allowed to edit them as they feel more comfortable.
-The suggestion could be made based on their current assigned farmers information (such as the performance status and the number of previous visits) and the areas they chosen to be responsible of.
+Referring to point \ref{itm:daily_plan}, we assume that the system automatically prepares for the agronomists empty daily plans. Agronomists are then allowed to edit them as they feel more comfortable.
+The decision should be based on their current assigned farmers information (such as the performance status and the number of previous visits) and the areas they chose to be responsible of.
 \newline
 
 Furthermore the system should make use of the already collected data such as:
@@ -218,7 +218,7 @@ For each of them we provide the \textbf{traceability matrix} in section \ref{sec
 \label{sec:def_acr_abr}
 In order to introduce some sort of coherence in an environment--- the physical world--- that is informal, we present in this section the sets of \textbf{definitions}, \textbf{acronyms} and \textbf{abbreviations} used in the following sections. These are supposed to be as more generic as possible, in order to provide more flexibility for the following phases of the Waterfall software lifecycle.
 
-It is important to agree in advance on the specific keywords and terms that signal the presence of specific entity. Following the convention defined in \cite{iso_ieee_standard}, we therefore adopt the following terms to identify and describe requirements, goals and domain assumptions.
+It is important to agree in advance on the specific keywords and terms that signal the presence of a specific entity. Following the convention defined in \cite{iso_ieee_standard}, we therefore adopt the following terms to identify and describe requirements, goals and domain assumptions.
 
 %# SOURCE : https://reqexperts.com/2012/10/09/using-the-correct-terms-shall-will-should/
 \begin{itemize}
@@ -439,12 +439,12 @@ The overall document is organized in 5 main sections. For each of them we provid
 
 \subsection*{\textsc{\textcolor{myblue}{\ref{sect:introduction} Introduction}}}
 Here in section \ref{sec:purpose} we offer a brief description of the problem and required functionalities, with some of our assumptions about the terms used in the original assignment. In section \ref{sec:scope} we briefly describe the environment in which the \hyperref[tab:def]{S2B} will be involved and present the phenomena analysis table.
-In section \ref{sec:goals} a table of the required goals is presented and defined, while section \ref{sec:def_acr_abr} contains the list of definitions of terms and acronyms used along the document. Section \ref{sec:history} contains the history of reviewed section of the document during time passing. Finally, section \ref{sec:ref_docs} provides the list of useful sources that have been exploited to build the document.
+In section \ref{sec:goals} a table of the required goals is presented and defined, while section \ref{sec:def_acr_abr} contains the list of definitions of terms and acronyms used along the document. Section \ref{sec:history} contains the history of reviewed sections of the document over time. Finally, section \ref{sec:ref_docs} provides the list of useful sources that have been exploited to build the document.
 
 \subsection*{\textsc{\textcolor{myblue}{ Overall description}}}
 This section offers a summary description about the overall organization of the system, the Hardware and Software constraints and the interfaces needed to get it work. In particular section \ref{sec:prod_perspective} proposes the UML high level class diagram structure of the application and a brief discussion about the entities contained in it. In section \ref{sec:product_functions} we provide a description of the main features offered by the application and the relatives BPMN diagrams for deeper understanding. The main actors that are supposed to interact with the application are defined in section \ref{sec:actors}, while in section \ref{sec:domain_assumptions} we define the list of domain assumptions.
 \subsection*{\textsc{\textcolor{myblue}{ Specific Requirements}}}
-In section \ref{sec:ex_interface_req} some mock-ups of the web and application \hyperref[tab:acronymsTable]{GUIs} are showed and described. Section \ref{sec:fun_req} represents the main portion of the document and contains the list of functional requirements described by means of actor's scenarios, use case diagrams, tables and sequence diagrams. Performance requirements are defined in section \ref{sec:per_req}, while in section \ref{sec:design_constraints} we present the design constraints. Finally in section \ref{sec:sw_sys_attributes} we provide the main expected qualitative properties the platform is required to hold.
+In section \ref{sec:ex_interface_req} some mock-ups of the web and application \hyperref[tab:acronymsTable]{GUIs} are showed and described. Section \ref{sec:fun_req} represents the main portion of the document and contains the list of functional requirements described by means of actors' scenarios, use case diagrams, tables and sequence diagrams. Performance requirements are defined in section \ref{sec:per_req}, while in section \ref{sec:design_constraints} we present the design constraints. Finally in section \ref{sec:sw_sys_attributes} we provide the main expected qualitative properties the platform is required to hold.
 \subsection*{\textsc{\textcolor{myblue}{ Formal Analysis using Alloy}}}
 Finally, in section \ref{sec:alloy_code} we provide the Alloy code used for the analysis of the system, together with some diagrams to better understand the behaviour of the system.
 
