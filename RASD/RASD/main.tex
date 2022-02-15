@@ -29,15 +29,37 @@
 \vfill
 %TITLE 
 
-% \begin{flushleft}
+
 \begin{center}
 %Replace the text string with your title
 % \textcolor{Blue}{\textbf{\Huge{Requirement Analysis\\ and \\Specification Document}}}
 \textcolor{myblue}{\textit{\textline[t]{Requirement Analysis}{\&}{Specification Document}}}
 \end{center}
-% \end{flushleft}
+
 
 \vfill
+
+\begin{center}
+    \begin{adjustbox}{width=0.4\textwidth}
+        \begin{tikzpicture}
+        \node [circle, minimum width = 7cm,
+            path picture = {
+                \node [] at (path picture bounding box.center) {
+                \includegraphics[scale=0.12]{Images/logo/logo.jpg}};
+                \node [] at (path picture bounding box.center) {{
+                \transparent{0.8}\includegraphics[scale=0.4]{Images/logo/onu.png}}};
+            }] {};
+        % \path 
+            % [rotate=125,postaction={decoration={text along path,text={|\huge\bfseries|\ DREAM - Data-dRiven prEdictive fArMing -},
+            %   text align=fit to path,reverse path}, decorate}]
+            %  circle[radius=3cm] ; 
+        \path 
+            [rotate=232,postaction={decoration={text along path,text={|\huge\bfseries|\ Data-dRiven prEdictive fArMing {\Large\textbullet} {\myrotate{M}}{\myrotate{A}}{\myrotate{E}}{\myrotate{R}}{\myrotate{D}} {\Large\textbullet}}, text align=fit to path,reverse path}, decorate}]
+            circle[radius=4cm];
+        \end{tikzpicture}
+    \end{adjustbox}
+\end{center}
+
 \vfill
 
 \end{titlepage}
